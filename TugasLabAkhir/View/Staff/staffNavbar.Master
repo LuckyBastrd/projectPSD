@@ -1,0 +1,26 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="staffNavbar.master.cs" Inherits="TugasLabAkhir.View.Staff.staffNavbar" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+
+            <asp:Button ID="homeBtn" runat="server" Text="Home" />
+            <asp:Button ID="mngBtn" runat="server" Text="Manage Ramen" />
+            <asp:Button ID="queueBtn" runat="server" Text="Order Queue" />
+            <asp:Button ID="proflBtn" runat="server" Text="Profile" />
+            <asp:Button ID="outBtn" runat="server" Text="Log Out" />
+
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+</body>
+</html>
