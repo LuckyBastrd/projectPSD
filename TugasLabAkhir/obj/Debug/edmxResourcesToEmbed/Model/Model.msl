@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DatabaseModelStoreContainer" CdmEntityContainer="DatabaseEntities">
+    <EntitySetMapping Name="Headers">
+      <EntityTypeMapping TypeName="DatabaseModel.Header">
+        <MappingFragment StoreEntitySet="Header">
+          <ScalarProperty Name="headerID" ColumnName="headerID" />
+          <ScalarProperty Name="userID" ColumnName="userID" />
+          <ScalarProperty Name="staffID" ColumnName="staffID" />
+          <ScalarProperty Name="date" ColumnName="date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Meats">
+      <EntityTypeMapping TypeName="DatabaseModel.Meat">
+        <MappingFragment StoreEntitySet="Meat">
+          <ScalarProperty Name="meatID" ColumnName="meatID" />
+          <ScalarProperty Name="meatName" ColumnName="meatName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Ramen">
+      <EntityTypeMapping TypeName="DatabaseModel.Raman">
+        <MappingFragment StoreEntitySet="Ramen">
+          <ScalarProperty Name="ramenID" ColumnName="ramenID" />
+          <ScalarProperty Name="meatID" ColumnName="meatID" />
+          <ScalarProperty Name="ramenName" ColumnName="ramenName" />
+          <ScalarProperty Name="ramenBorth" ColumnName="ramenBorth" />
+          <ScalarProperty Name="ramenPrice" ColumnName="ramenPrice" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Roles">
+      <EntityTypeMapping TypeName="DatabaseModel.Role">
+        <MappingFragment StoreEntitySet="Role">
+          <ScalarProperty Name="roleID" ColumnName="roleID" />
+          <ScalarProperty Name="roleName" ColumnName="roleName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="DatabaseModel.User">
+        <MappingFragment StoreEntitySet="User">
+          <ScalarProperty Name="userID" ColumnName="userID" />
+          <ScalarProperty Name="roleID" ColumnName="roleID" />
+          <ScalarProperty Name="userName" ColumnName="userName" />
+          <ScalarProperty Name="userEmail" ColumnName="userEmail" />
+          <ScalarProperty Name="userGender" ColumnName="userGender" />
+          <ScalarProperty Name="userPassword" ColumnName="userPassword" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Details">
+      <EntityTypeMapping TypeName="DatabaseModel.Detail">
+        <MappingFragment StoreEntitySet="Detail">
+          <ScalarProperty Name="headerID" ColumnName="headerID" />
+          <ScalarProperty Name="ramenID" ColumnName="ramenID" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
