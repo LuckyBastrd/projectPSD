@@ -24,7 +24,10 @@
             <br />
 
             <asp:Label ID="genderLbl" runat="server" Text="Gender"></asp:Label>
-            <asp:TextBox ID="genderTbx" runat="server"></asp:TextBox>
+            <asp:RadioButtonList ID="genderRdb" runat="server">
+                <asp:ListItem Value="Male">Male</asp:ListItem>
+                <asp:ListItem Value="Female">Female</asp:ListItem>
+            </asp:RadioButtonList>
 
             <br />
 

@@ -13,5 +13,10 @@ namespace TugasLabAkhir.View.Register
         {
 
         }
+
+        protected void genderBtn_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
