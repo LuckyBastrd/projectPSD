@@ -97,6 +97,7 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Factory\userFactory.cs" />
     <Compile Include="Model\Detail.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
@@ -209,7 +210,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Controller\" />
-    <Folder Include="Factory\" />
     <Folder Include="Handler\" />
     <Folder Include="Repository\" />
   </ItemGroup>
