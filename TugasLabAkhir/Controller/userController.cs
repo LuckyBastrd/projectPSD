@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using TugasLabAkhir.Handler;
 using TugasLabAkhir.Model;
+using TugasLabAkhir.Repository;
 
 namespace TugasLabAkhir.Controller
 {
@@ -33,7 +34,7 @@ namespace TugasLabAkhir.Controller
                 return "Choose Role";
             }
 
-            return userHandler.registUser(name, email, gender, password, role);
+            return userRepository.registUser(name, email, gender, password, role);
         }
 
     }
