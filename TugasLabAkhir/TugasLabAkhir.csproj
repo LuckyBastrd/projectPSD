@@ -97,7 +97,10 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controller\userController.cs" />
+    <Compile Include="Factory\ramenFactory.cs" />
     <Compile Include="Factory\userFactory.cs" />
+    <Compile Include="Handler\userHandler.cs" />
     <Compile Include="Model\Detail.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
@@ -132,6 +135,7 @@
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\userRepository.cs" />
     <Compile Include="View\Admin\adminHome.aspx.cs">
       <DependentUpon>adminHome.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

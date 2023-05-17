@@ -123,13 +123,13 @@ namespace TugasLabAkhir.View.Register
         protected global::System.Web.UI.WebControls.Label roleLbl;
 
         /// <summary>
-        /// DropDownList1 control.
+        /// roleDDL control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList1;
+        protected global::System.Web.UI.WebControls.DropDownList roleDDL;
 
         /// <summary>
         /// registBtn control.
@@ -139,5 +139,14 @@ namespace TugasLabAkhir.View.Register
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button registBtn;
+
+        /// <summary>
+        /// errorLbl control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label errorLbl;
     }
 }

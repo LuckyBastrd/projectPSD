@@ -13,17 +13,17 @@
 
             <br />
 
-            <asp:Label ID="userLbl" runat="server" Text="Username"></asp:Label>
+            <asp:Label ID="userLbl" runat="server" Text="Username : "></asp:Label>
             <asp:TextBox ID="userTbx" runat="server"></asp:TextBox>
 
             <br />
 
-            <asp:Label ID="emailLbl" runat="server" Text="Email"></asp:Label>
+            <asp:Label ID="emailLbl" runat="server" Text="Email : "></asp:Label>
             <asp:TextBox ID="emailTbx" runat="server"></asp:TextBox>
 
             <br />
 
-            <asp:Label ID="genderLbl" runat="server" Text="Gender"></asp:Label>
+            <asp:Label ID="genderLbl" runat="server" Text="Gender : "></asp:Label>
             <asp:RadioButtonList ID="genderRdb" runat="server">
                 <asp:ListItem Value="Male">Male</asp:ListItem>
                 <asp:ListItem Value="Female">Female</asp:ListItem>
@@ -31,26 +31,28 @@
 
             <br />
 
-            <asp:Label ID="passLbl" runat="server" Text="Password"></asp:Label>
+            <asp:Label ID="passLbl" runat="server" Text="Password : "></asp:Label>
             <asp:TextBox ID="passTbx" runat="server"></asp:TextBox>
 
             <br />
 
-            <asp:Label ID="confirmLbl" runat="server" Text="Confirm Password"></asp:Label>
+            <asp:Label ID="confirmLbl" runat="server" Text="Confirm Password : "></asp:Label>
             <asp:TextBox ID="confirmTbx" runat="server"></asp:TextBox>
 
             <br />
 
-            <asp:Label ID="roleLbl" runat="server" Text="Role"></asp:Label>
-            <asp:DropDownList ID="DropDownList1" runat="server">
+            <asp:Label ID="roleLbl" runat="server" Text="Role : "></asp:Label>
+            <asp:DropDownList ID="roleDDL" runat="server">
                  <asp:ListItem Value="1">Staff</asp:ListItem>
                  <asp:ListItem Value="2">Admin</asp:ListItem>
-                 <asp:ListItem Value="1">Member</asp:ListItem>
+                 <asp:ListItem Value="3">Member</asp:ListItem>
             </asp:DropDownList>
 
             <br /><br />
 
-            <asp:Button ID="registBtn" runat="server" Text="Register" />
+            <asp:Button ID="registBtn" runat="server" Text="Register" /><br /><br />
+
+            <asp:Label ID="errorLbl" runat="server" Text=""></asp:Label>
 
         </div>
     </form>

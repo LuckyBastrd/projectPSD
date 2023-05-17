@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using TugasLabAkhir.Controller;
 
 namespace TugasLabAkhir.View.Register
 {
@@ -14,9 +15,19 @@ namespace TugasLabAkhir.View.Register
 
         }
 
-        protected void genderBtn_CheckedChanged(object sender, EventArgs e)
+        protected void registBtn_Click(object sender, EventArgs e)
         {
 
+            string name = userTbx.Text;
+            string email = emailTbx.Text;
+            string gender = genderRdb.Text;
+            string password = passTbx.Text;
+            string confirm = confirmTbx.Text;
+            string role = roleDDL.Text;
+
+            errorLbl.Text = userController.registUser(name, email, gender, password, role, confirm);
+
+            Response.Redirect("~/View/Customer/customerHome.aspx");
         }
     }
 }
