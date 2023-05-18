@@ -4,18 +4,18 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="bd75095e9f1c4967a30e28e83cea86f8" Name="Diagram1">
+      <Diagram DiagramId="9a87d354a2b741fab91a66ea15003aa1" Name="Diagram1">
         <EntityTypeShape EntityType="DatabaseModel.Header" Width="1.5" PointX="5.25" PointY="1.125" IsExpanded="true" />
         <EntityTypeShape EntityType="DatabaseModel.Meat" Width="1.5" PointX="3" PointY="5.375" IsExpanded="true" />
         <EntityTypeShape EntityType="DatabaseModel.Raman" Width="1.5" PointX="5.25" PointY="5" IsExpanded="true" />
         <EntityTypeShape EntityType="DatabaseModel.Role" Width="1.5" PointX="0.75" PointY="1.375" IsExpanded="true" />
         <EntityTypeShape EntityType="DatabaseModel.User" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
         <EntityTypeShape EntityType="DatabaseModel.Detail" Width="1.5" PointX="7.5" PointY="1.25" IsExpanded="true" />
-        <AssociationConnector Association="DatabaseModel.FK__Detail__HeaderId__403A8C7D" ManuallyRouted="false" />
-        <AssociationConnector Association="DatabaseModel.FK__Header__UserId__398D8EEE" ManuallyRouted="false" />
-        <AssociationConnector Association="DatabaseModel.FK__Ramen__MeatId__3E52440B" ManuallyRouted="false" />
-        <AssociationConnector Association="DatabaseModel.FK__Detail__RamenId__412EB0B6" ManuallyRouted="false" />
-        <AssociationConnector Association="DatabaseModel.FK__User__RoleId__36B12243" ManuallyRouted="false" />
+        <AssociationConnector Association="DatabaseModel.FK__Detail__HeaderId__2F10007B" ManuallyRouted="false" />
+        <AssociationConnector Association="DatabaseModel.FK__Header__UserId__286302EC" ManuallyRouted="false" />
+        <AssociationConnector Association="DatabaseModel.FK__Ramen__MeatId__2D27B809" ManuallyRouted="false" />
+        <AssociationConnector Association="DatabaseModel.FK__Detail__RamenId__300424B4" ManuallyRouted="false" />
+        <AssociationConnector Association="DatabaseModel.FK__User__RoleId__25869641" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

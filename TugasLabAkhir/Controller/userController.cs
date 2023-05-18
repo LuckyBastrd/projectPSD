@@ -42,12 +42,12 @@ namespace TugasLabAkhir.Controller
 
             User u = new User();
 
-            if (name.Equals("") || password.Equals(""))
+            if (name == null || password == null)
             {
                 return u;
             }
 
-            return userHandler.login(name, password);
+            return userRepository.login(name, password);
         }
     }
 }

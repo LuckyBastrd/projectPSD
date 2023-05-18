@@ -12,7 +12,7 @@ namespace TugasLabAkhir.Repository
         public static string registUser(string name, string email, string gender, string password, string role)
         {
 
-            DatabaseEntities1 db = new DatabaseEntities1();
+            DatabaseEntities2 db = new DatabaseEntities2();
 
             User u = userFactory.registUser(name, email, gender, password, role);
 
@@ -25,7 +25,7 @@ namespace TugasLabAkhir.Repository
         public static User login(string name, string password)
         {
 
-            DatabaseEntities1 db = new DatabaseEntities1();
+            DatabaseEntities2 db = new DatabaseEntities2();
 
             User u = (from x in db.Users where name.Equals(x.UserName) && password.Equals(x.UserPassword) select x).FirstOrDefault();
 

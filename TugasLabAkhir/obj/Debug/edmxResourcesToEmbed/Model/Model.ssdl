@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="DatabaseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
   <!--Errors Found During Generation:
-warning 6002: The table/view 'C:\USERS\LENOVO\DOCUMENTS\MATKUL SEM 4\PATTERN SOFTWARE DESIGN\LAB\PROJEK RAAMEN\PROJECTPSD\TUGASLABAKHIR\APP_DATA\DATABASE.MDF.dbo.Detail' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'D:\KULIAH\SEMESTER 4\TUGAS AKHIR PSD\PROJECT PSD\TUGASLABAKHIR\APP_DATA\DATABASE.MDF.dbo.Detail' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
   <EntityType Name="Detail">
     <Key>
       <PropertyRef Name="HeaderId" />
@@ -56,7 +56,7 @@ warning 6002: The table/view 'C:\USERS\LENOVO\DOCUMENTS\MATKUL SEM 4\PATTERN SOF
     <Property Name="UserGender" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="UserPassword" Type="varchar" MaxLength="50" Nullable="false" />
   </EntityType>
-  <Association Name="FK__Detail__HeaderId__403A8C7D">
+  <Association Name="FK__Detail__HeaderId__2F10007B">
     <End Role="Header" Type="Self.Header" Multiplicity="1" />
     <End Role="Detail" Type="Self.Detail" Multiplicity="*" />
     <ReferentialConstraint>
@@ -68,7 +68,7 @@ warning 6002: The table/view 'C:\USERS\LENOVO\DOCUMENTS\MATKUL SEM 4\PATTERN SOF
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Detail__RamenId__412EB0B6">
+  <Association Name="FK__Detail__RamenId__300424B4">
     <End Role="Ramen" Type="Self.Ramen" Multiplicity="1" />
     <End Role="Detail" Type="Self.Detail" Multiplicity="*" />
     <ReferentialConstraint>
@@ -80,7 +80,7 @@ warning 6002: The table/view 'C:\USERS\LENOVO\DOCUMENTS\MATKUL SEM 4\PATTERN SOF
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Header__UserId__398D8EEE">
+  <Association Name="FK__Header__UserId__286302EC">
     <End Role="User" Type="Self.User" Multiplicity="1" />
     <End Role="Header" Type="Self.Header" Multiplicity="*" />
     <ReferentialConstraint>
@@ -92,7 +92,7 @@ warning 6002: The table/view 'C:\USERS\LENOVO\DOCUMENTS\MATKUL SEM 4\PATTERN SOF
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Ramen__MeatId__3E52440B">
+  <Association Name="FK__Ramen__MeatId__2D27B809">
     <End Role="Meat" Type="Self.Meat" Multiplicity="1" />
     <End Role="Ramen" Type="Self.Ramen" Multiplicity="*" />
     <ReferentialConstraint>
@@ -104,7 +104,7 @@ warning 6002: The table/view 'C:\USERS\LENOVO\DOCUMENTS\MATKUL SEM 4\PATTERN SOF
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__User__RoleId__36B12243">
+  <Association Name="FK__User__RoleId__25869641">
     <End Role="Role" Type="Self.Role" Multiplicity="1" />
     <End Role="User" Type="Self.User" Multiplicity="*" />
     <ReferentialConstraint>
@@ -129,23 +129,23 @@ warning 6002: The table/view 'C:\USERS\LENOVO\DOCUMENTS\MATKUL SEM 4\PATTERN SOF
     [Detail].[Quantity] AS [Quantity]
     FROM [dbo].[Detail] AS [Detail]</DefiningQuery>
     </EntitySet>
-    <AssociationSet Name="FK__Detail__HeaderId__403A8C7D" Association="Self.FK__Detail__HeaderId__403A8C7D">
+    <AssociationSet Name="FK__Detail__HeaderId__2F10007B" Association="Self.FK__Detail__HeaderId__2F10007B">
       <End Role="Header" EntitySet="Header" />
       <End Role="Detail" EntitySet="Detail" />
     </AssociationSet>
-    <AssociationSet Name="FK__Detail__RamenId__412EB0B6" Association="Self.FK__Detail__RamenId__412EB0B6">
+    <AssociationSet Name="FK__Detail__RamenId__300424B4" Association="Self.FK__Detail__RamenId__300424B4">
       <End Role="Ramen" EntitySet="Ramen" />
       <End Role="Detail" EntitySet="Detail" />
     </AssociationSet>
-    <AssociationSet Name="FK__Header__UserId__398D8EEE" Association="Self.FK__Header__UserId__398D8EEE">
+    <AssociationSet Name="FK__Header__UserId__286302EC" Association="Self.FK__Header__UserId__286302EC">
       <End Role="User" EntitySet="User" />
       <End Role="Header" EntitySet="Header" />
     </AssociationSet>
-    <AssociationSet Name="FK__Ramen__MeatId__3E52440B" Association="Self.FK__Ramen__MeatId__3E52440B">
+    <AssociationSet Name="FK__Ramen__MeatId__2D27B809" Association="Self.FK__Ramen__MeatId__2D27B809">
       <End Role="Meat" EntitySet="Meat" />
       <End Role="Ramen" EntitySet="Ramen" />
     </AssociationSet>
-    <AssociationSet Name="FK__User__RoleId__36B12243" Association="Self.FK__User__RoleId__36B12243">
+    <AssociationSet Name="FK__User__RoleId__25869641" Association="Self.FK__User__RoleId__25869641">
       <End Role="Role" EntitySet="Role" />
       <End Role="User" EntitySet="User" />
     </AssociationSet>
