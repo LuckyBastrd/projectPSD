@@ -14,10 +14,10 @@ namespace TugasLabAkhir.Controller
         public static string registUser(string name, string email, string gender, string password, string role, string confirm)
         {
 
-            if(name.Equals(""))
+            if(name.Length < 5 || name.Length > 15 || name.All(x => Char.IsLetter(x) || x == ' ') == false)
             {
                 return "Name Invalid";
-            } else if (!name.EndsWith(".com"))
+            } else if (!email.EndsWith(".com"))
             {
                 return "email must end with '.com'";
             } else if (gender.Equals(""))
@@ -26,7 +26,7 @@ namespace TugasLabAkhir.Controller
             } else if (password.Equals(""))
             {
                 return "Password empty";
-            } else if (!password.Equals(confirm))
+            } else if (!confirm.Equals(password))
             {
                 return "Password not match";
             } else if (role.Equals(""))
@@ -34,7 +34,20 @@ namespace TugasLabAkhir.Controller
                 return "Choose Role";
             }
 
-            return userRepository.registUser(name, email, gender, password, role);
+            return userHandler.registUser(name, email, gender, password, role);
+        }
+
+       public static User login(string name, string password)
+        {
+
+            User u = new User();
+
+            if(name.Equals("") || password.Equals(""))
+            {
+                return u;
+            }
+
+            return userHandler.login(name, password);
         }
 
     }

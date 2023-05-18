@@ -1,60 +1,60 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="DatabaseModelStoreContainer" CdmEntityContainer="DatabaseEntities">
+  <EntityContainerMapping StorageEntityContainer="DatabaseModelStoreContainer" CdmEntityContainer="DatabaseEntities1">
     <EntitySetMapping Name="Headers">
       <EntityTypeMapping TypeName="DatabaseModel.Header">
         <MappingFragment StoreEntitySet="Header">
-          <ScalarProperty Name="headerID" ColumnName="headerID" />
-          <ScalarProperty Name="userID" ColumnName="userID" />
-          <ScalarProperty Name="staffID" ColumnName="staffID" />
-          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="HeaderId" ColumnName="HeaderId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="StaffId" ColumnName="StaffId" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Meats">
       <EntityTypeMapping TypeName="DatabaseModel.Meat">
         <MappingFragment StoreEntitySet="Meat">
-          <ScalarProperty Name="meatID" ColumnName="meatID" />
-          <ScalarProperty Name="meatName" ColumnName="meatName" />
+          <ScalarProperty Name="MeatId" ColumnName="MeatId" />
+          <ScalarProperty Name="MeatName" ColumnName="MeatName" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Ramen">
       <EntityTypeMapping TypeName="DatabaseModel.Raman">
         <MappingFragment StoreEntitySet="Ramen">
-          <ScalarProperty Name="ramenID" ColumnName="ramenID" />
-          <ScalarProperty Name="meatID" ColumnName="meatID" />
-          <ScalarProperty Name="ramenName" ColumnName="ramenName" />
-          <ScalarProperty Name="ramenBorth" ColumnName="ramenBorth" />
-          <ScalarProperty Name="ramenPrice" ColumnName="ramenPrice" />
+          <ScalarProperty Name="RamenId" ColumnName="RamenId" />
+          <ScalarProperty Name="MeatId" ColumnName="MeatId" />
+          <ScalarProperty Name="RamenName" ColumnName="RamenName" />
+          <ScalarProperty Name="Broth" ColumnName="Broth" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Roles">
       <EntityTypeMapping TypeName="DatabaseModel.Role">
         <MappingFragment StoreEntitySet="Role">
-          <ScalarProperty Name="roleID" ColumnName="roleID" />
-          <ScalarProperty Name="roleName" ColumnName="roleName" />
+          <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+          <ScalarProperty Name="RoleName" ColumnName="RoleName" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Users">
       <EntityTypeMapping TypeName="DatabaseModel.User">
         <MappingFragment StoreEntitySet="User">
-          <ScalarProperty Name="userID" ColumnName="userID" />
-          <ScalarProperty Name="roleID" ColumnName="roleID" />
-          <ScalarProperty Name="userName" ColumnName="userName" />
-          <ScalarProperty Name="userEmail" ColumnName="userEmail" />
-          <ScalarProperty Name="userGender" ColumnName="userGender" />
-          <ScalarProperty Name="userPassword" ColumnName="userPassword" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="UserEmail" ColumnName="UserEmail" />
+          <ScalarProperty Name="UserGender" ColumnName="UserGender" />
+          <ScalarProperty Name="UserPassword" ColumnName="UserPassword" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Details">
       <EntityTypeMapping TypeName="DatabaseModel.Detail">
         <MappingFragment StoreEntitySet="Detail">
-          <ScalarProperty Name="headerID" ColumnName="headerID" />
-          <ScalarProperty Name="ramenID" ColumnName="ramenID" />
+          <ScalarProperty Name="HeaderId" ColumnName="HeaderId" />
+          <ScalarProperty Name="RamenId" ColumnName="RamenId" />
           <ScalarProperty Name="Quantity" ColumnName="Quantity" />
         </MappingFragment>
       </EntityTypeMapping>

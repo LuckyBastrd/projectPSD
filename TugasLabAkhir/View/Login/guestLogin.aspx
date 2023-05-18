@@ -10,20 +10,22 @@
     <form id="form1" runat="server">
         <div>
 
-            <asp:Label ID="usernameLbl" runat="server" Text="Username : "></asp:Label>
-            <asp:TextBox ID="usernameTbx" runat="server"></asp:TextBox><br />
+            <h2>Login</h2>
+
+            <asp:Label ID="nameLbl" runat="server" Text="Username : "></asp:Label>
+            <asp:TextBox ID="nameTbx" runat="server"></asp:TextBox><br />
 
             <asp:Label ID="passLbl" runat="server" Text="Password : "></asp:Label>
-            <asp:TextBox ID="passTbx" runat="server"></asp:TextBox><br /><br />
+            <asp:TextBox ID="passTbx" runat="server"></asp:TextBox><br />
 
             <asp:CheckBox ID="rememberChb" runat="server" />
-            <asp:Label ID="rememberLbl" runat="server" Text="Remember Me"></asp:Label><br />
+            <asp:Label ID="rememberLbl" runat="server" Text="Remember Me"></asp:Label><br /><br />
 
-            <asp:Button ID="loginBtn" runat="server" Text="Login" /><br />
+            <asp:Button ID="loginBtn" runat="server" Text="Login" OnClick="loginBtn_Click" /><br />
+            <asp:Label ID="errorLbl" runat="server" Text=""></asp:Label><br /><br />
 
-            <asp:Label ID="statLbl" runat="server" Text=""></asp:Label><br />
+            <asp:LinkButton ID="registerLbtn" runat="server" OnClick="registerLbtn_Click">Register</asp:LinkButton>
 
-            <asp:LinkButton ID="registerLk" runat="server" OnClick="registerLk_Click">Register</asp:LinkButton>
         </div>
     </form>
 </body>

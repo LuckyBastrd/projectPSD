@@ -12,11 +12,11 @@ namespace TugasLabAkhir.Factory
         {
             User u = new User();
 
-            u.userName = name;
-            u.userEmail = email;
-            u.userGender = gender;
-            u.userPassword = password;
-            u.roleID = int.Parse(role);
+            u.UserName = name;
+            u.UserEmail = email;
+            u.UserGender = gender;
+            u.UserPassword = password;
+            u.RoleId = int.Parse(role);
 
             return u;
         }

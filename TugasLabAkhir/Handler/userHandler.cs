@@ -15,5 +15,9 @@ namespace TugasLabAkhir.Handler
            return userRepository.registUser(name, email, gender, password, role);
         }
 
+        public static User login(string name, string password)
+        {
+            return userRepository.login(name, password);
+        }
     }
 }

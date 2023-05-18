@@ -26,8 +26,13 @@ namespace TugasLabAkhir.View.Register
             string role = roleDDL.Text;
 
             errorLbl.Text = userController.registUser(name, email, gender, password, role, confirm);
+        }
 
-            Response.Redirect("~/View/Customer/customerHome.aspx");
+        protected void loginLbtn_Click(object sender, EventArgs e)
+        {
+
+            Response.Redirect("~/View/Login/guestLogin.aspx");
+
         }
     }
 }

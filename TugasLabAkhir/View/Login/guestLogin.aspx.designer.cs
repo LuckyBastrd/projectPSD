@@ -24,22 +24,22 @@ namespace TugasLabAkhir.View.Login
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// usernameLbl control.
+        /// nameLbl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label usernameLbl;
+        protected global::System.Web.UI.WebControls.Label nameLbl;
 
         /// <summary>
-        /// usernameTbx control.
+        /// nameTbx control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox usernameTbx;
+        protected global::System.Web.UI.WebControls.TextBox nameTbx;
 
         /// <summary>
         /// passLbl control.
@@ -87,21 +87,21 @@ namespace TugasLabAkhir.View.Login
         protected global::System.Web.UI.WebControls.Button loginBtn;
 
         /// <summary>
-        /// statLbl control.
+        /// errorLbl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label statLbl;
+        protected global::System.Web.UI.WebControls.Label errorLbl;
 
         /// <summary>
-        /// registerLk control.
+        /// registerLbtn control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton registerLk;
+        protected global::System.Web.UI.WebControls.LinkButton registerLbtn;
     }
 }

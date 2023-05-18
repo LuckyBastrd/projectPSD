@@ -1,0 +1,1 @@
+﻿INSERT INTO [Role](RoleName) VALUES ('Admin'), ('Staff'), ('Customer');

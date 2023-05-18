@@ -44,16 +44,19 @@
 
             <asp:Label ID="roleLbl" runat="server" Text="Role : "></asp:Label>
             <asp:DropDownList ID="roleDDL" runat="server">
-                 <asp:ListItem Value="1">Staff</asp:ListItem>
-                 <asp:ListItem Value="2">Admin</asp:ListItem>
-                 <asp:ListItem Value="3">Member</asp:ListItem>
+                 <asp:ListItem Value="1">Admin</asp:ListItem>
+                 <asp:ListItem Value="2">Staff</asp:ListItem>
+                 <asp:ListItem Value="3">Customer</asp:ListItem>
             </asp:DropDownList>
 
             <br /><br />
 
             <asp:Button ID="registBtn" runat="server" Text="Register" OnClick="registBtn_Click" /><br /><br />
 
-            <asp:Label ID="errorLbl" runat="server" Text=""></asp:Label>
+            <asp:Label ID="errorLbl" runat="server" Text=""></asp:Label><br /><br />
+
+            <h5>Already have an account</h5>
+            <asp:LinkButton ID="loginLbtn" runat="server" OnClick="loginLbtn_Click">Log-in</asp:LinkButton>
 
         </div>
     </form>
