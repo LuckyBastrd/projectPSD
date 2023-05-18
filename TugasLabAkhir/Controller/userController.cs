@@ -37,18 +37,17 @@ namespace TugasLabAkhir.Controller
             return userHandler.registUser(name, email, gender, password, role);
         }
 
-       public static User login(string name, string password)
+        public static User login(string name, string password)
         {
 
             User u = new User();
 
-            if(name.Equals("") || password.Equals(""))
+            if (name.Equals("") || password.Equals(""))
             {
                 return u;
             }
 
             return userHandler.login(name, password);
         }
-
     }
 }
