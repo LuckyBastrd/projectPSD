@@ -20,6 +20,7 @@ namespace TugasLabAkhir.View.Login
         {
             string name = nameTbx.Text;
             string password = passwordTbx.Text;
+            bool remember = rememberChb.Checked;
 
             User u = userController.login(name, password);
 

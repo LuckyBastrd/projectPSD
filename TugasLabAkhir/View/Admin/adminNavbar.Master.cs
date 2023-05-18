@@ -13,5 +13,10 @@ namespace TugasLabAkhir.View.Admin
         {
 
         }
+
+        protected void profBtn_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/View/Admin/adminProfilePage.aspx");
+        }
     }
 }

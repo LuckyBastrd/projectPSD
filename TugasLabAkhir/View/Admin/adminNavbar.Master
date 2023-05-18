@@ -14,7 +14,7 @@
 
             <asp:Button ID="manageBtn" runat="server" Text="Manage Ramen" />
             <asp:Button ID="orderBtn" runat="server" Text="Order Ramen" />
-            <asp:Button ID="profBtn" runat="server" Text="Profile" />
+            <asp:Button ID="profBtn" runat="server" Text="Profile" OnClick="profBtn_Click" />
             <asp:Button ID="historyBtn" runat="server" Text="History" />
             <asp:Button ID="reportBtn" runat="server" Text="Report" />
             <asp:Button ID="logoutBtn" runat="server" Text="Logout" />
