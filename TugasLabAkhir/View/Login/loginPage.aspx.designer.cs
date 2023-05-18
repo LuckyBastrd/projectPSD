@@ -42,22 +42,22 @@ namespace TugasLabAkhir.View.Login
         protected global::System.Web.UI.WebControls.TextBox nameTbx;
 
         /// <summary>
-        /// passLbl control.
+        /// passwordLbl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label passLbl;
+        protected global::System.Web.UI.WebControls.Label passwordLbl;
 
         /// <summary>
-        /// passTbx control.
+        /// passwordTbx control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox passTbx;
+        protected global::System.Web.UI.WebControls.TextBox passwordTbx;
 
         /// <summary>
         /// rememberChb control.

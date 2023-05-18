@@ -19,11 +19,16 @@ namespace TugasLabAkhir.View.Login
         protected void loginBtn_Click(object sender, EventArgs e)
         {
             string name = nameTbx.Text;
-            string password = passTbx.Text;
+            string password = passwordTbx.Text;
 
             User u = userController.login(name, password);
 
+            if(u == null)
+            {
+                errorLbl.Text = "Invalid User";
+            }
 
+            
 
         }
 
