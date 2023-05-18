@@ -17,7 +17,7 @@
             <asp:Button ID="profBtn" runat="server" Text="Profile" OnClick="profBtn_Click" />
             <asp:Button ID="historyBtn" runat="server" Text="History" />
             <asp:Button ID="reportBtn" runat="server" Text="Report" />
-            <asp:Button ID="logoutBtn" runat="server" Text="Logout" />
+            <asp:Button ID="logoutBtn" runat="server" Text="Logout" OnClick="logoutBtn_Click" />
 
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>

@@ -20,7 +20,6 @@ namespace TugasLabAkhir.View.Login
         {
             string name = nameTbx.Text;
             string password = passwordTbx.Text;
-            bool remember = rememberChb.Checked;
 
             User u = userController.login(name, password);
 
@@ -33,7 +32,19 @@ namespace TugasLabAkhir.View.Login
 
             else
             {
-                if (u.RoleId == 1)
+                Session["User"] = u;
+
+
+                if (rememberChb.Checked)
+                {
+                    HttpCookie cookie = new HttpCookie("UserData");
+                    cookie["UserName"] = u.UserName;
+                    cookie.Expires = DateTime.Now.AddDays(1);
+                    Response.Cookies.Add(cookie);
+                }
+
+
+                    if (u.RoleId == 1)
                 {
                     Response.Redirect("~/View/Admin/adminHome.aspx");
                 }

@@ -11,12 +11,30 @@ namespace TugasLabAkhir.View.Admin
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            HttpCookie cookie = Request.Cookies["UserData"];
         }
 
         protected void profBtn_Click(object sender, EventArgs e)
         {
             Response.Redirect("~/View/Admin/adminProfilePage.aspx");
+        }
+
+        protected void logoutBtn_Click(object sender, EventArgs e)
+        {
+            HttpCookie cookie = Request.Cookies["UserData"];
+
+            if (cookie == null)
+            {
+                Response.Redirect("~/View/Login/loginPage.aspx");
+            }
+
+            cookie.Expires = DateTime.Now.AddDays(-1);
+            Response.Cookies.Add(cookie);
+
+            Session.Clear();
+
+            Response.Redirect("~/View/Login/loginPage.aspx");
+
         }
     }
 }
