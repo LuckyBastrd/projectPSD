@@ -29,27 +29,14 @@ namespace TugasLabAkhir.View.Register
 
             if(errorLbl.Text == "Registration success")
             {
-                if (role == "1")
-                {
-                    Response.Redirect("~/View/Admin/adminHome.aspx");
-                }
-
-                else if (role == "2")
-                {
-                    Response.Redirect("~/View/Staff/staffHome.aspx");
-                }
-
-                else
-                {
-                    Response.Redirect("~/View/Customer/customerHome.aspx");
-                }
+                Response.Redirect("~/View/Home/homePage.aspx");
             }
         }
 
         protected void loginLbtn_Click(object sender, EventArgs e)
         {
 
-            Response.Redirect("~/View/Login/guestLogin.aspx");
+            Response.Redirect("~/View/Login/loginPage.aspx");
 
         }
     }

@@ -89,11 +89,9 @@
       <DependentUpon>Model.edmx</DependentUpon>
       <LastGenOutput>Model.cs</LastGenOutput>
     </Content>
-    <Content Include="View\Admin\adminHome.aspx" />
-    <Content Include="View\Customer\customerHome.aspx" />
+    <Content Include="View\Home\homePage.aspx" />
     <Content Include="View\Login\loginPage.aspx" />
     <Content Include="View\Register\registerPage.aspx" />
-    <Content Include="View\Staff\staffHome.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -135,33 +133,12 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\userRepository.cs" />
-    <Compile Include="View\Admin\adminHome.aspx.cs">
-      <DependentUpon>adminHome.aspx</DependentUpon>
+    <Compile Include="View\Home\homePage.aspx.cs">
+      <DependentUpon>homePage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="View\Admin\adminHome.aspx.designer.cs">
-      <DependentUpon>adminHome.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="View\Admin\adminNavbar.Master.cs">
-      <DependentUpon>adminNavbar.Master</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="View\Admin\adminNavbar.Master.designer.cs">
-      <DependentUpon>adminNavbar.Master</DependentUpon>
-    </Compile>
-    <Compile Include="View\Customer\csutomerNavbar.Master.cs">
-      <DependentUpon>csutomerNavbar.Master</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="View\Customer\csutomerNavbar.Master.designer.cs">
-      <DependentUpon>csutomerNavbar.Master</DependentUpon>
-    </Compile>
-    <Compile Include="View\Customer\customerHome.aspx.cs">
-      <DependentUpon>customerHome.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="View\Customer\customerHome.aspx.designer.cs">
-      <DependentUpon>customerHome.aspx</DependentUpon>
+    <Compile Include="View\Home\homePage.aspx.designer.cs">
+      <DependentUpon>homePage.aspx</DependentUpon>
     </Compile>
     <Compile Include="View\Login\loginPage.aspx.cs">
       <DependentUpon>loginPage.aspx</DependentUpon>
@@ -170,26 +147,19 @@
     <Compile Include="View\Login\loginPage.aspx.designer.cs">
       <DependentUpon>loginPage.aspx</DependentUpon>
     </Compile>
+    <Compile Include="View\Navbar\Navbar.Master.cs">
+      <DependentUpon>Navbar.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Navbar\Navbar.Master.designer.cs">
+      <DependentUpon>Navbar.Master</DependentUpon>
+    </Compile>
     <Compile Include="View\Register\registerPage.aspx.cs">
       <DependentUpon>registerPage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="View\Register\registerPage.aspx.designer.cs">
       <DependentUpon>registerPage.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="View\Staff\staffHome.aspx.cs">
-      <DependentUpon>staffHome.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="View\Staff\staffHome.aspx.designer.cs">
-      <DependentUpon>staffHome.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="View\Staff\staffNavbar.Master.cs">
-      <DependentUpon>staffNavbar.Master</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="View\Staff\staffNavbar.Master.designer.cs">
-      <DependentUpon>staffNavbar.Master</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -201,9 +171,7 @@
       <DependentUpon>Model.edmx</DependentUpon>
     </Content>
     <None Include="packages.config" />
-    <Content Include="View\Admin\adminNavbar.Master" />
-    <Content Include="View\Customer\csutomerNavbar.Master" />
-    <Content Include="View\Staff\staffNavbar.Master" />
+    <Content Include="View\Navbar\Navbar.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

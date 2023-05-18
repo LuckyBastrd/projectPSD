@@ -23,8 +23,6 @@ namespace TugasLabAkhir.View.Login
 
             User u = userController.login(name, password);
 
-            DatabaseEntities2 db = new DatabaseEntities2();
-
             if (u == null)
             {
                 errorLbl.Text = "Invalid User";
@@ -43,21 +41,7 @@ namespace TugasLabAkhir.View.Login
                     Response.Cookies.Add(cookie);
                 }
 
-
-                    if (u.RoleId == 1)
-                {
-                    Response.Redirect("~/View/Admin/adminHome.aspx");
-                }
-
-                else if (u.RoleId == 2)
-                {
-                    Response.Redirect("~/View/Staff/staffHome.aspx");
-                }
-
-                else
-                {
-                    Response.Redirect("~/View/Customer/customerHome.aspx");
-                }
+                Response.Redirect("~/View/Home/homePage.aspx");
             }
 
             
