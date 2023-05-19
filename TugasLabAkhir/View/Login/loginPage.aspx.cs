@@ -45,7 +45,7 @@ namespace TugasLabAkhir.View.Login
                 Application["User"] = userId;
 
                 string pass= u.UserPassword;
-                Application["Pass"] = pass;
+                Session["Pass"] = pass;
 
                 int roleId = u.RoleId;
                 Application["Role"] = roleId;

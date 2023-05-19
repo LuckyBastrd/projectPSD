@@ -65,7 +65,7 @@ namespace TugasLabAkhir.Controller
                 return "Must choose gender";
             }
 
-            else if (password == confirmPass)
+            else if (!password.Equals(confirmPass))
             {
                 return "Must be the same with the current password";
             }

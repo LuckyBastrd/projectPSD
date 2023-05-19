@@ -18,7 +18,7 @@ namespace TugasLabAkhir.View.Profile
         protected void updateBtn_Click(object sender, EventArgs e)
         {
             int user = (int)Application["User"];
-            string pass = (string)Application["Pass"];
+            string pass = Session["Pass"].ToString();
 
             int Id = user;
             string name = updNameTbx.Text;
