@@ -124,7 +124,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="DatabaseEntities3" annotation:LazyLoadingEnabled="true">
+  <EntityContainer Name="DatabaseEntities4" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Headers" EntityType="Self.Header" />
     <EntitySet Name="Meats" EntityType="Self.Meat" />
     <EntitySet Name="Ramen" EntityType="Self.Raman" />
