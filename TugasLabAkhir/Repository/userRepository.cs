@@ -32,11 +32,11 @@ namespace TugasLabAkhir.Repository
             return u;
         }
 
-        public static string updateUser(int Id, string name, string email, string gender, string password, string confirmPass)
+        public static string updateUser(string name, string email, string gender, string password)
         {
             DatabaseEntities4 db = new DatabaseEntities4();
 
-            User u = db.Users.Find(Id);
+            User u = (from x in db.Users where password.Equals(x.UserPassword) select x).FirstOrDefault();
 
             if (u != null)
             {
@@ -45,9 +45,15 @@ namespace TugasLabAkhir.Repository
                 u.UserGender = gender;
 
                 db.SaveChanges();
-            } 
 
-            return "Update Profile Success";   
+                return "Update Profile Success";
+            }
+            else
+            {
+                return "Password incorrect";
+            }
+
+           
         }
     }
 }

@@ -13,9 +13,11 @@ namespace TugasLabAkhir.View.Navbar
         DatabaseEntities4 db = new DatabaseEntities4();
         protected void Page_Load(object sender, EventArgs e)
         {
-            int role = (int)Application["Role"];
+            //int role = (int)Application["Role"];
 
-            if (role == 1)
+            string role = Session["User"].ToString();
+
+            if (role == "1")
             {
                 roleName.Text = "Admin";
 
@@ -24,7 +26,7 @@ namespace TugasLabAkhir.View.Navbar
                 customerNavbar.Visible = false;
             }
 
-            else if (role == 2)
+            else if (role == "2")
             {
                 roleName.Text = "Staff";
 
@@ -33,7 +35,7 @@ namespace TugasLabAkhir.View.Navbar
                 customerNavbar.Visible = false;
             }
 
-            else
+            else if (role == "3")
             {
                 roleName.Text = "Customer";
 

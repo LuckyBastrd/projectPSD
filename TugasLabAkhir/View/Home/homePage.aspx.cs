@@ -15,6 +15,11 @@ namespace TugasLabAkhir.View.Home
             {
                 Response.Redirect("~/View/Login/loginPage.aspx");
             }
+
+            if (Session["User"] != null)
+            {
+                sessionShow.Text = "Ada session";
+            }
         }
     }
 }

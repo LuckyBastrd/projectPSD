@@ -17,24 +17,13 @@ namespace TugasLabAkhir.View.Profile
 
         protected void updateBtn_Click(object sender, EventArgs e)
         {
-            int user = (int)Application["User"];
-            string pass = Session["Pass"].ToString();
-
-            int Id = user;
+           
             string name = updNameTbx.Text;
             string email = updEmailTbx.Text;
             string gender = updGenderRdb.Text;
             string password = passTbx.Text;
-            string confirmPass = pass;
 
-            errLbl.Text = userController.updateUser(Id, name, email, gender, password, confirmPass);
-
-            if (errLbl.Text == "Update Profile Success")
-            {
-                errLbl.Text = "Update Profile Success";
-            }
-
-
+            errLbl.Text = userController.updateUser(name, email, gender, password);
         }
     }
 }
