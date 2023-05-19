@@ -11,6 +11,10 @@ namespace TugasLabAkhir.View.Home
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["User"] == null && Request.Cookies["UserData"] == null)
+            {
+                Response.Redirect("~/View/Login/loginPage.aspx");
+            }
         }
     }
 }
