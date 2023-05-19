@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using TugasLabAkhir.Repository;
 
 namespace TugasLabAkhir.View.Home
 {
@@ -16,10 +17,18 @@ namespace TugasLabAkhir.View.Home
                 Response.Redirect("~/View/Login/loginPage.aspx");
             }
 
-            if (Session["User"] != null)
+            string role = Session["User"].ToString();
+
+            if(role == "1")
             {
-                sessionShow.Text = "Ada session";
+                staffGV.DataSource = userRepository.getAllUser(2);
+                staffGV.DataBind();
+            } else if (role == "2")
+            {
+                customerGV.DataSource = userRepository.getAllUser(3);
+                customerGV.DataBind();
             }
+
         }
     }
 }

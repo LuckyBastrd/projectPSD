@@ -15,12 +15,21 @@ namespace TugasLabAkhir.View.Home
     {
 
         /// <summary>
-        /// sessionShow control.
+        /// customerGV control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label sessionShow;
+        protected global::System.Web.UI.WebControls.GridView customerGV;
+
+        /// <summary>
+        /// staffGV control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView staffGV;
     }
 }

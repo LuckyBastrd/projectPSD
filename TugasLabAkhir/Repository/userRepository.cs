@@ -51,9 +51,16 @@ namespace TugasLabAkhir.Repository
             else
             {
                 return "Password incorrect";
-            }
+            }  
+        }
 
-           
+        public static List<User> getAllUser(int roleId)
+        {
+            DatabaseEntities4 db = new DatabaseEntities4();
+
+            List<User> u = (from x in db.Users where x.RoleId.Equals(roleId) select x).ToList();
+
+            return u;
         }
     }
 }
