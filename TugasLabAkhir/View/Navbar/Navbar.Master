@@ -14,24 +14,24 @@
 
            <asp:Button ID="manageBtn" runat="server" Text="Manage Ramen" />
            <asp:Button ID="orderBtn" runat="server" Text="Order Ramen" />
-           <asp:Button ID="profBtn" runat="server" Text="Profile"/>
+           <asp:Button ID="profBtn" runat="server" Text="Profile" OnClick="profBtn_Click"/>
            <asp:Button ID="historyBtn" runat="server" Text="History" />
            <asp:Button ID="reportBtn" runat="server" Text="Report" />
-            <asp:Button ID="logoutBtn" runat="server" Text="Logout" OnClick="logoutBtn_Click"/>
+           <asp:Button ID="logoutBtn" runat="server" Text="Logout" OnClick="logoutBtn_Click" />
         </div>
 
         <div id="staffNavbar" runat="server">
             <asp:Button ID="homeBtn" runat="server" Text="Home" />
             <asp:Button ID="mngBtn" runat="server" Text="Manage Ramen" />
             <asp:Button ID="queueBtn" runat="server" Text="Order Queue" />
-            <asp:Button ID="proflBtn" runat="server" Text="Profile" />
+            <asp:Button ID="proflBtn" runat="server" Text="Profile" OnClick="proflBtn_Click" />
             <asp:Button ID="outBtn" runat="server" Text="Log Out" OnClick="outBtn_Click" />
         </div>
 
         <div id="customerNavbar" runat="server">
             <asp:Button ID="orderRamenBtn" runat="server" Text="Order Ramen" />
             <asp:Button ID="hisBtn" runat="server" Text="History" />
-            <asp:Button ID="profileBtn" runat="server" Text="Profile" />
+            <asp:Button ID="profileBtn" runat="server" Text="Profile" OnClick="profileBtn_Click1" />
             <asp:Button ID="logBtn" runat="server" Text="Log Out" OnClick="logBtn_Click" />
         </div>
 

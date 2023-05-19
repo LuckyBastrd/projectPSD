@@ -43,6 +43,23 @@ namespace TugasLabAkhir.View.Navbar
             }
         }
 
+        //Profile Button
+        protected void profBtn_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/View/Profile/profilePage.aspx");
+        }
+
+        protected void proflBtn_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/View/Profile/profilePage.aspx");
+        }
+
+        protected void profileBtn_Click1(object sender, EventArgs e)
+        {
+            Response.Redirect("~/View/Profile/profilePage.aspx");
+        }
+
+        //Log Out Button
         public void logOut()
         {
             HttpCookie cookie = Request.Cookies["UserData"];
@@ -77,5 +94,6 @@ namespace TugasLabAkhir.View.Navbar
         {
             logOut();
         }
+
     }
 }

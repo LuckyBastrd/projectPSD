@@ -19,5 +19,10 @@ namespace TugasLabAkhir.Handler
         {
             return userRepository.login(name, password);
         }
+
+        public static string updateUser(int Id, string name, string email, string gender, string password, string confirmPass)
+        {
+            return userRepository.updateUser(Id, name, email, gender, password, confirmPass);
+        }
     }
 }

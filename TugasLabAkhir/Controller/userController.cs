@@ -16,13 +16,13 @@ namespace TugasLabAkhir.Controller
 
             if(name.Length < 5 || name.Length > 15 || name.All(x => Char.IsLetter(x) || x == ' ') == false)
             {
-                return "Name Invalid";
+                return "Name invalid";
             } else if (!email.EndsWith(".com"))
             {
-                return "email must end with '.com'";
+                return "Email must end with '.com'";
             } else if (gender.Equals(""))
             {
-                return "must choose gender";
+                return "Must choose gender";
             } else if (password.Equals(""))
             {
                 return "Password empty";
@@ -48,6 +48,29 @@ namespace TugasLabAkhir.Controller
             }
 
             return userRepository.login(name, password);
+        }
+
+        public static string updateUser(int Id, string name, string email, string gender, string password, string confirmPass)
+        {
+            if (name.Length < 5 || name.Length > 15 || name.All(x => Char.IsLetter(x) || x == ' ') == false)
+            {
+                return "Name invalid";
+            } else if (!email.EndsWith(".com"))
+            {
+                return "Email must end with '.com'";
+            }
+
+            else if (gender.Equals(""))
+            {
+                return "Must choose gender";
+            }
+
+            else if (password == confirmPass)
+            {
+                return "Must be the same with the current password";
+            }
+
+            return userHandler.updateUser(Id, name, email, gender, password, confirmPass);
         }
     }
 }
