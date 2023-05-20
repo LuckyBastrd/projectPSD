@@ -12,6 +12,8 @@
 
             <h2>Update Ramen</h2>
 
+            <%--<asp:Label ID="label" runat="server" Text=""></asp:Label>--%>
+
             <asp:Button ID="returnBtn" runat="server" Text="Manage Ramen" OnClick="returnBtn_Click" /><br /><br />
 
             <div>

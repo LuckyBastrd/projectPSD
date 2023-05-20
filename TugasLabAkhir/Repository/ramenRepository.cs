@@ -23,7 +23,46 @@ namespace TugasLabAkhir.Repository
             return "Ramen Data Inserted";
         }
 
-         
+        public static string updateRamen(string id, string ramenName, string meat, string broth, string price)
+        {
+            DatabaseEntities5 db = new DatabaseEntities5();
+
+            Raman r = db.Ramen.Find(int.Parse(id));
+
+            if(r != null)
+            {
+                r.RamenName = ramenName;
+                r.MeatId = int.Parse(meat);
+                r.Broth = broth;
+                r.Price = int.Parse(price);
+
+                db.SaveChanges();
+
+                return "Update Success";
+            }
+            else
+            {
+                return "Ramen Id not found";
+            }
+
+
+        } 
+
+        public static Boolean deleteRamen(string id)
+        {
+            DatabaseEntities5 db = new DatabaseEntities5();
+
+            Raman r = db.Ramen.Find(int.Parse(id));
+
+            if(r != null)
+            {
+                db.Ramen.Remove(r);
+
+                db.SaveChanges();
+            }
+
+            return false;
+        } 
 
         public static List<Raman> getAllRamen()
         {

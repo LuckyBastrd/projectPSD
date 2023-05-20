@@ -4,14 +4,19 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using TugasLabAkhir.Controller;
+using TugasLabAkhir.Model;
 using TugasLabAkhir.Repository;
 
 namespace TugasLabAkhir.View.updateRamen
 {
     public partial class updateRamen : System.Web.UI.Page
     {
+        DatabaseEntities5 db = new DatabaseEntities5(); 
         protected void Page_Load(object sender, EventArgs e)
         {
+            //int ramenId = Convert.ToInt32(Request.QueryString["ramenId"]);
+            //label.Text = ramenId.ToString();
             ramenGV.DataSource = ramenRepository.getAllRamen();
             ramenGV.DataBind();
         }
@@ -23,12 +28,16 @@ namespace TugasLabAkhir.View.updateRamen
 
         protected void updateRamenBtn_Click(object sender, EventArgs e)
         {
+            string id = Request["ramenId"];
+
             string ramenName = updRamenNameTbx.Text;
             string meat = updMeatDdl.Text;
             string broth = updBrothTbx.Text;
             string price = updPriceTbx.Text;
 
+            statusLbl.Text = ramenController.updateRamen(id, ramenName, meat, broth, price);
 
+            Response.Redirect("~/View/ManageRamen/manageRamen.aspx");
         }
     }
 }
