@@ -6,7 +6,7 @@
     <edmx:StorageModels>
       <Schema Namespace="DatabaseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <!--Errors Found During Generation:
-warning 6002: The table/view 'D:\KULIAH\SEMESTER 4\TUGAS AKHIR PSD\CLONE PROJECT PSD\PROJECTPSD\TUGASLABAKHIR\APP_DATA\DATABASE.MDF.dbo.Detail' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'C:\USERS\LENOVO\DOCUMENTS\MATKUL SEM 4\PATTERN SOFTWARE DESIGN\LAB\PROJEK RAAMEN\PROJECTPSD\TUGASLABAKHIR\APP_DATA\DATABASE.MDF.dbo.Detail' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="Detail">
           <Key>
             <PropertyRef Name="HeaderId" />
@@ -284,7 +284,7 @@ warning 6002: The table/view 'D:\KULIAH\SEMESTER 4\TUGAS AKHIR PSD\CLONE PROJECT
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="DatabaseEntities4" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="DatabaseEntities5" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Headers" EntityType="Self.Header" />
           <EntitySet Name="Meats" EntityType="Self.Meat" />
           <EntitySet Name="Ramen" EntityType="Self.Raman" />
@@ -317,7 +317,7 @@ warning 6002: The table/view 'D:\KULIAH\SEMESTER 4\TUGAS AKHIR PSD\CLONE PROJECT
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="DatabaseModelStoreContainer" CdmEntityContainer="DatabaseEntities4">
+        <EntityContainerMapping StorageEntityContainer="DatabaseModelStoreContainer" CdmEntityContainer="DatabaseEntities5">
           <EntitySetMapping Name="Headers">
             <EntityTypeMapping TypeName="DatabaseModel.Header">
               <MappingFragment StoreEntitySet="Header">

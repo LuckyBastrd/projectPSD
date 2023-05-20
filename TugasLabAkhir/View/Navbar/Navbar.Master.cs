@@ -10,7 +10,7 @@ namespace TugasLabAkhir.View.Navbar
 {
     public partial class Navbar : System.Web.UI.MasterPage
     {
-        DatabaseEntities4 db = new DatabaseEntities4();
+        DatabaseEntities5 db = new DatabaseEntities5();
         protected void Page_Load(object sender, EventArgs e)
         {
             //int role = (int)Application["Role"];
@@ -97,5 +97,14 @@ namespace TugasLabAkhir.View.Navbar
             logOut();
         }
 
+        protected void manageBtn_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/View/ManageRamen/manageRamen.aspx");
+        }
+
+        protected void mngBtn_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/View/ManageRamen/manageRamen.aspx");
+        }
     }
 }

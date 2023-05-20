@@ -6,20 +6,30 @@
     <br /><br />
 
     <div>
-        <asp:GridView ID="customerGV" runat="server" AutoGenerateColumns="false">
-            <%--<Columns>
-                <asp:BoundField DataField="UserId" HeaderText="Id" SortExpression="UserID"/>
-                <asp:BoundField DataField="RoleId.RoleName" HeaderText="Role" SortExpression="RoleId.RoleName"/>
-                <asp:BoundField DataField="UserName" HeaderText="Name" SortExpression="UserName"/>
-                <asp:BoundField DataField="UserEmail" HeaderText="Email" SortExpression="UserEmail"/>
-                <asp:BoundField DataField="UserGender" HeaderText="Gender" SortExpression="UserGender"/>
-                <asp:BoundField DataField="UserPassword" HeaderText="Password" SortExpression="UserPassword"/>
-            </Columns>--%>     
+        <asp:GridView ID="customerGV" runat="server" AutoGenerateColumns="False">
+            <Columns>
+                <asp:BoundField DataField="UserId" HeaderText="ID" SortExpression="UserId" />
+                <asp:BoundField DataField="Role.RoleName" HeaderText="Role" SortExpression="Role.RoleName" />
+                <asp:BoundField DataField="UserName" HeaderText="Name" SortExpression="UserName" />
+                <asp:BoundField DataField="UserEmail" HeaderText="Email" SortExpression="UserEmail" />
+                <asp:BoundField DataField="UserGender" HeaderText="Gender" SortExpression="UserGender" />
+                <asp:BoundField DataField="UserPassword" HeaderText="Password" SortExpression="UserPassword" />
+            </Columns>
+
         </asp:GridView>
     </div>
 
     <div>
-        <asp:GridView ID="staffGV" runat="server"></asp:GridView>
+        <asp:GridView ID="staffGV" runat="server">
+            <Columns>
+                <asp:BoundField DataField="UserId" HeaderText="ID" SortExpression="UserId" />
+                <asp:BoundField DataField="Role.RoleName" HeaderText="Role" SortExpression="Role.RoleName" />
+                <asp:BoundField DataField="UserName" HeaderText="Name" SortExpression="UserName" />
+                <asp:BoundField DataField="UserEmail" HeaderText="Email" SortExpression="UserEmail" />
+                <asp:BoundField DataField="UserGender" HeaderText="Gender" SortExpression="UserGender" />
+                <asp:BoundField DataField="UserPassword" HeaderText="Password" SortExpression="UserPassword" />
+            </Columns>
+        </asp:GridView>
     </div>
 
 </asp:Content>

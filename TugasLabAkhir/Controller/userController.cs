@@ -50,7 +50,7 @@ namespace TugasLabAkhir.Controller
             return userRepository.login(name, password);
         }
 
-        public static string updateUser(string name, string email, string gender, string password)
+        public static string updateUser(string name, string email, string gender, string password, string confirm)
         {
             if (name.Length < 5 || name.Length > 15 || name.All(x => Char.IsLetter(x) || x == ' ') == false)
             {
@@ -63,6 +63,9 @@ namespace TugasLabAkhir.Controller
             else if (gender.Equals(""))
             {
                 return "Must choose gender";
+            } else if (!password.Equals(confirm))
+            {
+                return "Password not matching";
             }
 
             return userHandler.updateUser(name, email, gender, password);

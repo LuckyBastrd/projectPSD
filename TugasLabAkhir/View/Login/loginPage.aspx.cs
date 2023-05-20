@@ -41,10 +41,14 @@ namespace TugasLabAkhir.View.Login
                     Response.Cookies.Add(cookie);
                 }
 
+                string confirm = u.UserPassword;
+
+                Application["Confirm"] = confirm;
+
                 int roleId = u.RoleId;
-                //Application["Role"] = roleId;
 
                 Session["User"] = roleId;
+
                 Response.Redirect("~/View/Home/homePage.aspx");
             }
 

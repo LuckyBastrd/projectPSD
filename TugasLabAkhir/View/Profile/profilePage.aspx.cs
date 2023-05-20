@@ -22,8 +22,9 @@ namespace TugasLabAkhir.View.Profile
             string email = updEmailTbx.Text;
             string gender = updGenderRdb.Text;
             string password = passTbx.Text;
+            string confirm = Application["Confirm"].ToString();
 
-            errLbl.Text = userController.updateUser(name, email, gender, password);
+            errLbl.Text = userController.updateUser(name, email, gender, password, confirm);
         }
     }
 }
