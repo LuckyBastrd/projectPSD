@@ -13,7 +13,7 @@
        <div id="adminNavbar" runat="server">
 
            <asp:Button ID="manageBtn" runat="server" Text="Manage Ramen" OnClick="manageBtn_Click" />
-           <asp:Button ID="orderBtn" runat="server" Text="Order Ramen" />
+           <asp:Button ID="orderQBtn" runat="server" Text="Order Queue"/>
            <asp:Button ID="profBtn" runat="server" Text="Profile" OnClick="profBtn_Click"/>
            <asp:Button ID="historyBtn" runat="server" Text="History" />
            <asp:Button ID="reportBtn" runat="server" Text="Report" />
@@ -29,7 +29,7 @@
         </div>
 
         <div id="customerNavbar" runat="server">
-            <asp:Button ID="orderRamenBtn" runat="server" Text="Order Ramen" />
+            <asp:Button ID="orderRamenBtn" runat="server" Text="Order Ramen" OnClick="orderRamenBtn_Click" />
             <asp:Button ID="hisBtn" runat="server" Text="History" />
             <asp:Button ID="profileBtn" runat="server" Text="Profile" OnClick="profileBtn_Click1" />
             <asp:Button ID="logBtn" runat="server" Text="Log Out" OnClick="logBtn_Click" />

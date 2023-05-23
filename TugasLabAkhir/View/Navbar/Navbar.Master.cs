@@ -13,9 +13,9 @@ namespace TugasLabAkhir.View.Navbar
         DatabaseEntities5 db = new DatabaseEntities5();
         protected void Page_Load(object sender, EventArgs e)
         {
-            //int role = (int)Application["Role"];
+            //string role = Session["User"].ToString();
 
-            string role = Session["User"].ToString();
+            string role = Application["roleId"].ToString();
 
             if (role == "1")
             {
@@ -105,6 +105,11 @@ namespace TugasLabAkhir.View.Navbar
         protected void mngBtn_Click(object sender, EventArgs e)
         {
             Response.Redirect("~/View/ManageRamen/manageRamen.aspx");
+        }
+
+        protected void orderRamenBtn_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/View/orderRamen/orderPage.aspx");
         }
     }
 }

@@ -29,11 +29,8 @@ namespace TugasLabAkhir.View.Register
 
             if(errorLbl.Text == "Registration success")
             {
-
                 string roleId = role;
-                //Application["Role"] = roleId;
-
-                Session["User"] = roleId;
+                Application["roleId"] = roleId;
 
                 Response.Redirect("~/View/Home/homePage.aspx");
             }

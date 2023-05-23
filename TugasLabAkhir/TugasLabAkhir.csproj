@@ -93,6 +93,7 @@
     <Content Include="View\insertRamen\insertRamen.aspx" />
     <Content Include="View\Login\loginPage.aspx" />
     <Content Include="View\ManageRamen\manageRamen.aspx" />
+    <Content Include="View\orderRamen\orderPage.aspx" />
     <Content Include="View\Profile\profilePage.aspx" />
     <Content Include="View\Register\registerPage.aspx" />
     <Content Include="View\updateRamen\updateRamen.aspx" />
@@ -175,6 +176,13 @@
     </Compile>
     <Compile Include="View\Navbar\Navbar.Master.designer.cs">
       <DependentUpon>Navbar.Master</DependentUpon>
+    </Compile>
+    <Compile Include="View\orderRamen\orderPage.aspx.cs">
+      <DependentUpon>orderPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\orderRamen\orderPage.aspx.designer.cs">
+      <DependentUpon>orderPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="View\Profile\profilePage.aspx.cs">
       <DependentUpon>profilePage.aspx</DependentUpon>

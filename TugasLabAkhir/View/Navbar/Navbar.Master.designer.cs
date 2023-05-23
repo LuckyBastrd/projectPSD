@@ -51,13 +51,13 @@ namespace TugasLabAkhir.View.Navbar
         protected global::System.Web.UI.WebControls.Button manageBtn;
 
         /// <summary>
-        /// orderBtn control.
+        /// orderQBtn control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button orderBtn;
+        protected global::System.Web.UI.WebControls.Button orderQBtn;
 
         /// <summary>
         /// profBtn control.

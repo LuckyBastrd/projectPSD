@@ -30,7 +30,7 @@ namespace TugasLabAkhir.View.Login
 
             else
             {
-                //Session["User"] = u;
+                Session["User"] = u;
 
 
                 if (rememberChb.Checked)
@@ -41,18 +41,22 @@ namespace TugasLabAkhir.View.Login
                     Response.Cookies.Add(cookie);
                 }
 
-                string confirm = u.UserPassword;
+                string roleId = u.RoleId.ToString();
+                Application["roleId"] = roleId;
 
+                string confirm = u.UserPassword;
                 Application["Confirm"] = confirm;
 
-                int roleId = u.RoleId;
-
-                Session["User"] = roleId;
-
                 Response.Redirect("~/View/Home/homePage.aspx");
+
+                //int roleId = u.RoleId;
+
+                //Session["User"] = roleId;
+
+                //Response.Redirect("~/View/Home/homePage.aspx");
             }
 
-            
+
 
         }
 

@@ -17,9 +17,11 @@ namespace TugasLabAkhir.View.Home
                 Response.Redirect("~/View/Login/loginPage.aspx");
             }
 
-            string role = Session["User"].ToString();
+            //string role = Session["User"].ToString();
 
-            if(role == "1")
+            string role = Application["roleId"].ToString();
+
+            if (role == "1")
             {
                 staffGV.DataSource = userRepository.getAllUser(2);
                 staffGV.DataBind();
