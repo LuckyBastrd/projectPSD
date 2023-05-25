@@ -14,6 +14,7 @@ namespace TugasLabAkhir.Repository
 
             List<RamenItem> ramenItem = r.Select(x => new RamenItem
             {
+                RamenId = x.RamenId,
                 RamenName = x.RamenName,
                 MeatName = x.Meat.MeatName.ToString(),
                 Broth = x.Broth,
@@ -27,9 +28,11 @@ namespace TugasLabAkhir.Repository
 
     public class RamenItem
     {
+        public int RamenId { get; set; }
         public string RamenName { get; set; }
         public string Broth { get; set; }
         public string MeatName { get; set; }
-        public decimal Price { get; set; }
+        public int Price { get; set; }
+        public int Quantity { get; set; }
     }
 }

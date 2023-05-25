@@ -12,8 +12,14 @@
 
         <br />
 
+        <asp:Label ID="Label" runat="server" Text=""></asp:Label>
+
         <asp:GridView ID="ramenGV" runat="server" AutoGenerateColumns="False" OnRowCommand="ramenGV_RowCommand">
             <Columns>
+<%--                <asp:BoundField DataField="RamenId" HeaderText="Ramen Id">
+                    <ItemStyle CssClass="hidden-column" />
+                </asp:BoundField>--%>
+                <asp:BoundField DataField="RamenId" HeaderText="Ramen Id" Visible="true"/> 
                 <asp:BoundField DataField="RamenName" HeaderText="Ramen Name"/>
                 <asp:BoundField DataField="MeatName" HeaderText="Meat"/>
                 <asp:BoundField DataField="Broth" HeaderText="Broth"/>
@@ -36,7 +42,7 @@
                 <asp:BoundField DataField="MeatName" HeaderText="Meat Name" />
                 <asp:BoundField DataField="Broth" HeaderText="Broth" />
                 <asp:BoundField DataField="Price" HeaderText="Price" />
-                <%--<asp:BoundField DataField="Quantity" HeaderText="Quantity" />--%>
+                <asp:BoundField DataField="Quantity" HeaderText="Quantity" />
             </Columns>
         </asp:GridView>
     </div>

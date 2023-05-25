@@ -15,6 +15,7 @@ namespace TugasLabAkhir.View.orderRamen
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            //ramenGV.Columns[0].Visible = false;
             if (!IsPostBack)
             {
                 ramenGV.DataSource = orderRepository.getRamenItem();
@@ -30,27 +31,46 @@ namespace TugasLabAkhir.View.orderRamen
             if (e.CommandName == "orderItem" && int.TryParse(e.CommandArgument.ToString(), out rowIndex))
             {
                 GridViewRow row = ramenGV.Rows[rowIndex];
-                string ramenName = row.Cells[0].Text;
-                string meatName = row.Cells[1].Text;
-                string broth = row.Cells[2].Text;
-                decimal price = Convert.ToDecimal(row.Cells[3].Text);
 
-                // Create a new cart item
-                RamenItem cartItem = new RamenItem
+                int ramenId = int.Parse(row.Cells[0].Text);
+                string ramenName = row.Cells[1].Text;
+                string meatName = row.Cells[2].Text;
+                string broth = row.Cells[3].Text;
+                int price = int.Parse(row.Cells[4].Text);
+
+                List<RamenItem> cartItems = checkCartItem();
+
+                // Check if the selected product already exists in the cart
+                RamenItem existingItem = cartItems.FirstOrDefault(item => item.RamenId == ramenId);
+                if (existingItem != null)
                 {
-                    RamenName = ramenName,
-                    MeatName = meatName,
-                    Broth = broth,
-                    Price = price
-                };
+                    // If the item already exists, increment the quantity
+                    existingItem.Quantity++;
+                }
+                else
+                {
+                    // If the item does not exist, create a new cart item
+                    RamenItem cartItem = new RamenItem
+                    {
+                        RamenId = ramenId,
+                        RamenName = ramenName,
+                        MeatName = meatName,
+                        Broth = broth,
+                        Price = price,
+                        Quantity = 1,
+                        
+                    };
 
-                // Add the cart item to the session
-                List<RamenItem> item = checkCartItem();
-                item.Add(cartItem);
-                Session["Cart"] = item;
+                    // Add the new cart item to the cart
+                    cartItems.Add(cartItem);
+                }
 
-                // Rebind the cart GridView
-                bindCartGV();
+            // Update the cart items in the session
+            Session["Cart"] = cartItems;
+
+            // Rebind the cart GridView
+            bindCartGV();
+
             }
         }
 
