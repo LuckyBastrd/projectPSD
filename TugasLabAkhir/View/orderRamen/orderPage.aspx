@@ -14,17 +14,11 @@
 
         <asp:GridView ID="ramenGV" runat="server" AutoGenerateColumns="False" OnRowCommand="ramenGV_RowCommand">
             <Columns>
-                <asp:BoundField DataField="RamenName" HeaderText="Ramen Name" SortExpression="RamenName" />
-                <asp:BoundField DataField="Meat.MeatName" HeaderText="Meat" SortExpression="Meat.MeatName" />
-                <asp:BoundField DataField="Broth" HeaderText="Broth" SortExpression="Broth" />
-                <asp:BoundField DataField="Price" HeaderText="Price" SortExpression="Price" />
-                
-                <asp:TemplateField>
-                   <ItemTemplate>
-                       <asp:Button ID="orderBtn" runat="server" Text="Order" CommandName="Order" CommandArgument='<%# Container.DataItem %>'  />
-                       </ItemTemplate>
-                </asp:TemplateField>
-
+                <asp:BoundField DataField="RamenName" HeaderText="Ramen Name"/>
+                <asp:BoundField DataField="MeatName" HeaderText="Meat"/>
+                <asp:BoundField DataField="Broth" HeaderText="Broth"/>
+                <asp:BoundField DataField="Price" HeaderText="Price"/>
+                <asp:ButtonField ButtonType="Button" Text="Order" CommandName="orderItem" />
             </Columns>
         </asp:GridView>
     </div>
@@ -39,12 +33,19 @@
         <asp:GridView ID="cartGV" runat="server" AutoGenerateColumns="false">
             <Columns>
                 <asp:BoundField DataField="RamenName" HeaderText="Ramen Name" />
-                <asp:BoundField DataField="Meat.MeatName" HeaderText="Meat Name" />
+                <asp:BoundField DataField="MeatName" HeaderText="Meat Name" />
                 <asp:BoundField DataField="Broth" HeaderText="Broth" />
                 <asp:BoundField DataField="Price" HeaderText="Price" />
-                <asp:BoundField DataField="Quantity" HeaderText="Quantity" />
+                <%--<asp:BoundField DataField="Quantity" HeaderText="Quantity" />--%>
             </Columns>
         </asp:GridView>
+    </div>
+    <div>
+        <asp:Button ID="clearBtn" runat="server" Text="Clear Cart" OnClick="clearBtn_Click"/>
+
+        <br />
+
+        <asp:Button ID="btnBuyCart" runat="server" Text="Buy Cart"/>
     </div>
 
 

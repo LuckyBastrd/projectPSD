@@ -74,6 +74,5 @@ namespace TugasLabAkhir.Repository
             return r;
 
         }
-
     }
 }
