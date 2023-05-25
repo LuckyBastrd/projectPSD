@@ -2,6 +2,15 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    
+    <%--CSS Tipis--%>
+    <style>
+
+    .hidden-column {
+        display: none;
+    }
+
+    </style>
 
     <br /><br />
 
@@ -16,11 +25,10 @@
 
         <asp:GridView ID="ramenGV" runat="server" AutoGenerateColumns="False" OnRowCommand="ramenGV_RowCommand">
             <Columns>
-<%--                <asp:BoundField DataField="RamenId" HeaderText="Ramen Id">
+                <asp:BoundField DataField="RamenId" HeaderText="Ramen Id">
+                    <HeaderStyle CssClass="hidden-column" />
                     <ItemStyle CssClass="hidden-column" />
-                </asp:BoundField>--%>
-                <asp:BoundField DataField="RamenId" HeaderText="Ramen Id" Visible="true"/> 
-                <asp:BoundField DataField="RamenName" HeaderText="Ramen Name"/>
+                </asp:BoundField>
                 <asp:BoundField DataField="MeatName" HeaderText="Meat"/>
                 <asp:BoundField DataField="Broth" HeaderText="Broth"/>
                 <asp:BoundField DataField="Price" HeaderText="Price"/>
