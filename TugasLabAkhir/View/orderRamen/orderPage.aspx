@@ -29,6 +29,7 @@
                     <HeaderStyle CssClass="hidden-column" />
                     <ItemStyle CssClass="hidden-column" />
                 </asp:BoundField>
+                <asp:BoundField DataField="RamenName" HeaderText="Ramen Name"/>
                 <asp:BoundField DataField="MeatName" HeaderText="Meat"/>
                 <asp:BoundField DataField="Broth" HeaderText="Broth"/>
                 <asp:BoundField DataField="Price" HeaderText="Price"/>
@@ -59,7 +60,7 @@
 
         <br />
 
-        <asp:Button ID="btnBuyCart" runat="server" Text="Buy Cart"/>
+        <asp:Button ID="btnBuyCart" runat="server" Text="Buy Cart" OnClick="btnBuyCart_Click"/>
     </div>
 
 

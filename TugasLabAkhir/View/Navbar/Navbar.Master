@@ -30,7 +30,7 @@
 
         <div id="customerNavbar" runat="server">
             <asp:Button ID="orderRamenBtn" runat="server" Text="Order Ramen" OnClick="orderRamenBtn_Click" />
-            <asp:Button ID="hisBtn" runat="server" Text="History" />
+            <asp:Button ID="hisBtn" runat="server" Text="History" OnClick="hisBtn_Click" />
             <asp:Button ID="profileBtn" runat="server" Text="Profile" OnClick="profileBtn_Click1" />
             <asp:Button ID="logBtn" runat="server" Text="Log Out" OnClick="logBtn_Click" />
         </div>

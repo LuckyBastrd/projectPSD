@@ -44,6 +44,9 @@ namespace TugasLabAkhir.View.Login
                 string roleId = u.RoleId.ToString();
                 Application["roleId"] = roleId;
 
+                string userId = u.UserId.ToString();
+                Application["userId"] = userId;
+
                 string confirm = u.UserPassword;
                 Application["Confirm"] = confirm;
 

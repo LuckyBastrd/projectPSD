@@ -111,5 +111,10 @@ namespace TugasLabAkhir.View.Navbar
         {
             Response.Redirect("~/View/orderRamen/orderPage.aspx");
         }
+
+        protected void hisBtn_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/View/History/history.aspx");
+        }
     }
 }

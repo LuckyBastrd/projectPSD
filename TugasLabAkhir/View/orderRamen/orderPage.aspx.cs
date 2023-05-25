@@ -5,6 +5,7 @@ using System.Text;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using TugasLabAkhir.Controller;
 using TugasLabAkhir.Model;
 using TugasLabAkhir.Repository;
 
@@ -102,5 +103,11 @@ namespace TugasLabAkhir.View.orderRamen
             bindCartGV();
         }
 
+        protected void btnBuyCart_Click(object sender, EventArgs e)
+        {
+
+            
+      
+        }
     }
 }

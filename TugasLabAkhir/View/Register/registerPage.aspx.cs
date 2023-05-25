@@ -32,6 +32,9 @@ namespace TugasLabAkhir.View.Register
                 string roleId = role;
                 Application["roleId"] = roleId;
 
+                //string userId = u.UserId.ToString();
+                //Application["userId"] = userId;
+
                 Response.Redirect("~/View/Home/homePage.aspx");
             }
         }
