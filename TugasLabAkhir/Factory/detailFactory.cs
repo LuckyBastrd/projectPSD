@@ -9,14 +9,15 @@ namespace TugasLabAkhir.Factory
     public class detailFactory
     {
 
-        public static Detail createDetail(string headerId, string ramenId, string quantity)
+        public static Detail createDetail(int headerId, int ramenId, int quantity)
         {
 
             Detail d = new Detail();
+            
 
-            d.HeaderId = int.Parse(headerId);
-            d.RamenId = int.Parse(ramenId);
-            d.Quantity = int.Parse(quantity);
+            d.HeaderId = headerId;
+            d.RamenId = ramenId;
+            d.Quantity = quantity;
 
             return d;
         }

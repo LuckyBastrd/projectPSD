@@ -10,7 +10,7 @@ namespace TugasLabAkhir.Repository
     public class detailRepository
     {
 
-        public static Detail showDetail(string headerId, string ramenId, string quantity)
+        public static Detail insertDetail(int headerId, int ramenId, int quantity)
         {
 
             DatabaseEntities db = new DatabaseEntities();

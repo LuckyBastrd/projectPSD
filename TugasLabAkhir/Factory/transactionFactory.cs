@@ -8,13 +8,12 @@ namespace TugasLabAkhir.Factory
 {
     public class transactionFactory
     {
-        public static Header createHeader(string userId, string staffId, string date)
+        public static Header createHeader(string userId, string date)
         {
 
             Header h = new Header();
-
+            
             h.UserId = int.Parse(userId);
-            h.StaffId = int.Parse(staffId);
             h.Date = DateTime.Parse(date);
 
             return h;

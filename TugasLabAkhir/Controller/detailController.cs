@@ -10,10 +10,10 @@ namespace TugasLabAkhir.Controller
     public class detailController
     {
 
-        public static Detail showDetail(string headerId, string ramenId, string quantity)
+        public static Detail insertDetail(int headerId, int ramenId, int quantity)
         {
 
-            return detailRepository.showDetail(headerId, ramenId, quantity);
+            return detailRepository.insertDetail(headerId, ramenId, quantity);
 
         }
 

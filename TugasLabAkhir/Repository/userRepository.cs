@@ -34,6 +34,7 @@ namespace TugasLabAkhir.Repository
 
         public static string updateUser(string name, string email, string gender, string password)
         {
+
             DatabaseEntities db = new DatabaseEntities();
 
             User u = (from x in db.Users where password.Equals(x.UserPassword) select x).FirstOrDefault();

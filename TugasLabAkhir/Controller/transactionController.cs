@@ -10,11 +10,9 @@ namespace TugasLabAkhir.Controller
     public class transactionController
     {
 
-        public static Header showHeader(string userId, string staffId, string date)
+        public static Header inserTransaction(string userId, string date)
         {
-
-            return transactionRepository.showHeader(userId, staffId, date);
-
+            return transactionRepository.insertTransaction(userId, date);
         }
 
     }

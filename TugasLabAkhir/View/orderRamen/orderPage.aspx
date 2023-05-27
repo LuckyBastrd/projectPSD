@@ -47,6 +47,10 @@
 
         <asp:GridView ID="cartGV" runat="server" AutoGenerateColumns="false">
             <Columns>
+                <asp:BoundField DataField="RamenId" HeaderText="Ramen Id">
+                    <HeaderStyle CssClass="hidden-column" />
+                    <ItemStyle CssClass="hidden-column" />
+                </asp:BoundField>
                 <asp:BoundField DataField="RamenName" HeaderText="Ramen Name" />
                 <asp:BoundField DataField="MeatName" HeaderText="Meat Name" />
                 <asp:BoundField DataField="Broth" HeaderText="Broth" />

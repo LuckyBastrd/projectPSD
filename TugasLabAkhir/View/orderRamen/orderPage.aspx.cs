@@ -16,7 +16,6 @@ namespace TugasLabAkhir.View.orderRamen
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            //ramenGV.Columns[0].Visible = false;
             if (!IsPostBack)
             {
                 ramenGV.DataSource = orderRepository.getRamenItem();
@@ -41,16 +40,13 @@ namespace TugasLabAkhir.View.orderRamen
 
                 List<RamenItem> cartItems = checkCartItem();
 
-                // Check if the selected product already exists in the cart
                 RamenItem existingItem = cartItems.FirstOrDefault(item => item.RamenId == ramenId);
                 if (existingItem != null)
                 {
-                    // If the item already exists, increment the quantity
                     existingItem.Quantity++;
                 }
                 else
                 {
-                    // If the item does not exist, create a new cart item
                     RamenItem cartItem = new RamenItem
                     {
                         RamenId = ramenId,
@@ -62,16 +58,12 @@ namespace TugasLabAkhir.View.orderRamen
                         
                     };
 
-                    // Add the new cart item to the cart
                     cartItems.Add(cartItem);
                 }
 
-            // Update the cart items in the session
             Session["Cart"] = cartItems;
 
-            // Rebind the cart GridView
             bindCartGV();
-
             }
         }
 
@@ -95,25 +87,33 @@ namespace TugasLabAkhir.View.orderRamen
 
         protected void clearBtn_Click(object sender, EventArgs e)
         {
-            // Clear the cart items in the session
             Session["Cart"] = new List<RamenItem>();
 
-
-            // Rebind the cart GridView to reflect the empty cart
             bindCartGV();
         }
 
         protected void btnBuyCart_Click(object sender, EventArgs e)
         {
-
             string userId = Application["userId"].ToString();
             string date = DateTime.Today.ToString();
-            string staffId = "2";
 
-            
+            transactionController.inserTransaction(userId, date);
 
-            transactionController.showHeader(userId, staffId, date);
+            int headerId = transactionRepository.GetLatestHeaderId();
 
+            List<RamenItem> cartItems = checkCartItem();
+
+            foreach (GridViewRow row in cartGV.Rows)
+            {
+                int ramenId = int.Parse(row.Cells[0].Text);
+                int quantity = int.Parse(row.Cells[5].Text);
+
+                detailController.insertDetail(headerId, ramenId, quantity);
+            }
+
+            Session["Cart"] = new List<RamenItem>();
+
+            bindCartGV();
         }
     }
 }
