@@ -12,7 +12,7 @@ namespace TugasLabAkhir.View.updateRamen
 {
     public partial class updateRamen : System.Web.UI.Page
     {
-        DatabaseEntities5 db = new DatabaseEntities5(); 
+        DatabaseEntities6 db = new DatabaseEntities6(); 
         protected void Page_Load(object sender, EventArgs e)
         {
             //int ramenId = Convert.ToInt32(Request.QueryString["ramenId"]);

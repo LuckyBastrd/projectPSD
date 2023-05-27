@@ -13,7 +13,7 @@ namespace TugasLabAkhir.Repository
         public static Header showHeader (string userId, string staffId, string date)
         {
 
-            DatabaseEntities5 db = new DatabaseEntities5();
+            DatabaseEntities6 db = new DatabaseEntities6();
 
             Header h = transactionFactory.createHeader(userId, staffId, date);
 
@@ -23,12 +23,14 @@ namespace TugasLabAkhir.Repository
             return h;
         }
 
-        public static List<Header> getAllHeader()
+        public static List<Header> getAllHeader(int userId)
         {
 
-            DatabaseEntities5 db = new DatabaseEntities5();
+            DatabaseEntities6 db = new DatabaseEntities6();
 
-            List<Header> h = (from x in db.Headers select x).ToList();
+
+
+            List<Header> h = (from x in db.Headers where x.UserId.Equals(userId) select x).ToList();
 
             return h;
         }

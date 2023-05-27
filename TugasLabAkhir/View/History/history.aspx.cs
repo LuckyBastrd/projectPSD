@@ -12,8 +12,14 @@ namespace TugasLabAkhir.View.History
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            detailGV.DataSource = detailRepository.getAllDetail();
-            detailGV.DataBind();
+            int userId = int.Parse(Request["userId"]);
+
+            if (!IsPostBack)
+            {
+                tranGV.DataSource = transactionRepository.getAllHeader(userId);
+                tranGV.DataBind();
+            }
+            
         }
     }
 }

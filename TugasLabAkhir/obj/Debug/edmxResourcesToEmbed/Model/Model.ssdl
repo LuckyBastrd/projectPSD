@@ -1,12 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="DatabaseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-  <!--Errors Found During Generation:
-warning 6002: The table/view 'C:\USERS\LENOVO\DOCUMENTS\MATKUL SEM 4\PATTERN SOFTWARE DESIGN\LAB\PROJEK RAAMEN\PROJECTPSD\TUGASLABAKHIR\APP_DATA\DATABASE.MDF.dbo.Detail' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
   <EntityType Name="Detail">
     <Key>
       <PropertyRef Name="HeaderId" />
       <PropertyRef Name="RamenId" />
-      <PropertyRef Name="Quantity" />
     </Key>
     <Property Name="HeaderId" Type="int" Nullable="false" />
     <Property Name="RamenId" Type="int" Nullable="false" />
@@ -56,7 +53,7 @@ warning 6002: The table/view 'C:\USERS\LENOVO\DOCUMENTS\MATKUL SEM 4\PATTERN SOF
     <Property Name="UserGender" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="UserPassword" Type="varchar" MaxLength="50" Nullable="false" />
   </EntityType>
-  <Association Name="FK__Detail__HeaderId__2F10007B">
+  <Association Name="FK__Detail__HeaderId__49C3F6B7">
     <End Role="Header" Type="Self.Header" Multiplicity="1" />
     <End Role="Detail" Type="Self.Detail" Multiplicity="*" />
     <ReferentialConstraint>
@@ -68,7 +65,7 @@ warning 6002: The table/view 'C:\USERS\LENOVO\DOCUMENTS\MATKUL SEM 4\PATTERN SOF
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Detail__RamenId__300424B4">
+  <Association Name="FK__Detail__RamenId__4AB81AF0">
     <End Role="Ramen" Type="Self.Ramen" Multiplicity="1" />
     <End Role="Detail" Type="Self.Detail" Multiplicity="*" />
     <ReferentialConstraint>
@@ -117,23 +114,17 @@ warning 6002: The table/view 'C:\USERS\LENOVO\DOCUMENTS\MATKUL SEM 4\PATTERN SOF
     </ReferentialConstraint>
   </Association>
   <EntityContainer Name="DatabaseModelStoreContainer">
+    <EntitySet Name="Detail" EntityType="Self.Detail" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Header" EntityType="Self.Header" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Meat" EntityType="Self.Meat" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Ramen" EntityType="Self.Ramen" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Role" EntityType="Self.Role" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="Detail" EntityType="Self.Detail" store:Type="Tables" store:Schema="dbo">
-      <DefiningQuery>SELECT 
-    [Detail].[HeaderId] AS [HeaderId], 
-    [Detail].[RamenId] AS [RamenId], 
-    [Detail].[Quantity] AS [Quantity]
-    FROM [dbo].[Detail] AS [Detail]</DefiningQuery>
-    </EntitySet>
-    <AssociationSet Name="FK__Detail__HeaderId__2F10007B" Association="Self.FK__Detail__HeaderId__2F10007B">
+    <AssociationSet Name="FK__Detail__HeaderId__49C3F6B7" Association="Self.FK__Detail__HeaderId__49C3F6B7">
       <End Role="Header" EntitySet="Header" />
       <End Role="Detail" EntitySet="Detail" />
     </AssociationSet>
-    <AssociationSet Name="FK__Detail__RamenId__300424B4" Association="Self.FK__Detail__RamenId__300424B4">
+    <AssociationSet Name="FK__Detail__RamenId__4AB81AF0" Association="Self.FK__Detail__RamenId__4AB81AF0">
       <End Role="Ramen" EntitySet="Ramen" />
       <End Role="Detail" EntitySet="Detail" />
     </AssociationSet>

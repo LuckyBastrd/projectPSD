@@ -29,10 +29,7 @@ namespace TugasLabAkhir.Controller
             } else if (!confirm.Equals(password))
             {
                 return "Password not match";
-            } else if (role.Equals(""))
-            {
-                return "Choose Role";
-            }
+            } 
 
             return userHandler.registUser(name, email, gender, password, role);
         }
@@ -70,5 +67,8 @@ namespace TugasLabAkhir.Controller
 
             return userHandler.updateUser(name, email, gender, password);
         }
+
+
+
     }
 }

@@ -1,5 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="DatabaseModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Detail">
+    <Key>
+      <PropertyRef Name="HeaderId" />
+      <PropertyRef Name="RamenId" />
+    </Key>
+    <Property Name="HeaderId" Type="Int32" Nullable="false" />
+    <Property Name="RamenId" Type="Int32" Nullable="false" />
+    <Property Name="Quantity" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Header" Relationship="Self.FK__Detail__HeaderId__49C3F6B7" FromRole="Detail" ToRole="Header" />
+    <NavigationProperty Name="Raman" Relationship="Self.FK__Detail__RamenId__4AB81AF0" FromRole="Detail" ToRole="Ramen" />
+  </EntityType>
   <EntityType Name="Header">
     <Key>
       <PropertyRef Name="HeaderId" />
@@ -8,7 +19,7 @@
     <Property Name="UserId" Type="Int32" Nullable="false" />
     <Property Name="StaffId" Type="Int32" Nullable="false" />
     <Property Name="Date" Type="DateTime" Nullable="false" Precision="0" />
-    <NavigationProperty Name="Details" Relationship="Self.FK__Detail__HeaderId__2F10007B" FromRole="Header" ToRole="Detail" />
+    <NavigationProperty Name="Details" Relationship="Self.FK__Detail__HeaderId__49C3F6B7" FromRole="Header" ToRole="Detail" />
     <NavigationProperty Name="User" Relationship="Self.FK__Header__UserId__286302EC" FromRole="Header" ToRole="User" />
   </EntityType>
   <EntityType Name="Meat">
@@ -28,8 +39,8 @@
     <Property Name="RamenName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="Broth" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="Price" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Details" Relationship="Self.FK__Detail__RamenId__4AB81AF0" FromRole="Ramen" ToRole="Detail" />
     <NavigationProperty Name="Meat" Relationship="Self.FK__Ramen__MeatId__2D27B809" FromRole="Ramen" ToRole="Meat" />
-    <NavigationProperty Name="Details" Relationship="Self.FK__Detail__RamenId__300424B4" FromRole="Ramen" ToRole="Detail" />
   </EntityType>
   <EntityType Name="Role">
     <Key>
@@ -52,19 +63,7 @@
     <NavigationProperty Name="Headers" Relationship="Self.FK__Header__UserId__286302EC" FromRole="User" ToRole="Header" />
     <NavigationProperty Name="Role" Relationship="Self.FK__User__RoleId__25869641" FromRole="User" ToRole="Role" />
   </EntityType>
-  <EntityType Name="Detail">
-    <Key>
-      <PropertyRef Name="HeaderId" />
-      <PropertyRef Name="RamenId" />
-      <PropertyRef Name="Quantity" />
-    </Key>
-    <Property Name="HeaderId" Type="Int32" Nullable="false" />
-    <Property Name="RamenId" Type="Int32" Nullable="false" />
-    <Property Name="Quantity" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="Header" Relationship="Self.FK__Detail__HeaderId__2F10007B" FromRole="Detail" ToRole="Header" />
-    <NavigationProperty Name="Raman" Relationship="Self.FK__Detail__RamenId__300424B4" FromRole="Detail" ToRole="Ramen" />
-  </EntityType>
-  <Association Name="FK__Detail__HeaderId__2F10007B">
+  <Association Name="FK__Detail__HeaderId__49C3F6B7">
     <End Role="Header" Type="Self.Header" Multiplicity="1" />
     <End Role="Detail" Type="Self.Detail" Multiplicity="*" />
     <ReferentialConstraint>
@@ -73,6 +72,18 @@
       </Principal>
       <Dependent Role="Detail">
         <PropertyRef Name="HeaderId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Detail__RamenId__4AB81AF0">
+    <End Role="Ramen" Type="Self.Raman" Multiplicity="1" />
+    <End Role="Detail" Type="Self.Detail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ramen">
+        <PropertyRef Name="RamenId" />
+      </Principal>
+      <Dependent Role="Detail">
+        <PropertyRef Name="RamenId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -100,18 +111,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Detail__RamenId__300424B4">
-    <End Role="Ramen" Type="Self.Raman" Multiplicity="1" />
-    <End Role="Detail" Type="Self.Detail" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Ramen">
-        <PropertyRef Name="RamenId" />
-      </Principal>
-      <Dependent Role="Detail">
-        <PropertyRef Name="RamenId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK__User__RoleId__25869641">
     <End Role="Role" Type="Self.Role" Multiplicity="1" />
     <End Role="User" Type="Self.User" Multiplicity="*" />
@@ -124,15 +123,19 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="DatabaseEntities5" annotation:LazyLoadingEnabled="true">
+  <EntityContainer Name="DatabaseEntities6" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Details" EntityType="Self.Detail" />
     <EntitySet Name="Headers" EntityType="Self.Header" />
     <EntitySet Name="Meats" EntityType="Self.Meat" />
     <EntitySet Name="Ramen" EntityType="Self.Raman" />
     <EntitySet Name="Roles" EntityType="Self.Role" />
     <EntitySet Name="Users" EntityType="Self.User" />
-    <EntitySet Name="Details" EntityType="Self.Detail" />
-    <AssociationSet Name="FK__Detail__HeaderId__2F10007B" Association="Self.FK__Detail__HeaderId__2F10007B">
+    <AssociationSet Name="FK__Detail__HeaderId__49C3F6B7" Association="Self.FK__Detail__HeaderId__49C3F6B7">
       <End Role="Header" EntitySet="Headers" />
+      <End Role="Detail" EntitySet="Details" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Detail__RamenId__4AB81AF0" Association="Self.FK__Detail__RamenId__4AB81AF0">
+      <End Role="Ramen" EntitySet="Ramen" />
       <End Role="Detail" EntitySet="Details" />
     </AssociationSet>
     <AssociationSet Name="FK__Header__UserId__286302EC" Association="Self.FK__Header__UserId__286302EC">
@@ -142,10 +145,6 @@
     <AssociationSet Name="FK__Ramen__MeatId__2D27B809" Association="Self.FK__Ramen__MeatId__2D27B809">
       <End Role="Meat" EntitySet="Meats" />
       <End Role="Ramen" EntitySet="Ramen" />
-    </AssociationSet>
-    <AssociationSet Name="FK__Detail__RamenId__300424B4" Association="Self.FK__Detail__RamenId__300424B4">
-      <End Role="Ramen" EntitySet="Ramen" />
-      <End Role="Detail" EntitySet="Details" />
     </AssociationSet>
     <AssociationSet Name="FK__User__RoleId__25869641" Association="Self.FK__User__RoleId__25869641">
       <End Role="Role" EntitySet="Roles" />

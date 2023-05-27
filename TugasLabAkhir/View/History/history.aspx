@@ -6,6 +6,17 @@
     <h3>History</h3>
 
     <div>
+        <asp:GridView ID="tranGV" runat="server" AutoGenerateColumns="false">
+            <Columns>
+                <asp:BoundField DataField="UserId" HeaderText="User Id" SortExpression="UserId" />
+                <asp:BoundField DataField="StaffId" HeaderText="Staff Id" SortExpression="StaffId" />
+                <asp:BoundField DataField="Date" HeaderText="Date Id" SortExpression="Date" />
+                <asp:BoundField DataField="Detail.RamenId" HeaderText="Ramen Id" SortExpression="Detail.RamenId" />
+            </Columns>
+        </asp:GridView>
+    </div>
+
+    <div>
         <asp:GridView ID="detailGV" runat="server" AutoGenerateColumns="False">
             <Columns>
                 <asp:BoundField DataField="HeaderId" HeaderText="Transaction ID" SortExpression="HeaderId" />

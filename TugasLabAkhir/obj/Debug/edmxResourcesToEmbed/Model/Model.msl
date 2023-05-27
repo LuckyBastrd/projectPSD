@@ -1,6 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="DatabaseModelStoreContainer" CdmEntityContainer="DatabaseEntities5">
+  <EntityContainerMapping StorageEntityContainer="DatabaseModelStoreContainer" CdmEntityContainer="DatabaseEntities6">
+    <EntitySetMapping Name="Details">
+      <EntityTypeMapping TypeName="DatabaseModel.Detail">
+        <MappingFragment StoreEntitySet="Detail">
+          <ScalarProperty Name="HeaderId" ColumnName="HeaderId" />
+          <ScalarProperty Name="RamenId" ColumnName="RamenId" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="Headers">
       <EntityTypeMapping TypeName="DatabaseModel.Header">
         <MappingFragment StoreEntitySet="Header">
@@ -47,15 +56,6 @@
           <ScalarProperty Name="UserEmail" ColumnName="UserEmail" />
           <ScalarProperty Name="UserGender" ColumnName="UserGender" />
           <ScalarProperty Name="UserPassword" ColumnName="UserPassword" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Details">
-      <EntityTypeMapping TypeName="DatabaseModel.Detail">
-        <MappingFragment StoreEntitySet="Detail">
-          <ScalarProperty Name="HeaderId" ColumnName="HeaderId" />
-          <ScalarProperty Name="RamenId" ColumnName="RamenId" />
-          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

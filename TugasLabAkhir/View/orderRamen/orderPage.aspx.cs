@@ -106,8 +106,14 @@ namespace TugasLabAkhir.View.orderRamen
         protected void btnBuyCart_Click(object sender, EventArgs e)
         {
 
+            string userId = Application["userId"].ToString();
+            string date = DateTime.Today.ToString();
+            string staffId = "2";
+
             
-      
+
+            transactionController.showHeader(userId, staffId, date);
+
         }
     }
 }

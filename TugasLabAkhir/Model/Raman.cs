@@ -26,8 +26,8 @@ namespace TugasLabAkhir.Model
         public string Broth { get; set; }
         public int Price { get; set; }
     
-        public virtual Meat Meat { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Detail> Details { get; set; }
+        public virtual Meat Meat { get; set; }
     }
 }

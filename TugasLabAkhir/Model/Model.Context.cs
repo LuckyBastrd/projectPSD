@@ -13,10 +13,10 @@ namespace TugasLabAkhir.Model
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class DatabaseEntities5 : DbContext
+    public partial class DatabaseEntities6 : DbContext
     {
-        public DatabaseEntities5()
-            : base("name=DatabaseEntities5")
+        public DatabaseEntities6()
+            : base("name=DatabaseEntities6")
         {
         }
     
@@ -25,11 +25,11 @@ namespace TugasLabAkhir.Model
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<Detail> Details { get; set; }
         public virtual DbSet<Header> Headers { get; set; }
         public virtual DbSet<Meat> Meats { get; set; }
         public virtual DbSet<Raman> Ramen { get; set; }
         public virtual DbSet<Role> Roles { get; set; }
         public virtual DbSet<User> Users { get; set; }
-        public virtual DbSet<Detail> Details { get; set; }
     }
 }

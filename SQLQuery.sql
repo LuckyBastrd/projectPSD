@@ -36,4 +36,5 @@ CREATE TABLE [Detail](
 	HeaderId INT NOT NULL FOREIGN KEY REFERENCES [Header](HeaderId),
 	RamenId INT NOT NULL FOREIGN KEY REFERENCES [Ramen](RamenId),
 	Quantity INT NOT NULL
+	PRIMARY KEY (HeaderId, RamenId)
 )

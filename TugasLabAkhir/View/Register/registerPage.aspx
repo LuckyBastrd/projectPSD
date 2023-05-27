@@ -42,10 +42,9 @@
 
             <br />
 
-            <asp:Label ID="roleLbl" runat="server" Text="Role : "></asp:Label>
             <asp:DropDownList ID="roleDDL" runat="server">
-                 <asp:ListItem Value="1">Admin</asp:ListItem>
-                 <asp:ListItem Value="2">Staff</asp:ListItem>
+                <%-- <asp:listitem value="1">admin</asp:listitem>
+                 <asp:listitem value="2">staff</asp:listitem>--%>
                  <asp:ListItem Value="3">Customer</asp:ListItem>
             </asp:DropDownList>
 

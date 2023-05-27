@@ -10,7 +10,7 @@ namespace TugasLabAkhir.View.Navbar
 {
     public partial class Navbar : System.Web.UI.MasterPage
     {
-        DatabaseEntities5 db = new DatabaseEntities5();
+        DatabaseEntities6 db = new DatabaseEntities6();
         protected void Page_Load(object sender, EventArgs e)
         {
             //string role = Session["User"].ToString();
@@ -114,7 +114,8 @@ namespace TugasLabAkhir.View.Navbar
 
         protected void hisBtn_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/View/History/history.aspx");
+            string userId = Application["userId"].ToString();
+            Response.Redirect("~/View/History/history.aspx?userId=" + userId);
         }
     }
 }
