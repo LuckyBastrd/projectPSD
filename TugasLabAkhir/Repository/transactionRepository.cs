@@ -35,14 +35,22 @@ namespace TugasLabAkhir.Repository
             return headerId;
         }
 
-        public static List<Header> getAllHeader(int userId)
+        public static List<Header> getHeaderById(int userId)
         {
 
             DatabaseEntities db = new DatabaseEntities();
 
-
-
             List<Header> h = (from x in db.Headers where x.UserId.Equals(userId) select x).ToList();
+
+            return h;
+        }
+
+        public static List<Header> getAllHeader()
+        {
+
+            DatabaseEntities db = new DatabaseEntities();
+
+            List<Header> h = (from x in db.Headers select x).ToList();
 
             return h;
         }

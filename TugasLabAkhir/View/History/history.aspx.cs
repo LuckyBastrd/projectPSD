@@ -13,11 +13,19 @@ namespace TugasLabAkhir.View.History
         protected void Page_Load(object sender, EventArgs e)
         {
             int userId = int.Parse(Request["userId"]);
+            string role = Application["roleId"].ToString();
 
             if (!IsPostBack)
             {
-                tranGV.DataSource = transactionRepository.getAllHeader(userId);
-                tranGV.DataBind();
+                if(role == "3")
+                {
+                    tranGV.DataSource = transactionRepository.getHeaderById(userId);
+                    tranGV.DataBind();
+                } else if(role == "1")
+                {
+                    tranGV.DataSource = transactionRepository.getAllHeader();
+                    tranGV.DataBind();
+                }
             }
             
         }
