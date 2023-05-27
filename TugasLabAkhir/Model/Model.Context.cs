@@ -13,10 +13,10 @@ namespace TugasLabAkhir.Model
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class DatabaseEntities6 : DbContext
+    public partial class DatabaseEntities : DbContext
     {
-        public DatabaseEntities6()
-            : base("name=DatabaseEntities6")
+        public DatabaseEntities()
+            : base("name=DatabaseEntities")
         {
         }
     

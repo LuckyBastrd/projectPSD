@@ -51,15 +51,7 @@ namespace TugasLabAkhir.View.Login
                 Application["Confirm"] = confirm;
 
                 Response.Redirect("~/View/Home/homePage.aspx");
-
-                //int roleId = u.RoleId;
-
-                //Session["User"] = roleId;
-
-                //Response.Redirect("~/View/Home/homePage.aspx");
             }
-
-
 
         }
 

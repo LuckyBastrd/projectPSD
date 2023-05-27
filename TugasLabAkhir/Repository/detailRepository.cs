@@ -13,7 +13,7 @@ namespace TugasLabAkhir.Repository
         public static Detail showDetail(string headerId, string ramenId, string quantity)
         {
 
-            DatabaseEntities6 db = new DatabaseEntities6();
+            DatabaseEntities db = new DatabaseEntities();
 
             Detail d = detailFactory.createDetail(headerId, ramenId, quantity);
 
@@ -26,7 +26,7 @@ namespace TugasLabAkhir.Repository
         public static List<Detail> getAllDetail()
         {
 
-            DatabaseEntities6 db = new DatabaseEntities6();
+            DatabaseEntities db = new DatabaseEntities();
 
             List<Detail> d = (from x in db.Details select x).ToList();
 

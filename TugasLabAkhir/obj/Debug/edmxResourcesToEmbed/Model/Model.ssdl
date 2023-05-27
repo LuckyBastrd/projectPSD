@@ -15,7 +15,7 @@
     </Key>
     <Property Name="HeaderId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="UserId" Type="int" Nullable="false" />
-    <Property Name="StaffId" Type="int" Nullable="false" />
+    <Property Name="StaffId" Type="int" />
     <Property Name="Date" Type="date" Nullable="false" />
   </EntityType>
   <EntityType Name="Meat">
@@ -53,7 +53,7 @@
     <Property Name="UserGender" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="UserPassword" Type="varchar" MaxLength="50" Nullable="false" />
   </EntityType>
-  <Association Name="FK__Detail__HeaderId__49C3F6B7">
+  <Association Name="FK__Detail__HeaderId__300424B4">
     <End Role="Header" Type="Self.Header" Multiplicity="1" />
     <End Role="Detail" Type="Self.Detail" Multiplicity="*" />
     <ReferentialConstraint>
@@ -65,7 +65,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Detail__RamenId__4AB81AF0">
+  <Association Name="FK__Detail__RamenId__30F848ED">
     <End Role="Ramen" Type="Self.Ramen" Multiplicity="1" />
     <End Role="Detail" Type="Self.Detail" Multiplicity="*" />
     <ReferentialConstraint>
@@ -120,11 +120,11 @@
     <EntitySet Name="Ramen" EntityType="Self.Ramen" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Role" EntityType="Self.Role" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
-    <AssociationSet Name="FK__Detail__HeaderId__49C3F6B7" Association="Self.FK__Detail__HeaderId__49C3F6B7">
+    <AssociationSet Name="FK__Detail__HeaderId__300424B4" Association="Self.FK__Detail__HeaderId__300424B4">
       <End Role="Header" EntitySet="Header" />
       <End Role="Detail" EntitySet="Detail" />
     </AssociationSet>
-    <AssociationSet Name="FK__Detail__RamenId__4AB81AF0" Association="Self.FK__Detail__RamenId__4AB81AF0">
+    <AssociationSet Name="FK__Detail__RamenId__30F848ED" Association="Self.FK__Detail__RamenId__30F848ED">
       <End Role="Ramen" EntitySet="Ramen" />
       <End Role="Detail" EntitySet="Detail" />
     </AssociationSet>

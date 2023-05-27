@@ -13,7 +13,7 @@ namespace TugasLabAkhir.Repository
         public static Header showHeader (string userId, string staffId, string date)
         {
 
-            DatabaseEntities6 db = new DatabaseEntities6();
+            DatabaseEntities db = new DatabaseEntities();
 
             Header h = transactionFactory.createHeader(userId, staffId, date);
 
@@ -26,7 +26,7 @@ namespace TugasLabAkhir.Repository
         public static List<Header> getAllHeader(int userId)
         {
 
-            DatabaseEntities6 db = new DatabaseEntities6();
+            DatabaseEntities db = new DatabaseEntities();
 
 
 

@@ -12,7 +12,7 @@ namespace TugasLabAkhir.Repository
         public static string registUser(string name, string email, string gender, string password, string role)
         {
 
-            DatabaseEntities6 db = new DatabaseEntities6();
+            DatabaseEntities db = new DatabaseEntities();
 
             User u = userFactory.registUser(name, email, gender, password, role);
 
@@ -25,7 +25,7 @@ namespace TugasLabAkhir.Repository
         public static User login(string name, string password)
         {
 
-            DatabaseEntities6 db = new DatabaseEntities6();
+            DatabaseEntities db = new DatabaseEntities();
 
             User u = (from x in db.Users where name.Equals(x.UserName) && password.Equals(x.UserPassword) select x).FirstOrDefault();
 
@@ -34,7 +34,7 @@ namespace TugasLabAkhir.Repository
 
         public static string updateUser(string name, string email, string gender, string password)
         {
-            DatabaseEntities6 db = new DatabaseEntities6();
+            DatabaseEntities db = new DatabaseEntities();
 
             User u = (from x in db.Users where password.Equals(x.UserPassword) select x).FirstOrDefault();
 
@@ -56,7 +56,7 @@ namespace TugasLabAkhir.Repository
 
         public static List<User> getAllUser(int roleId)
         {
-            DatabaseEntities6 db = new DatabaseEntities6();
+            DatabaseEntities db = new DatabaseEntities();
 
             List<User> u = (from x in db.Users where x.RoleId.Equals(roleId) select x).ToList();
 

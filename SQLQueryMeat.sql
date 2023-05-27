@@ -1,0 +1,1 @@
+﻿INSERT INTO [Meat](MeatName) VALUES ('Beef'), ('Tori'), ('Cha-su');

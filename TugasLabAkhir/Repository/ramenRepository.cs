@@ -13,7 +13,7 @@ namespace TugasLabAkhir.Repository
         public static string insertRamen(string ramenName, string meat, string broth, string price)
         {
 
-            DatabaseEntities6 db = new DatabaseEntities6();
+            DatabaseEntities db = new DatabaseEntities();
 
             Raman r = ramenFactory.createRamen(ramenName, meat, broth, price);
 
@@ -25,7 +25,7 @@ namespace TugasLabAkhir.Repository
 
         public static string updateRamen(string id, string ramenName, string meat, string broth, string price)
         {
-            DatabaseEntities6 db = new DatabaseEntities6();
+            DatabaseEntities db = new DatabaseEntities();
 
             Raman r = db.Ramen.Find(int.Parse(id));
 
@@ -50,7 +50,7 @@ namespace TugasLabAkhir.Repository
 
         public static Boolean deleteRamen(string id)
         {
-            DatabaseEntities6 db = new DatabaseEntities6();
+            DatabaseEntities db = new DatabaseEntities();
 
             Raman r = db.Ramen.Find(int.Parse(id));
 
@@ -67,7 +67,7 @@ namespace TugasLabAkhir.Repository
         public static List<Raman> getAllRamen()
         {
 
-            DatabaseEntities6 db = new DatabaseEntities6();
+            DatabaseEntities db = new DatabaseEntities();
 
             List<Raman> r = (from x in db.Ramen select x).ToList();
 

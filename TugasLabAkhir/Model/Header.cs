@@ -22,7 +22,7 @@ namespace TugasLabAkhir.Model
     
         public int HeaderId { get; set; }
         public int UserId { get; set; }
-        public int StaffId { get; set; }
+        public Nullable<int> StaffId { get; set; }
         public System.DateTime Date { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

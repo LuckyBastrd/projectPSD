@@ -23,7 +23,7 @@ namespace TugasLabAkhir.View.Register
             string gender = genderRdb.Text;
             string password = passTbx.Text;
             string confirm = confirmTbx.Text;
-            string role = roleDDL.Text;
+            string role = "3";
 
             errorLbl.Text = userController.registUser(name, email, gender, password, role, confirm);
 
@@ -31,9 +31,6 @@ namespace TugasLabAkhir.View.Register
             {
                 string roleId = role;
                 Application["roleId"] = roleId;
-
-                //string userId = u.UserId.ToString();
-                //Application["userId"] = userId;
 
                 Response.Redirect("~/View/Home/homePage.aspx");
             }

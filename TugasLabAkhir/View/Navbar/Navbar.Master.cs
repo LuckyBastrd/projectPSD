@@ -10,7 +10,7 @@ namespace TugasLabAkhir.View.Navbar
 {
     public partial class Navbar : System.Web.UI.MasterPage
     {
-        DatabaseEntities6 db = new DatabaseEntities6();
+        DatabaseEntities db = new DatabaseEntities();
         protected void Page_Load(object sender, EventArgs e)
         {
             //string role = Session["User"].ToString();

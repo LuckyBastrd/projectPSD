@@ -40,14 +40,6 @@
             <asp:Label ID="confirmLbl" runat="server" Text="Confirm Password : "></asp:Label>
             <asp:TextBox ID="confirmTbx" runat="server"></asp:TextBox>
 
-            <br />
-
-            <asp:DropDownList ID="roleDDL" runat="server">
-                <%-- <asp:listitem value="1">admin</asp:listitem>
-                 <asp:listitem value="2">staff</asp:listitem>--%>
-                 <asp:ListItem Value="3">Customer</asp:ListItem>
-            </asp:DropDownList>
-
             <br /><br />
 
             <asp:Button ID="registBtn" runat="server" Text="Register" OnClick="registBtn_Click" /><br /><br />
