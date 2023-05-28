@@ -13,8 +13,6 @@ namespace TugasLabAkhir.View.Navbar
         DatabaseEntities db = new DatabaseEntities();
         protected void Page_Load(object sender, EventArgs e)
         {
-            //string role = Session["User"].ToString();
-
             string role = Application["roleId"].ToString();
 
             if (role == "1")
@@ -142,6 +140,11 @@ namespace TugasLabAkhir.View.Navbar
         protected void queueBtn_Click(object sender, EventArgs e)
         {
             queue();
+        }
+
+        protected void reportBtn_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/View/Report/reportPage.aspx");
         }
     }
 }

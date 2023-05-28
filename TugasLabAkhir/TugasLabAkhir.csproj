@@ -43,6 +43,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CrystalDecisions.Web, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -98,6 +99,7 @@
     <Content Include="View\Profile\profilePage.aspx" />
     <Content Include="View\Queue\queue.aspx" />
     <Content Include="View\Register\registerPage.aspx" />
+    <Content Include="View\Report\reportPage.aspx" />
     <Content Include="View\transactionPage\tranDetailsPage.aspx" />
     <Content Include="View\updateRamen\updateRamen.aspx" />
     <Content Include="Web.config" />
@@ -221,6 +223,13 @@
     </Compile>
     <Compile Include="View\Register\registerPage.aspx.designer.cs">
       <DependentUpon>registerPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Report\reportPage.aspx.cs">
+      <DependentUpon>reportPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Report\reportPage.aspx.designer.cs">
+      <DependentUpon>reportPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="View\transactionPage\tranDetailsPage.aspx.cs">
       <DependentUpon>tranDetailsPage.aspx</DependentUpon>

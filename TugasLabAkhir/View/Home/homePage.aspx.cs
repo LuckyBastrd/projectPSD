@@ -17,8 +17,6 @@ namespace TugasLabAkhir.View.Home
                 Response.Redirect("~/View/Login/loginPage.aspx");
             }
 
-            //string role = Session["User"].ToString();
-
             string role = Application["roleId"].ToString();
 
             if (role == "1")
