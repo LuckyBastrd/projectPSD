@@ -99,7 +99,7 @@ namespace TugasLabAkhir.View.orderRamen
 
             transactionController.inserTransaction(userId, date);
 
-            int headerId = transactionRepository.GetLatestHeaderId();
+            int headerId = transactionRepository.getNewesttHeaderId();
 
             List<RamenItem> cartItems = checkCartItem();
 

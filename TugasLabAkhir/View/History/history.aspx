@@ -8,11 +8,19 @@
     <div>
         <asp:GridView ID="tranGV" runat="server" AutoGenerateColumns="false">
             <Columns>
-                <asp:BoundField DataField="HeaderId" HeaderText="ID" SortExpression="HeaderId" />
-                <asp:BoundField DataField="User.UserName" HeaderText="Name" SortExpression="UserId" />
-                <asp:BoundField DataField="StaffId" HeaderText="Staff Id" SortExpression="StaffId" />
-                <asp:BoundField DataField="Date" HeaderText="Date" SortExpression="Date" />
-                <asp:BoundField DataField="Details.Quantity.Sum" HeaderText="Total Ramen" SortExpression="Details.Quantity.Sum" />
+                <asp:BoundField DataField="HeaderId" HeaderText="ID"/>
+                <asp:BoundField DataField="UserName" HeaderText="Name"/>
+                <asp:BoundField DataField="StaffId" HeaderText="Staff Id"/>
+                <asp:BoundField DataField="Date" HeaderText="Date"/>
+                <asp:BoundField DataField="totalItem" HeaderText="Total Item"/>
+            </Columns>
+        </asp:GridView>
+    </div>
+
+    <div>
+        <asp:GridView ID="totalGv" runat="server" AutoGenerateColumns="false">
+            <Columns>
+                <asp:BoundField DataField="totalItem" HeaderText="Total Item"/>
             </Columns>
         </asp:GridView>
     </div>

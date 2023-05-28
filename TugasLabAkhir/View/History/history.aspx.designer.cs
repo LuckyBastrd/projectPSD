@@ -24,6 +24,15 @@ namespace TugasLabAkhir.View.History
         protected global::System.Web.UI.WebControls.GridView tranGV;
 
         /// <summary>
+        /// totalGv control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView totalGv;
+
+        /// <summary>
         /// detailGV control.
         /// </summary>
         /// <remarks>
