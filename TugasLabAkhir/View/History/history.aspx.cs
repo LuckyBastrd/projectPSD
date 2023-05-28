@@ -31,5 +31,20 @@ namespace TugasLabAkhir.View.History
                 }
             }  
         }
+
+        protected void tranGV_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            int rowIndex;
+            if (e.CommandName == "tranDetail" && int.TryParse(e.CommandArgument.ToString(), out rowIndex))
+            {
+                GridViewRow row = tranGV.Rows[rowIndex];
+
+                int headerId = int.Parse(row.Cells[0].Text);
+
+                string URL = $"~/View/transactionPage/tranDetailsPage.aspx?headerId={headerId}";
+
+                Response.Redirect(URL);
+            }
+        }
     }
 }

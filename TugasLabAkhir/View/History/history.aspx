@@ -3,35 +3,29 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
+    <%--CSS Tipis--%>
+    <style>
+
+    .hidden-column {
+        display: none;
+    }
+
+    </style>
+
+    <br /><br />
+
     <h3>History</h3>
 
     <div>
-        <asp:GridView ID="tranGV" runat="server" AutoGenerateColumns="false">
+        <asp:GridView ID="tranGV" runat="server" AutoGenerateColumns="false" OnRowCommand="tranGV_RowCommand">
             <Columns>
-                <asp:BoundField DataField="HeaderId" HeaderText="ID"/>
+                <asp:BoundField DataField="headerId" HeaderText="Transaction Id"/>
                 <asp:BoundField DataField="UserName" HeaderText="Name"/>
                 <asp:BoundField DataField="StaffId" HeaderText="Staff Id"/>
                 <asp:BoundField DataField="Date" HeaderText="Date"/>
                 <asp:BoundField DataField="totalItem" HeaderText="Total Item"/>
+                <asp:ButtonField ButtonType="Button" Text="Transaction Detail" CommandName="tranDetail" />
             </Columns>
         </asp:GridView>
     </div>
-
-    <div>
-        <asp:GridView ID="detailGV" runat="server" AutoGenerateColumns="False">
-            <Columns>
-                <asp:BoundField DataField="HeaderId" HeaderText="Transaction ID" SortExpression="HeaderId" />
-                <asp:BoundField DataField="Header.UserId" HeaderText="User ID" SortExpression="Header.UserId" />
-               <%-- <asp:BoundField DataField="2" HeaderText="Staff ID" SortExpression="2" />--%>
-                <asp:BoundField DataField="Header.Date" HeaderText="Date" SortExpression="Header.Date" />
-                <asp:BoundField DataField="Ramen.RamenName" HeaderText="Ramen Name" SortExpression="Ramen.RamenName" />
-                <asp:BoundField DataField="Quantity" HeaderText="Quantity" SortExpression="Quantity" />
-                <asp:CommandField ButtonType="Button" HeaderText="View Detail" ShowHeader="True" ShowSelectButton="True" />
-            </Columns>
-            
-        </asp:GridView>
-    </div>
-
-
-
 </asp:Content>

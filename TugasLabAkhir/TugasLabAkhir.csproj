@@ -97,6 +97,7 @@
     <Content Include="View\orderRamen\orderPage.aspx" />
     <Content Include="View\Profile\profilePage.aspx" />
     <Content Include="View\Register\registerPage.aspx" />
+    <Content Include="View\transactionPage\tranDetailsPage.aspx" />
     <Content Include="View\updateRamen\updateRamen.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -213,6 +214,13 @@
     <Compile Include="View\Register\registerPage.aspx.designer.cs">
       <DependentUpon>registerPage.aspx</DependentUpon>
     </Compile>
+    <Compile Include="View\transactionPage\tranDetailsPage.aspx.cs">
+      <DependentUpon>tranDetailsPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\transactionPage\tranDetailsPage.aspx.designer.cs">
+      <DependentUpon>tranDetailsPage.aspx</DependentUpon>
+    </Compile>
     <Compile Include="View\updateRamen\updateRamen.aspx.cs">
       <DependentUpon>updateRamen.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -238,9 +246,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="View\Detail\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
