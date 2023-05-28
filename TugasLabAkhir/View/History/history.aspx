@@ -18,14 +18,6 @@
     </div>
 
     <div>
-        <asp:GridView ID="totalGv" runat="server" AutoGenerateColumns="false">
-            <Columns>
-                <asp:BoundField DataField="totalItem" HeaderText="Total Item"/>
-            </Columns>
-        </asp:GridView>
-    </div>
-
-    <div>
         <asp:GridView ID="detailGV" runat="server" AutoGenerateColumns="False">
             <Columns>
                 <asp:BoundField DataField="HeaderId" HeaderText="Transaction ID" SortExpression="HeaderId" />

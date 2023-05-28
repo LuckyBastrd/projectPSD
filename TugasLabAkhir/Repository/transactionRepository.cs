@@ -70,16 +70,13 @@ namespace TugasLabAkhir.Repository
 
         public static int totalItem(int headerId)
         {
-            int totalQuantity = 0;
+            int totalItem = 0;
 
-            using (var dbContext = new DatabaseEntities())
-            {
-                totalQuantity = dbContext.Details
-                    .Where(t => t.HeaderId == headerId)
-                    .Sum(t => t.Quantity);
-            }
+            DatabaseEntities db = new DatabaseEntities();
 
-            return totalQuantity;
+            totalItem = db.Details.Where(x => x.HeaderId == headerId).Sum(x => x.Quantity);
+
+            return totalItem;
         }
 
     }
