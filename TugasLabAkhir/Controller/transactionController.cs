@@ -15,5 +15,10 @@ namespace TugasLabAkhir.Controller
             return transactionRepository.insertTransaction(userId, date);
         }
 
+        public static Header updateStaff(int headerId, int staffId)
+        {
+            return transactionRepository.updateStaff(headerId, staffId);
+        }
+
     }
 }

@@ -23,6 +23,22 @@ namespace TugasLabAkhir.Repository
             return h;
         }
 
+        public static Header updateStaff(int headerId, int staffId)
+        {
+            DatabaseEntities db = new DatabaseEntities();
+
+            Header h = db.Headers.Find(headerId);
+
+            if(h != null)
+            {
+                h.StaffId = staffId;
+
+                db.SaveChanges();
+            }
+
+            return h;
+        }
+
         public static int getNewesttHeaderId()
         {
             DatabaseEntities db = new DatabaseEntities();
@@ -55,7 +71,7 @@ namespace TugasLabAkhir.Repository
 
             List<Header> h = new List<Header>();
 
-            if (userId == 1)
+            if (userId == 1 || userId == 2)
             {
                 h = (from x in db.Headers select x).ToList();
             }
@@ -77,6 +93,15 @@ namespace TugasLabAkhir.Repository
             totalItem = db.Details.Where(x => x.HeaderId == headerId).Sum(x => x.Quantity);
 
             return totalItem;
+        }
+
+        public static List<Header> getTransactionByStatus(int userId, int staffId)
+        {
+            DatabaseEntities db = new DatabaseEntities();
+
+            List<Header> t = (from x in db.Headers where x.StaffId.Equals(staffId) select x).ToList();
+
+            return t;
         }
 
     }

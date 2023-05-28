@@ -96,6 +96,7 @@
     <Content Include="View\ManageRamen\manageRamen.aspx" />
     <Content Include="View\orderRamen\orderPage.aspx" />
     <Content Include="View\Profile\profilePage.aspx" />
+    <Content Include="View\Queue\queue.aspx" />
     <Content Include="View\Register\registerPage.aspx" />
     <Content Include="View\transactionPage\tranDetailsPage.aspx" />
     <Content Include="View\updateRamen\updateRamen.aspx" />
@@ -206,6 +207,13 @@
     </Compile>
     <Compile Include="View\Profile\profilePage.aspx.designer.cs">
       <DependentUpon>profilePage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Queue\queue.aspx.cs">
+      <DependentUpon>queue.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Queue\queue.aspx.designer.cs">
+      <DependentUpon>queue.aspx</DependentUpon>
     </Compile>
     <Compile Include="View\Register\registerPage.aspx.cs">
       <DependentUpon>registerPage.aspx</DependentUpon>

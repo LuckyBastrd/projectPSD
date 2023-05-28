@@ -127,5 +127,21 @@ namespace TugasLabAkhir.View.Navbar
         {
             history();
         }
+
+        protected void queue()
+        {
+            string userId = Application["userId"].ToString();
+            Response.Redirect("~/View/Queue/queue.aspx?userId=" + userId);
+        }
+
+        protected void orderQBtn_Click(object sender, EventArgs e)
+        {
+            queue();
+        }
+
+        protected void queueBtn_Click(object sender, EventArgs e)
+        {
+            queue();
+        }
     }
 }
