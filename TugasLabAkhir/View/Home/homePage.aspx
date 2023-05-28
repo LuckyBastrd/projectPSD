@@ -20,7 +20,7 @@
     </div>
 
     <div>
-        <asp:GridView ID="staffGV" runat="server">
+        <asp:GridView ID="staffGV" runat="server" AutoGenerateColumns="false">
             <Columns>
                 <asp:BoundField DataField="UserId" HeaderText="ID" SortExpression="UserId" />
                 <asp:BoundField DataField="Role.RoleName" HeaderText="Role" SortExpression="Role.RoleName" />

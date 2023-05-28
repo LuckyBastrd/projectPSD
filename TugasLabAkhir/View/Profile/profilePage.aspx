@@ -5,6 +5,16 @@
     <div>
         <h1>Profile</h1>
 
+        <div>
+            <asp:GridView ID="profileGV" runat="server" AutoGenerateColumns="false">
+                <Columns>
+                    <asp:BoundField DataField="UserName" HeaderText="Name" SortExpression="UserName" />
+                    <asp:BoundField DataField="UserEmail" HeaderText="Email" SortExpression="UserEmail" />
+                    <asp:BoundField DataField="UserGender" HeaderText="Gender" SortExpression="UserGender" />
+                </Columns>
+            </asp:GridView>
+        </div>
+
         <br />
 
         <asp:Label ID="nameLbl" runat="server" Text="Username : "></asp:Label>

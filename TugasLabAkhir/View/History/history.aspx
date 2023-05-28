@@ -8,9 +8,11 @@
     <div>
         <asp:GridView ID="tranGV" runat="server" AutoGenerateColumns="false">
             <Columns>
+                <asp:BoundField DataField="HeaderId" HeaderText="ID" SortExpression="HeaderId" />
                 <asp:BoundField DataField="User.UserName" HeaderText="Name" SortExpression="UserId" />
                 <asp:BoundField DataField="StaffId" HeaderText="Staff Id" SortExpression="StaffId" />
                 <asp:BoundField DataField="Date" HeaderText="Date" SortExpression="Date" />
+                <asp:BoundField DataField="Details.Quantity.Sum" HeaderText="Total Ramen" SortExpression="Details.Quantity.Sum" />
             </Columns>
         </asp:GridView>
     </div>

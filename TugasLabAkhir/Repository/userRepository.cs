@@ -64,6 +64,15 @@ namespace TugasLabAkhir.Repository
             return u;
         }
 
+        public static List<User> getUserById(int userId)
+        {
+            DatabaseEntities db = new DatabaseEntities();
+
+            List<User> u = (from x in db.Users where x.UserId.Equals(userId) select x).ToList();
+
+            return u;
+        }
+
 
     }
 }

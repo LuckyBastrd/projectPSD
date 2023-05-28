@@ -33,5 +33,14 @@ namespace TugasLabAkhir.Repository
             return d;
         }
 
+        public static List<Detail> sumQuantity(int headerId)
+        {
+            DatabaseEntities db = new DatabaseEntities();
+
+            List <Detail> detail = (from x in db.Details where x.HeaderId.Equals(headerId) select x).ToList();
+
+            return detail;
+        }
+
     }
 }

@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using TugasLabAkhir.Controller;
+using TugasLabAkhir.Repository;
 
 namespace TugasLabAkhir.View.Profile
 {
@@ -12,7 +13,13 @@ namespace TugasLabAkhir.View.Profile
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            int userId = int.Parse(Application["userId"].ToString());
 
+            if (!IsPostBack)
+            {
+                profileGV.DataSource = userRepository.getUserById(userId);
+                profileGV.DataBind();
+            }
         }
 
         protected void updateBtn_Click(object sender, EventArgs e)
