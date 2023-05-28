@@ -36,12 +36,25 @@ namespace TugasLabAkhir.Repository
                 staffId = x.Header.StaffId.ToString(),
                 ramenName = x.Raman.RamenName,
                 Broth = x.Raman.Broth,
-                Price = x.Raman.Price,
+                totalPrice = totalPrice(x.RamenId, x.Quantity),
                 Quantity = x.Quantity,
                 Date = x.Header.Date
             }).ToList();
 
             return transaction;
+        }
+
+        public static int totalPrice(int ramenId, int Quantity)
+        {
+            DatabaseEntities db = new DatabaseEntities();
+
+            int totalPrice = 0;
+
+            int Price = (from x in db.Ramen where x.RamenId == ramenId select x.Price).FirstOrDefault();
+
+            totalPrice = Price * Quantity;
+
+            return totalPrice;
         }
 
     }
@@ -52,7 +65,7 @@ namespace TugasLabAkhir.Repository
         public string staffId { get; set; }
         public string ramenName { get; set; }
         public string Broth { get; set; }
-        public int Price { get; set; }
+        public int totalPrice { get; set; }
         public int Quantity { get; set; }
         public DateTime Date { get; set; }
     }

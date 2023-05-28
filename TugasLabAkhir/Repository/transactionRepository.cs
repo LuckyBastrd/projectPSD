@@ -70,9 +70,9 @@ namespace TugasLabAkhir.Repository
 
         public static int totalItem(int headerId)
         {
-            int totalItem = 0;
-
             DatabaseEntities db = new DatabaseEntities();
+
+            int totalItem = 0;
 
             totalItem = db.Details.Where(x => x.HeaderId == headerId).Sum(x => x.Quantity);
 

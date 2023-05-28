@@ -8,11 +8,11 @@
                 <asp:BoundField DataField="headerId" HeaderText="Transaction Id"/>
                 <asp:BoundField DataField="UserName" HeaderText="Name"/>
                 <asp:BoundField DataField="StaffId" HeaderText="Staff Id"/>
+                <asp:BoundField DataField="Date" HeaderText="Date"/>
                 <asp:BoundField DataField="ramenName" HeaderText="Ramen Name"/>
                 <asp:BoundField DataField="Broth" HeaderText="Broth"/>
-                <asp:BoundField DataField="Price" HeaderText="Price"/>
                 <asp:BoundField DataField="Quantity" HeaderText="Quantity"/>
-                <asp:BoundField DataField="Date" HeaderText="Date"/>
+                <asp:BoundField DataField="totalPrice" HeaderText="Total Price"/>
             </Columns>
         </asp:GridView>
     </div>
