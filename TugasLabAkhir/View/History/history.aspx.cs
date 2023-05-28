@@ -17,16 +17,32 @@ namespace TugasLabAkhir.View.History
             int userId = int.Parse(Request["userId"]);
             string role = Application["roleId"].ToString();
 
+
+
             if (!IsPostBack)
             {
                 if(role == "3")
                 {
-                    tranGV.DataSource = transactionRepository.getTransactionData(userId);
+                    (List<Transaction> transactionUnhandled,
+                    List<Transaction> transactionHandled) = transactionRepository.getTransactionData(userId);
+
+                    List<Transaction> mergeList = new List<Transaction>();
+                    mergeList.AddRange(transactionHandled);
+                    mergeList.AddRange(transactionUnhandled);
+
+                    tranGV.DataSource = mergeList;
                     tranGV.DataBind();
 
                 } else if(role == "1")
                 {
-                    tranGV.DataSource = transactionRepository.getTransactionData(int.Parse(role));
+                    (List<Transaction> transactionUnhandled,
+                    List<Transaction> transactionHandled) = transactionRepository.getTransactionData(int.Parse(role));
+
+                    List<Transaction> mergeList = new List<Transaction>();
+                    mergeList.AddRange(transactionHandled);
+                    mergeList.AddRange(transactionUnhandled);
+
+                    tranGV.DataSource = mergeList;
                     tranGV.DataBind();
                 }
             }  

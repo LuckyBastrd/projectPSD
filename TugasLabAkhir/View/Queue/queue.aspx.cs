@@ -22,16 +22,14 @@ namespace TugasLabAkhir.View.Queue
 
             if (!IsPostBack){
 
-                if(staffId == null)
-                {
-                    unhandledGV.DataSource = transactionRepository.getTransactionByStatus(int.Parse(role), int.Parse(staffId));
-                    unhandledGV.DataBind();
-                }
-                else
-                {
-                    handledGV.DataSource = transactionRepository.getTransactionByStatus(int.Parse(role), int.Parse(staffId));
-                    handledGV.DataBind();
-                }
+                (List<Transaction> transactionUnhandled, 
+                List<Transaction> transactionHandled) = transactionRepository.getTransactionData(int.Parse(role));
+
+                unhandledGV.DataSource = transactionUnhandled;
+                unhandledGV.DataBind();
+
+                handledGV.DataSource = transactionHandled;
+                handledGV.DataBind();
             }
         }
 

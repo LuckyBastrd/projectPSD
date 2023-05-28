@@ -48,11 +48,11 @@ namespace TugasLabAkhir.Repository
             return headerId;
         }
 
-        public static List<Transaction> getTransactionData(int userId)
+        public static (List<Transaction> transactionUnhandled, List<Transaction> transactionHandled) getTransactionData(int userId)
         {
             List<Header> h = transactionRepository.getDataById(userId);
 
-            List<Transaction> transaction = h.Select(x => new Transaction
+            List<Transaction> transactionUnhandled = h.Where(x => x.StaffId == null).Select(x => new Transaction
             {
                 HeaderId = x.HeaderId,
                 userName = x.User.UserName,
@@ -61,7 +61,16 @@ namespace TugasLabAkhir.Repository
                 totalItem = totalItem(x.HeaderId)
             }).ToList();
 
-            return transaction;
+            List<Transaction> transactionHandled = h.Where(x => x.StaffId != null).Select(x => new Transaction
+            {
+                HeaderId = x.HeaderId,
+                userName = x.User.UserName,
+                staffId = x.StaffId.ToString(),
+                Date = x.Date,
+                totalItem = totalItem(x.HeaderId)
+            }).ToList();
+
+            return (transactionUnhandled, transactionHandled);
         }
 
         public static List<Header> getDataById(int userId)
@@ -95,14 +104,14 @@ namespace TugasLabAkhir.Repository
             return totalItem;
         }
 
-        public static List<Header> getTransactionByStatus(int userId, int staffId)
-        {
-            DatabaseEntities db = new DatabaseEntities();
+        //public static List<Header> getTransactionByStatus(int userId, int staffId)
+        //{
+        //    DatabaseEntities db = new DatabaseEntities();
 
-            List<Header> t = (from x in db.Headers where x.StaffId.Equals(staffId) select x).ToList();
+        //    List<Header> t = (from x in db.Headers where x.StaffId.Equals(staffId) select x).ToList();
 
-            return t;
-        }
+        //    return t;
+        //}
 
     }
     public class Transaction
