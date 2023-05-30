@@ -17,7 +17,9 @@ namespace TugasLabAkhir.View.updateRamen
         {
             //int ramenId = Convert.ToInt32(Request.QueryString["ramenId"]);
             //label.Text = ramenId.ToString();
-            ramenGV.DataSource = ramenRepository.getAllRamen();
+            int ramenId = int.Parse(Request["ramenId"]);
+
+            ramenGV.DataSource = ramenRepository.getRamenById(ramenId);
             ramenGV.DataBind();
         }
 

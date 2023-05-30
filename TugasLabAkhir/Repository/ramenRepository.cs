@@ -74,5 +74,14 @@ namespace TugasLabAkhir.Repository
             return r;
 
         }
+
+        public static List<Raman> getRamenById(int ramenId)
+        {
+            DatabaseEntities db = new DatabaseEntities();
+
+            List<Raman> r = (from x in db.Ramen where x.RamenId.Equals(ramenId) select x).ToList();
+
+            return r;
+        }
     }
 }

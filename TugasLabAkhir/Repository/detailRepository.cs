@@ -44,6 +44,7 @@ namespace TugasLabAkhir.Repository
             return transaction;
         }
 
+        // handler
         public static int totalPrice(int ramenId, int Quantity)
         {
             DatabaseEntities db = new DatabaseEntities();

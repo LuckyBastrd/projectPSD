@@ -93,6 +93,7 @@ namespace TugasLabAkhir.Repository
             return h;
         }
 
+        // handler
         public static int totalItem(int headerId)
         {
             DatabaseEntities db = new DatabaseEntities();

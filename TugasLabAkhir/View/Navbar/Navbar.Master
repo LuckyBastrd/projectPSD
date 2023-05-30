@@ -21,7 +21,7 @@
         </div>
 
         <div id="staffNavbar" runat="server">
-            <asp:Button ID="homeBtn" runat="server" Text="Home" />
+            <asp:Button ID="homeBtn" runat="server" Text="Home" OnClick="homeBtn_Click" />
             <asp:Button ID="mngBtn" runat="server" Text="Manage Ramen" OnClick="mngBtn_Click" />
             <asp:Button ID="queueBtn" runat="server" Text="Order Queue" OnClick="queueBtn_Click" />
             <asp:Button ID="proflBtn" runat="server" Text="Profile" OnClick="proflBtn_Click" />
