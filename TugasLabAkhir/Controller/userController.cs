@@ -44,7 +44,7 @@ namespace TugasLabAkhir.Controller
                 return u;
             }
 
-            return userRepository.login(name, password);
+            return userHandler.login(name, password);
         }
 
         public static string updateUser(string name, string email, string gender, string password, string confirm)

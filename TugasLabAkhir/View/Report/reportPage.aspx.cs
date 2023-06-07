@@ -14,6 +14,19 @@ namespace TugasLabAkhir.View.Report
     {
         protected void Page_Init(object sender, EventArgs e)
         {
+
+            if (Session["User"] == null && Request.Cookies["UserData"] == null)
+            {
+                Response.Redirect("~/View/Login/loginPage.aspx");
+            }
+
+            string role = Application["roleId"].ToString();
+
+            if(role == "2" || role == "3")
+            {
+                Response.Redirect("~/View/Home/homePage.aspx");
+            }
+
             if (!IsPostBack)
             {
                 CrystalReport report = new CrystalReport();

@@ -13,6 +13,18 @@ namespace TugasLabAkhir.View.ManageRamen
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["User"] == null && Request.Cookies["UserData"] == null)
+            {
+                Response.Redirect("~/View/Login/loginPage.aspx");
+            }
+
+            string role = Application["roleId"].ToString();
+
+            if(role == "3")
+            {
+                Response.Redirect("~/View/Home/homePage.aspx");
+            }
+
             ramenGV.DataSource = ramenRepository.getAllRamen();
             ramenGV.DataBind();
         }

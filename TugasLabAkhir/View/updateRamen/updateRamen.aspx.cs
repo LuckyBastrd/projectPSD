@@ -15,6 +15,18 @@ namespace TugasLabAkhir.View.updateRamen
         DatabaseEntities db = new DatabaseEntities(); 
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["User"] == null && Request.Cookies["UserData"] == null)
+            {
+                Response.Redirect("~/View/Login/loginPage.aspx");
+            }
+
+            string role = Application["roleId"].ToString();
+
+            if (role == "3")
+            {
+                Response.Redirect("~/View/Home/homePage.aspx");
+            }
+
             //int ramenId = Convert.ToInt32(Request.QueryString["ramenId"]);
             //label.Text = ramenId.ToString();
             int ramenId = int.Parse(Request["ramenId"]);

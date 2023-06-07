@@ -14,14 +14,23 @@ namespace TugasLabAkhir.View.History
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+
+            if (Session["User"] == null && Request.Cookies["UserData"] == null)
+            {
+                Response.Redirect("~/View/Login/loginPage.aspx");
+            }
+
             int userId = int.Parse(Request["userId"]);
             string role = Application["roleId"].ToString();
 
-
+            if(role == "2")
+            {
+                Response.Redirect("~/View/Home/homePage.aspx");
+            } 
 
             if (!IsPostBack)
             {
-                if(role == "3")
+                if (role == "3")
                 {
                     (List<Transaction> transactionUnhandled,
                     List<Transaction> transactionHandled) = transactionRepository.getTransactionData(userId);
@@ -33,7 +42,8 @@ namespace TugasLabAkhir.View.History
                     tranGV.DataSource = mergeList;
                     tranGV.DataBind();
 
-                } else if(role == "1")
+                }
+                else if (role == "1")
                 {
                     (List<Transaction> transactionUnhandled,
                     List<Transaction> transactionHandled) = transactionRepository.getTransactionData(int.Parse(role));
@@ -45,7 +55,8 @@ namespace TugasLabAkhir.View.History
                     tranGV.DataSource = mergeList;
                     tranGV.DataBind();
                 }
-            }  
+            }
+            
         }
 
         protected void tranGV_RowCommand(object sender, GridViewCommandEventArgs e)

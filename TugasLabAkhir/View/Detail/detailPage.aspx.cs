@@ -12,12 +12,25 @@ namespace TugasLabAkhir.View.Detail
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["User"] == null && Request.Cookies["UserData"] == null)
+            {
+                Response.Redirect("~/View/Login/loginPage.aspx");
+            }
+
+            string role = Application["roleId"].ToString();
             string headerId = Request.QueryString["headerId"];
 
-            if (!IsPostBack)
+            if(role == "2")
             {
-                detailGV.DataSource = detailRepository.getTransactionData(int.Parse(headerId));
-                detailGV.DataBind();
+                Response.Redirect("~/View/Home/homePage.aspx");
+            } 
+            else
+            {
+                if (!IsPostBack)
+                {
+                    detailGV.DataSource = detailRepository.getTransactionData(int.Parse(headerId));
+                    detailGV.DataBind();
+                }
             }
         }
     }

@@ -16,12 +16,25 @@ namespace TugasLabAkhir.View.orderRamen
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack)
+            if (Session["User"] == null && Request.Cookies["UserData"] == null)
             {
-                ramenGV.DataSource = orderRepository.getRamenItem();
-                ramenGV.DataBind();
+                Response.Redirect("~/View/Login/loginPage.aspx");
+            }
 
-                bindCartGV();
+            string role = Application["roleId"].ToString();
+
+            if(role == "3")
+            {
+                if (!IsPostBack)
+                {
+                    ramenGV.DataSource = orderRepository.getRamenItem();
+                    ramenGV.DataBind();
+
+                    bindCartGV();
+                }
+            } else
+            {
+                Response.Redirect("~/View/Home/homePage.aspx");
             }
         }
 

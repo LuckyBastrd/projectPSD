@@ -13,6 +13,11 @@ namespace TugasLabAkhir.View.Profile
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["User"] == null && Request.Cookies["UserData"] == null)
+            {
+                Response.Redirect("~/View/Login/loginPage.aspx");
+            }
+
             int userId = int.Parse(Application["userId"].ToString());
 
             if (!IsPostBack)

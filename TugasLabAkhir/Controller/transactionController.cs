@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using TugasLabAkhir.Handler;
 using TugasLabAkhir.Model;
 using TugasLabAkhir.Repository;
 
@@ -11,12 +12,12 @@ namespace TugasLabAkhir.Controller
     {
         public static Header inserTransaction(string userId, string date)
         {
-            return transactionRepository.insertTransaction(userId, date);
+            return transactionHandler.insertTransaction(userId, date);
         }
 
         public static Header updateStaff(int headerId, int staffId)
         {
-            return transactionRepository.updateStaff(headerId, staffId);
+            return transactionHandler.updateStaff(headerId, staffId);
         }
 
     }
