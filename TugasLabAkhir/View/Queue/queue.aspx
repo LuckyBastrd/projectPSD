@@ -13,6 +13,7 @@
                 <asp:BoundField DataField="StaffId" HeaderText="Staff Id"/>
                 <asp:BoundField DataField="Date" HeaderText="Date"/>
                 <asp:BoundField DataField="totalItem" HeaderText="Total Item"/>
+                <asp:BoundField DataField="TrStatus" HeaderText="Transaction Status"/>
                 <asp:ButtonField ButtonType="Button" Text="Handle" CommandName="handleItem" />
             </Columns>
         </asp:GridView>
@@ -28,6 +29,7 @@
                 <asp:BoundField DataField="StaffId" HeaderText="Staff Id"/>
                 <asp:BoundField DataField="Date" HeaderText="Date"/>
                 <asp:BoundField DataField="totalItem" HeaderText="Total Item"/>
+                <asp:BoundField DataField="TrStatus" HeaderText="Transaction Status"/>
             </Columns>
         </asp:GridView>
     </div>

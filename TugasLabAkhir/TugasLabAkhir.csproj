@@ -90,6 +90,7 @@
       <DependentUpon>Model.edmx</DependentUpon>
       <LastGenOutput>Model.cs</LastGenOutput>
     </Content>
+    <Content Include="View\Detail\detailPage.aspx" />
     <Content Include="View\History\history.aspx" />
     <Content Include="View\Home\homePage.aspx" />
     <Content Include="View\insertRamen\insertRamen.aspx" />
@@ -100,7 +101,6 @@
     <Content Include="View\Queue\queue.aspx" />
     <Content Include="View\Register\registerPage.aspx" />
     <Content Include="View\Report\reportPage.aspx" />
-    <Content Include="View\transactionPage\tranDetailsPage.aspx" />
     <Content Include="View\updateRamen\updateRamen.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -113,7 +113,9 @@
     <Compile Include="Factory\ramenFactory.cs" />
     <Compile Include="Factory\transactionFactory.cs" />
     <Compile Include="Factory\userFactory.cs" />
+    <Compile Include="Handler\detailHandler.cs" />
     <Compile Include="Handler\ramenHandler.cs" />
+    <Compile Include="Handler\transactionHandler.cs" />
     <Compile Include="Handler\userHandler.cs" />
     <Compile Include="Model\Detail.cs">
       <DependentUpon>Model.tt</DependentUpon>
@@ -154,6 +156,13 @@
     <Compile Include="Repository\ramenRepository.cs" />
     <Compile Include="Repository\transactionRepository.cs" />
     <Compile Include="Repository\userRepository.cs" />
+    <Compile Include="View\Detail\detailPage.aspx.cs">
+      <DependentUpon>detailPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Detail\detailPage.aspx.designer.cs">
+      <DependentUpon>detailPage.aspx</DependentUpon>
+    </Compile>
     <Compile Include="View\History\history.aspx.cs">
       <DependentUpon>history.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -230,13 +239,6 @@
     </Compile>
     <Compile Include="View\Report\reportPage.aspx.designer.cs">
       <DependentUpon>reportPage.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="View\transactionPage\tranDetailsPage.aspx.cs">
-      <DependentUpon>tranDetailsPage.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="View\transactionPage\tranDetailsPage.aspx.designer.cs">
-      <DependentUpon>tranDetailsPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="View\updateRamen\updateRamen.aspx.cs">
       <DependentUpon>updateRamen.aspx</DependentUpon>

@@ -9,7 +9,6 @@ namespace TugasLabAkhir.Controller
 {
     public class transactionController
     {
-
         public static Header inserTransaction(string userId, string date)
         {
             return transactionRepository.insertTransaction(userId, date);

@@ -57,7 +57,7 @@ namespace TugasLabAkhir.View.History
 
                 int headerId = int.Parse(row.Cells[0].Text);
 
-                string URL = $"~/View/transactionPage/tranDetailsPage.aspx?headerId={headerId}";
+                string URL = $"~/View/Detail/detailPage.aspx?headerId={headerId}";
 
                 Response.Redirect(URL);
             }

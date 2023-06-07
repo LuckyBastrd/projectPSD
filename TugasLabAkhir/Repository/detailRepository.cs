@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using TugasLabAkhir.Factory;
+using TugasLabAkhir.Handler;
 using TugasLabAkhir.Model;
 
 namespace TugasLabAkhir.Repository
@@ -36,29 +37,15 @@ namespace TugasLabAkhir.Repository
                 staffId = x.Header.StaffId.ToString(),
                 ramenName = x.Raman.RamenName,
                 Broth = x.Raman.Broth,
-                totalPrice = totalPrice(x.RamenId, x.Quantity),
+                totalPrice = detailHandler.totalPrice(x.RamenId, x.Quantity),
                 Quantity = x.Quantity,
                 Date = x.Header.Date
             }).ToList();
 
             return transaction;
         }
-
-        // handler
-        public static int totalPrice(int ramenId, int Quantity)
-        {
-            DatabaseEntities db = new DatabaseEntities();
-
-            int totalPrice = 0;
-
-            int Price = (from x in db.Ramen where x.RamenId == ramenId select x.Price).FirstOrDefault();
-
-            totalPrice = Price * Quantity;
-
-            return totalPrice;
-        }
-
     }
+
     public class TransactionDetail
     {
         public int HeaderId { get; set; }

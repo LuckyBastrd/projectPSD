@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using TugasLabAkhir.Factory;
+using TugasLabAkhir.Handler;
 using TugasLabAkhir.Model;
 
 namespace TugasLabAkhir.Repository
@@ -58,7 +59,8 @@ namespace TugasLabAkhir.Repository
                 userName = x.User.UserName,
                 staffId = x.StaffId.ToString(),
                 Date = x.Date,
-                totalItem = totalItem(x.HeaderId)
+                totalItem = transactionHandler.totalItem(x.HeaderId),
+                TrStatus = "Unhandled"
             }).ToList();
 
             List<Transaction> transactionHandled = h.Where(x => x.StaffId != null).Select(x => new Transaction
@@ -67,7 +69,8 @@ namespace TugasLabAkhir.Repository
                 userName = x.User.UserName,
                 staffId = x.StaffId.ToString(),
                 Date = x.Date,
-                totalItem = totalItem(x.HeaderId)
+                totalItem = transactionHandler.totalItem(x.HeaderId),
+                TrStatus = "Handled"
             }).ToList();
 
             return (transactionUnhandled, transactionHandled);
@@ -92,29 +95,8 @@ namespace TugasLabAkhir.Repository
            
             return h;
         }
-
-        // handler
-        public static int totalItem(int headerId)
-        {
-            DatabaseEntities db = new DatabaseEntities();
-
-            int totalItem = 0;
-
-            totalItem = db.Details.Where(x => x.HeaderId == headerId).Sum(x => x.Quantity);
-
-            return totalItem;
-        }
-
-        //public static List<Header> getTransactionByStatus(int userId, int staffId)
-        //{
-        //    DatabaseEntities db = new DatabaseEntities();
-
-        //    List<Header> t = (from x in db.Headers where x.StaffId.Equals(staffId) select x).ToList();
-
-        //    return t;
-        //}
-
     }
+
     public class Transaction
     {
         public int HeaderId { get; set; }
@@ -122,5 +104,7 @@ namespace TugasLabAkhir.Repository
         public string staffId { get; set; }
         public DateTime Date { get; set; }
         public int totalItem { get; set; }
+        public string TrStatus { get; set; }
+
     }
 }
