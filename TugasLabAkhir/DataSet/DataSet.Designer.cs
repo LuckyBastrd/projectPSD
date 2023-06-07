@@ -10,7 +10,7 @@
 
 #pragma warning disable 1591
 
-namespace TugasLabAkhir.DataSet {
+namespace TugasLabAkhir.Dataset {
     
     
     /// <summary>
@@ -24,7 +24,7 @@ namespace TugasLabAkhir.DataSet {
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
     public partial class DataSet : global::System.Data.DataSet {
         
-        private TransactionDetailDataTable tableTransactionDetail;
+        private TransactionDetailsDataTable tableTransactionDetails;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -54,8 +54,8 @@ namespace TugasLabAkhir.DataSet {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["TransactionDetail"] != null)) {
-                    base.Tables.Add(new TransactionDetailDataTable(ds.Tables["TransactionDetail"]));
+                if ((ds.Tables["TransactionDetails"] != null)) {
+                    base.Tables.Add(new TransactionDetailsDataTable(ds.Tables["TransactionDetails"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -79,9 +79,9 @@ namespace TugasLabAkhir.DataSet {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public TransactionDetailDataTable TransactionDetail {
+        public TransactionDetailsDataTable TransactionDetails {
             get {
-                return this.tableTransactionDetail;
+                return this.tableTransactionDetails;
             }
         }
         
@@ -152,8 +152,8 @@ namespace TugasLabAkhir.DataSet {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["TransactionDetail"] != null)) {
-                    base.Tables.Add(new TransactionDetailDataTable(ds.Tables["TransactionDetail"]));
+                if ((ds.Tables["TransactionDetails"] != null)) {
+                    base.Tables.Add(new TransactionDetailsDataTable(ds.Tables["TransactionDetails"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -188,10 +188,10 @@ namespace TugasLabAkhir.DataSet {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         internal void InitVars(bool initTable) {
-            this.tableTransactionDetail = ((TransactionDetailDataTable)(base.Tables["TransactionDetail"]));
+            this.tableTransactionDetails = ((TransactionDetailsDataTable)(base.Tables["TransactionDetails"]));
             if ((initTable == true)) {
-                if ((this.tableTransactionDetail != null)) {
-                    this.tableTransactionDetail.InitVars();
+                if ((this.tableTransactionDetails != null)) {
+                    this.tableTransactionDetails.InitVars();
                 }
             }
         }
@@ -204,13 +204,13 @@ namespace TugasLabAkhir.DataSet {
             this.Namespace = "http://tempuri.org/DataSet.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tableTransactionDetail = new TransactionDetailDataTable();
-            base.Tables.Add(this.tableTransactionDetail);
+            this.tableTransactionDetails = new TransactionDetailsDataTable();
+            base.Tables.Add(this.tableTransactionDetails);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private bool ShouldSerializeTransactionDetail() {
+        private bool ShouldSerializeTransactionDetails() {
             return false;
         }
         
@@ -270,27 +270,41 @@ namespace TugasLabAkhir.DataSet {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public delegate void TransactionDetailRowChangeEventHandler(object sender, TransactionDetailRowChangeEvent e);
+        public delegate void TransactionDetailsRowChangeEventHandler(object sender, TransactionDetailsRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class TransactionDetailDataTable : global::System.Data.TypedTableBase<TransactionDetailRow> {
+        public partial class TransactionDetailsDataTable : global::System.Data.TypedTableBase<TransactionDetailsRow> {
             
             private global::System.Data.DataColumn columnTransaction_Id;
+            
+            private global::System.Data.DataColumn columnTransaction_Date;
             
             private global::System.Data.DataColumn columnCustomer_Name;
             
             private global::System.Data.DataColumn columnStaff_Id;
             
-            private global::System.Data.DataColumn columnDataColumn1;
+            private global::System.Data.DataColumn columnStaff_Name;
+            
+            private global::System.Data.DataColumn columnRamen_Name;
+            
+            private global::System.Data.DataColumn columnRamen_Broth;
+            
+            private global::System.Data.DataColumn columnTotal_Ramen;
+            
+            private global::System.Data.DataColumn columnSub_Total_Price;
+            
+            private global::System.Data.DataColumn columnTotal_Price;
+            
+            private global::System.Data.DataColumn columnGrand_Price;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public TransactionDetailDataTable() {
-                this.TableName = "TransactionDetail";
+            public TransactionDetailsDataTable() {
+                this.TableName = "TransactionDetails";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -298,7 +312,7 @@ namespace TugasLabAkhir.DataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal TransactionDetailDataTable(global::System.Data.DataTable table) {
+            internal TransactionDetailsDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -315,7 +329,7 @@ namespace TugasLabAkhir.DataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected TransactionDetailDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected TransactionDetailsDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
@@ -325,6 +339,14 @@ namespace TugasLabAkhir.DataSet {
             public global::System.Data.DataColumn Transaction_IdColumn {
                 get {
                     return this.columnTransaction_Id;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn Transaction_DateColumn {
+                get {
+                    return this.columnTransaction_Date;
                 }
             }
             
@@ -346,9 +368,57 @@ namespace TugasLabAkhir.DataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn DataColumn1Column {
+            public global::System.Data.DataColumn Staff_NameColumn {
                 get {
-                    return this.columnDataColumn1;
+                    return this.columnStaff_Name;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn Ramen_NameColumn {
+                get {
+                    return this.columnRamen_Name;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn Ramen_BrothColumn {
+                get {
+                    return this.columnRamen_Broth;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn Total_RamenColumn {
+                get {
+                    return this.columnTotal_Ramen;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn Sub_Total_PriceColumn {
+                get {
+                    return this.columnSub_Total_Price;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn Total_PriceColumn {
+                get {
+                    return this.columnTotal_Price;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn Grand_PriceColumn {
+                get {
+                    return this.columnGrand_Price;
                 }
             }
             
@@ -363,48 +433,55 @@ namespace TugasLabAkhir.DataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public TransactionDetailRow this[int index] {
+            public TransactionDetailsRow this[int index] {
                 get {
-                    return ((TransactionDetailRow)(this.Rows[index]));
+                    return ((TransactionDetailsRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event TransactionDetailRowChangeEventHandler TransactionDetailRowChanging;
+            public event TransactionDetailsRowChangeEventHandler TransactionDetailsRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event TransactionDetailRowChangeEventHandler TransactionDetailRowChanged;
+            public event TransactionDetailsRowChangeEventHandler TransactionDetailsRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event TransactionDetailRowChangeEventHandler TransactionDetailRowDeleting;
+            public event TransactionDetailsRowChangeEventHandler TransactionDetailsRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event TransactionDetailRowChangeEventHandler TransactionDetailRowDeleted;
+            public event TransactionDetailsRowChangeEventHandler TransactionDetailsRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void AddTransactionDetailRow(TransactionDetailRow row) {
+            public void AddTransactionDetailsRow(TransactionDetailsRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public TransactionDetailRow AddTransactionDetailRow(string Transaction_Id, string Customer_Name, string Staff_Id, string DataColumn1) {
-                TransactionDetailRow rowTransactionDetailRow = ((TransactionDetailRow)(this.NewRow()));
+            public TransactionDetailsRow AddTransactionDetailsRow(string Transaction_Id, string Transaction_Date, string Customer_Name, string Staff_Id, string Staff_Name, string Ramen_Name, string Ramen_Broth, string Total_Ramen, string Sub_Total_Price, string Total_Price, string Grand_Price) {
+                TransactionDetailsRow rowTransactionDetailsRow = ((TransactionDetailsRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         Transaction_Id,
+                        Transaction_Date,
                         Customer_Name,
                         Staff_Id,
-                        DataColumn1};
-                rowTransactionDetailRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowTransactionDetailRow);
-                return rowTransactionDetailRow;
+                        Staff_Name,
+                        Ramen_Name,
+                        Ramen_Broth,
+                        Total_Ramen,
+                        Sub_Total_Price,
+                        Total_Price,
+                        Grand_Price};
+                rowTransactionDetailsRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowTransactionDetailsRow);
+                return rowTransactionDetailsRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                TransactionDetailDataTable cln = ((TransactionDetailDataTable)(base.Clone()));
+                TransactionDetailsDataTable cln = ((TransactionDetailsDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -412,16 +489,23 @@ namespace TugasLabAkhir.DataSet {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new TransactionDetailDataTable();
+                return new TransactionDetailsDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             internal void InitVars() {
                 this.columnTransaction_Id = base.Columns["Transaction Id"];
+                this.columnTransaction_Date = base.Columns["Transaction Date"];
                 this.columnCustomer_Name = base.Columns["Customer Name"];
                 this.columnStaff_Id = base.Columns["Staff Id"];
-                this.columnDataColumn1 = base.Columns["DataColumn1"];
+                this.columnStaff_Name = base.Columns["Staff Name"];
+                this.columnRamen_Name = base.Columns["Ramen Name"];
+                this.columnRamen_Broth = base.Columns["Ramen Broth"];
+                this.columnTotal_Ramen = base.Columns["Total Ramen"];
+                this.columnSub_Total_Price = base.Columns["Sub Total Price"];
+                this.columnTotal_Price = base.Columns["Total Price"];
+                this.columnGrand_Price = base.Columns["Grand Price"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -429,38 +513,52 @@ namespace TugasLabAkhir.DataSet {
             private void InitClass() {
                 this.columnTransaction_Id = new global::System.Data.DataColumn("Transaction Id", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTransaction_Id);
+                this.columnTransaction_Date = new global::System.Data.DataColumn("Transaction Date", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTransaction_Date);
                 this.columnCustomer_Name = new global::System.Data.DataColumn("Customer Name", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnCustomer_Name);
                 this.columnStaff_Id = new global::System.Data.DataColumn("Staff Id", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnStaff_Id);
-                this.columnDataColumn1 = new global::System.Data.DataColumn("DataColumn1", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnDataColumn1);
+                this.columnStaff_Name = new global::System.Data.DataColumn("Staff Name", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnStaff_Name);
+                this.columnRamen_Name = new global::System.Data.DataColumn("Ramen Name", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnRamen_Name);
+                this.columnRamen_Broth = new global::System.Data.DataColumn("Ramen Broth", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnRamen_Broth);
+                this.columnTotal_Ramen = new global::System.Data.DataColumn("Total Ramen", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTotal_Ramen);
+                this.columnSub_Total_Price = new global::System.Data.DataColumn("Sub Total Price", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSub_Total_Price);
+                this.columnTotal_Price = new global::System.Data.DataColumn("Total Price", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTotal_Price);
+                this.columnGrand_Price = new global::System.Data.DataColumn("Grand Price", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnGrand_Price);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public TransactionDetailRow NewTransactionDetailRow() {
-                return ((TransactionDetailRow)(this.NewRow()));
+            public TransactionDetailsRow NewTransactionDetailsRow() {
+                return ((TransactionDetailsRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new TransactionDetailRow(builder);
+                return new TransactionDetailsRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(TransactionDetailRow);
+                return typeof(TransactionDetailsRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.TransactionDetailRowChanged != null)) {
-                    this.TransactionDetailRowChanged(this, new TransactionDetailRowChangeEvent(((TransactionDetailRow)(e.Row)), e.Action));
+                if ((this.TransactionDetailsRowChanged != null)) {
+                    this.TransactionDetailsRowChanged(this, new TransactionDetailsRowChangeEvent(((TransactionDetailsRow)(e.Row)), e.Action));
                 }
             }
             
@@ -468,8 +566,8 @@ namespace TugasLabAkhir.DataSet {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.TransactionDetailRowChanging != null)) {
-                    this.TransactionDetailRowChanging(this, new TransactionDetailRowChangeEvent(((TransactionDetailRow)(e.Row)), e.Action));
+                if ((this.TransactionDetailsRowChanging != null)) {
+                    this.TransactionDetailsRowChanging(this, new TransactionDetailsRowChangeEvent(((TransactionDetailsRow)(e.Row)), e.Action));
                 }
             }
             
@@ -477,8 +575,8 @@ namespace TugasLabAkhir.DataSet {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.TransactionDetailRowDeleted != null)) {
-                    this.TransactionDetailRowDeleted(this, new TransactionDetailRowChangeEvent(((TransactionDetailRow)(e.Row)), e.Action));
+                if ((this.TransactionDetailsRowDeleted != null)) {
+                    this.TransactionDetailsRowDeleted(this, new TransactionDetailsRowChangeEvent(((TransactionDetailsRow)(e.Row)), e.Action));
                 }
             }
             
@@ -486,14 +584,14 @@ namespace TugasLabAkhir.DataSet {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.TransactionDetailRowDeleting != null)) {
-                    this.TransactionDetailRowDeleting(this, new TransactionDetailRowChangeEvent(((TransactionDetailRow)(e.Row)), e.Action));
+                if ((this.TransactionDetailsRowDeleting != null)) {
+                    this.TransactionDetailsRowDeleting(this, new TransactionDetailsRowChangeEvent(((TransactionDetailsRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void RemoveTransactionDetailRow(TransactionDetailRow row) {
+            public void RemoveTransactionDetailsRow(TransactionDetailsRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -520,7 +618,7 @@ namespace TugasLabAkhir.DataSet {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "TransactionDetailDataTable";
+                attribute2.FixedValue = "TransactionDetailsDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -564,15 +662,15 @@ namespace TugasLabAkhir.DataSet {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class TransactionDetailRow : global::System.Data.DataRow {
+        public partial class TransactionDetailsRow : global::System.Data.DataRow {
             
-            private TransactionDetailDataTable tableTransactionDetail;
+            private TransactionDetailsDataTable tableTransactionDetails;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal TransactionDetailRow(global::System.Data.DataRowBuilder rb) : 
+            internal TransactionDetailsRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableTransactionDetail = ((TransactionDetailDataTable)(this.Table));
+                this.tableTransactionDetails = ((TransactionDetailsDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -580,14 +678,30 @@ namespace TugasLabAkhir.DataSet {
             public string Transaction_Id {
                 get {
                     try {
-                        return ((string)(this[this.tableTransactionDetail.Transaction_IdColumn]));
+                        return ((string)(this[this.tableTransactionDetails.Transaction_IdColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Transaction Id\' in table \'TransactionDetail\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Transaction Id\' in table \'TransactionDetails\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableTransactionDetail.Transaction_IdColumn] = value;
+                    this[this.tableTransactionDetails.Transaction_IdColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string Transaction_Date {
+                get {
+                    try {
+                        return ((string)(this[this.tableTransactionDetails.Transaction_DateColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Transaction Date\' in table \'TransactionDetails\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTransactionDetails.Transaction_DateColumn] = value;
                 }
             }
             
@@ -596,14 +710,14 @@ namespace TugasLabAkhir.DataSet {
             public string Customer_Name {
                 get {
                     try {
-                        return ((string)(this[this.tableTransactionDetail.Customer_NameColumn]));
+                        return ((string)(this[this.tableTransactionDetails.Customer_NameColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Customer Name\' in table \'TransactionDetail\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Customer Name\' in table \'TransactionDetails\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableTransactionDetail.Customer_NameColumn] = value;
+                    this[this.tableTransactionDetails.Customer_NameColumn] = value;
                 }
             }
             
@@ -612,79 +726,259 @@ namespace TugasLabAkhir.DataSet {
             public string Staff_Id {
                 get {
                     try {
-                        return ((string)(this[this.tableTransactionDetail.Staff_IdColumn]));
+                        return ((string)(this[this.tableTransactionDetails.Staff_IdColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Staff Id\' in table \'TransactionDetail\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Staff Id\' in table \'TransactionDetails\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableTransactionDetail.Staff_IdColumn] = value;
+                    this[this.tableTransactionDetails.Staff_IdColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string DataColumn1 {
+            public string Staff_Name {
                 get {
                     try {
-                        return ((string)(this[this.tableTransactionDetail.DataColumn1Column]));
+                        return ((string)(this[this.tableTransactionDetails.Staff_NameColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'DataColumn1\' in table \'TransactionDetail\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Staff Name\' in table \'TransactionDetails\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableTransactionDetail.DataColumn1Column] = value;
+                    this[this.tableTransactionDetails.Staff_NameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string Ramen_Name {
+                get {
+                    try {
+                        return ((string)(this[this.tableTransactionDetails.Ramen_NameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Ramen Name\' in table \'TransactionDetails\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTransactionDetails.Ramen_NameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string Ramen_Broth {
+                get {
+                    try {
+                        return ((string)(this[this.tableTransactionDetails.Ramen_BrothColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Ramen Broth\' in table \'TransactionDetails\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTransactionDetails.Ramen_BrothColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string Total_Ramen {
+                get {
+                    try {
+                        return ((string)(this[this.tableTransactionDetails.Total_RamenColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Total Ramen\' in table \'TransactionDetails\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTransactionDetails.Total_RamenColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string Sub_Total_Price {
+                get {
+                    try {
+                        return ((string)(this[this.tableTransactionDetails.Sub_Total_PriceColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Sub Total Price\' in table \'TransactionDetails\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTransactionDetails.Sub_Total_PriceColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string Total_Price {
+                get {
+                    try {
+                        return ((string)(this[this.tableTransactionDetails.Total_PriceColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Total Price\' in table \'TransactionDetails\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTransactionDetails.Total_PriceColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string Grand_Price {
+                get {
+                    try {
+                        return ((string)(this[this.tableTransactionDetails.Grand_PriceColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Grand Price\' in table \'TransactionDetails\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTransactionDetails.Grand_PriceColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsTransaction_IdNull() {
-                return this.IsNull(this.tableTransactionDetail.Transaction_IdColumn);
+                return this.IsNull(this.tableTransactionDetails.Transaction_IdColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetTransaction_IdNull() {
-                this[this.tableTransactionDetail.Transaction_IdColumn] = global::System.Convert.DBNull;
+                this[this.tableTransactionDetails.Transaction_IdColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsTransaction_DateNull() {
+                return this.IsNull(this.tableTransactionDetails.Transaction_DateColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetTransaction_DateNull() {
+                this[this.tableTransactionDetails.Transaction_DateColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsCustomer_NameNull() {
-                return this.IsNull(this.tableTransactionDetail.Customer_NameColumn);
+                return this.IsNull(this.tableTransactionDetails.Customer_NameColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetCustomer_NameNull() {
-                this[this.tableTransactionDetail.Customer_NameColumn] = global::System.Convert.DBNull;
+                this[this.tableTransactionDetails.Customer_NameColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsStaff_IdNull() {
-                return this.IsNull(this.tableTransactionDetail.Staff_IdColumn);
+                return this.IsNull(this.tableTransactionDetails.Staff_IdColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetStaff_IdNull() {
-                this[this.tableTransactionDetail.Staff_IdColumn] = global::System.Convert.DBNull;
+                this[this.tableTransactionDetails.Staff_IdColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsDataColumn1Null() {
-                return this.IsNull(this.tableTransactionDetail.DataColumn1Column);
+            public bool IsStaff_NameNull() {
+                return this.IsNull(this.tableTransactionDetails.Staff_NameColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetDataColumn1Null() {
-                this[this.tableTransactionDetail.DataColumn1Column] = global::System.Convert.DBNull;
+            public void SetStaff_NameNull() {
+                this[this.tableTransactionDetails.Staff_NameColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsRamen_NameNull() {
+                return this.IsNull(this.tableTransactionDetails.Ramen_NameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetRamen_NameNull() {
+                this[this.tableTransactionDetails.Ramen_NameColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsRamen_BrothNull() {
+                return this.IsNull(this.tableTransactionDetails.Ramen_BrothColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetRamen_BrothNull() {
+                this[this.tableTransactionDetails.Ramen_BrothColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsTotal_RamenNull() {
+                return this.IsNull(this.tableTransactionDetails.Total_RamenColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetTotal_RamenNull() {
+                this[this.tableTransactionDetails.Total_RamenColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsSub_Total_PriceNull() {
+                return this.IsNull(this.tableTransactionDetails.Sub_Total_PriceColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetSub_Total_PriceNull() {
+                this[this.tableTransactionDetails.Sub_Total_PriceColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsTotal_PriceNull() {
+                return this.IsNull(this.tableTransactionDetails.Total_PriceColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetTotal_PriceNull() {
+                this[this.tableTransactionDetails.Total_PriceColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsGrand_PriceNull() {
+                return this.IsNull(this.tableTransactionDetails.Grand_PriceColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetGrand_PriceNull() {
+                this[this.tableTransactionDetails.Grand_PriceColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -692,22 +986,22 @@ namespace TugasLabAkhir.DataSet {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public class TransactionDetailRowChangeEvent : global::System.EventArgs {
+        public class TransactionDetailsRowChangeEvent : global::System.EventArgs {
             
-            private TransactionDetailRow eventRow;
+            private TransactionDetailsRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public TransactionDetailRowChangeEvent(TransactionDetailRow row, global::System.Data.DataRowAction action) {
+            public TransactionDetailsRowChangeEvent(TransactionDetailsRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public TransactionDetailRow Row {
+            public TransactionDetailsRow Row {
                 get {
                     return this.eventRow;
                 }

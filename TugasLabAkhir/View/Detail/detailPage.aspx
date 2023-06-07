@@ -6,14 +6,14 @@
         <asp:GridView ID="detailGV" runat="server" AutoGenerateColumns="False">
             <Columns>
                 <asp:BoundField DataField="headerId" HeaderText="Transaction Id"/>
-                <asp:BoundField DataField="UserName" HeaderText="Name"/>
+                <asp:BoundField DataField="Date" HeaderText="Transaction Date"/>
+                <asp:BoundField DataField="UserName" HeaderText="Customer Name"/>
                 <asp:BoundField DataField="StaffId" HeaderText="Staff Id"/>
                 <asp:BoundField DataField="StaffName" HeaderText="Staff Name"/>
-                <asp:BoundField DataField="Date" HeaderText="Date"/>
                 <asp:BoundField DataField="ramenName" HeaderText="Ramen Name"/>
-                <asp:BoundField DataField="Broth" HeaderText="Broth"/>
-                <asp:BoundField DataField="Quantity" HeaderText="Quantity"/>
-                <asp:BoundField DataField="totalPrice" HeaderText="Total Price"/>
+                <asp:BoundField DataField="Broth" HeaderText="Ramen Broth"/>
+                <asp:BoundField DataField="Quantity" HeaderText="Total Ramen"/>
+                <asp:BoundField DataField="subTotalPrice" HeaderText="Sub Total Price"/>
             </Columns>
         </asp:GridView>
     </div>

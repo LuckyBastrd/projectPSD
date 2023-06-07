@@ -43,8 +43,6 @@ namespace TugasLabAkhir.Repository
         public static int getNewesttHeaderId()
         {
             DatabaseEntities db = new DatabaseEntities();
-            
-            //int headerId = db.Headers.OrderByDescending(x => x.HeaderId).Select(x => x.HeaderId).FirstOrDefault();
 
             int headerId = (from x in db.Headers orderby x.HeaderId descending select x.HeaderId).FirstOrDefault();
 

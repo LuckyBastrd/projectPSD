@@ -20,11 +20,11 @@
         <asp:GridView ID="tranGV" runat="server" AutoGenerateColumns="false" OnRowCommand="tranGV_RowCommand">
             <Columns>
                 <asp:BoundField DataField="headerId" HeaderText="Transaction Id"/>
-                <asp:BoundField DataField="UserName" HeaderText="Name"/>
+                <asp:BoundField DataField="Date" HeaderText="Transaction Date"/>
+                <asp:BoundField DataField="UserName" HeaderText="Customer Name"/>
                 <asp:BoundField DataField="StaffId" HeaderText="Staff Id"/>
                 <asp:BoundField DataField="staffName" HeaderText="Staff Name"/>
-                <asp:BoundField DataField="Date" HeaderText="Date"/>
-                <asp:BoundField DataField="totalItem" HeaderText="Total Item"/>
+                <asp:BoundField DataField="totalItem" HeaderText="Total Ramen"/>
                 <asp:BoundField DataField="TrStatus" HeaderText="Transaction Status"/>
                 <asp:ButtonField ButtonType="Button" Text="Transaction Detail" CommandName="tranDetail" />
             </Columns>
