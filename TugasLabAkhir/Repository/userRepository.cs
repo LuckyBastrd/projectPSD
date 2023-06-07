@@ -72,7 +72,13 @@ namespace TugasLabAkhir.Repository
 
             return u;
         }
+        public static string getStaffName(string staffId)
+        {
+            DatabaseEntities db = new DatabaseEntities();
 
+            string staffName = (from x in db.Users where x.UserId.ToString() == staffId select x.UserName).FirstOrDefault();
 
+            return staffName;
+        }
     }
 }

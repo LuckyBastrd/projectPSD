@@ -44,7 +44,9 @@ namespace TugasLabAkhir.Repository
         {
             DatabaseEntities db = new DatabaseEntities();
             
-            int headerId = db.Headers.OrderByDescending(x => x.HeaderId).Select(x => x.HeaderId).FirstOrDefault();
+            //int headerId = db.Headers.OrderByDescending(x => x.HeaderId).Select(x => x.HeaderId).FirstOrDefault();
+
+            int headerId = (from x in db.Headers orderby x.HeaderId descending select x.HeaderId).FirstOrDefault();
 
             return headerId;
         }
@@ -58,6 +60,7 @@ namespace TugasLabAkhir.Repository
                 HeaderId = x.HeaderId,
                 userName = x.User.UserName,
                 staffId = x.StaffId.ToString(),
+                staffName = userRepository.getStaffName(x.StaffId.ToString()),
                 Date = x.Date,
                 totalItem = transactionHandler.totalItem(x.HeaderId),
                 TrStatus = "Unhandled"
@@ -68,6 +71,7 @@ namespace TugasLabAkhir.Repository
                 HeaderId = x.HeaderId,
                 userName = x.User.UserName,
                 staffId = x.StaffId.ToString(),
+                staffName = userRepository.getStaffName(x.StaffId.ToString()),
                 Date = x.Date,
                 totalItem = transactionHandler.totalItem(x.HeaderId),
                 TrStatus = "Handled"
@@ -102,6 +106,7 @@ namespace TugasLabAkhir.Repository
         public int HeaderId { get; set; }
         public string userName { get; set; }
         public string staffId { get; set; }
+        public string staffName { get; set; }
         public DateTime Date { get; set; }
         public int totalItem { get; set; }
         public string TrStatus { get; set; }

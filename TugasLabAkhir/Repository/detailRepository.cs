@@ -35,6 +35,7 @@ namespace TugasLabAkhir.Repository
                 HeaderId = x.HeaderId,
                 userName = x.Header.User.UserName,
                 staffId = x.Header.StaffId.ToString(),
+                staffName = userRepository.getStaffName(x.Header.StaffId.ToString()),
                 ramenName = x.Raman.RamenName,
                 Broth = x.Raman.Broth,
                 totalPrice = detailHandler.totalPrice(x.RamenId, x.Quantity),
@@ -51,10 +52,11 @@ namespace TugasLabAkhir.Repository
         public int HeaderId { get; set; }
         public string userName { get; set; }
         public string staffId { get; set; }
+        public string staffName { get; set; }
         public string ramenName { get; set; }
         public string Broth { get; set; }
         public int totalPrice { get; set; }
-        public int Quantity { get; set; }
         public DateTime Date { get; set; }
+        public int Quantity { get; set; }
     }
 }

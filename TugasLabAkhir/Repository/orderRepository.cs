@@ -25,7 +25,6 @@ namespace TugasLabAkhir.Repository
         }
     }
 
-
     public class RamenItem
     {
         public int RamenId { get; set; }
