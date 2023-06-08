@@ -24,11 +24,21 @@ namespace TugasLabAkhir.Repository
             return d;
         }
 
-        public static List<TransactionDetail> getTransactionData(int headerId)
+        public static List<TransactionDetail> getTransactionData(int? headerId = null)
         {
             DatabaseEntities db = new DatabaseEntities();
 
-            List<Detail> d = (from x in db.Details where x.HeaderId.Equals(headerId) select x).ToList();
+            List<Detail> d;
+
+            if (headerId.HasValue)
+            {
+                d = (from x in db.Details where x.HeaderId.Equals(headerId.Value) select x).ToList();
+            }
+
+            else
+            {
+                d = (from x in db.Details select x).ToList();
+            }
 
             List<TransactionDetail> transaction = d.Select(x => new TransactionDetail
             {
@@ -40,36 +50,8 @@ namespace TugasLabAkhir.Repository
                 ramenName = x.Raman.RamenName,
                 Broth = x.Raman.Broth,
                 Quantity = x.Quantity,
-                subTotal = detailHandler.getSubTotalPrice(x.RamenId, x.Quantity)
+                subTotalPrice = detailHandler.getSubTotalPrice(x.RamenId, x.Quantity)
             }).ToList();
-
-            return transaction;
-        }
-
-        public static List<TransactionDetail> getAllTransactionData()
-        {
-            DatabaseEntities db = new DatabaseEntities();
-
-            List<Detail> d = (from x in db.Details select x).ToList();
-
-            List<TransactionDetail> transaction = d.Select(x => new TransactionDetail
-            {
-                HeaderId = x.HeaderId,
-                Date = x.Header.Date,
-                userName = x.Header.User.UserName,
-                staffId = x.Header.StaffId.ToString(),
-                staffName = userRepository.getStaffName(x.Header.StaffId.ToString()),
-                ramenName = x.Raman.RamenName,
-                Broth = x.Raman.Broth,
-                Quantity = x.Quantity,
-                subTotal = detailHandler.getSubTotalPrice(x.RamenId, x.Quantity),
-                totalPrice = 0,
-                grandPrice = 0
-            }).ToList();
-
-            transaction = detailHandler.getTotalPrices(transaction);
-
-            transaction = detailHandler.getGrandPrices(transaction);
 
             return transaction;
         }
@@ -85,8 +67,6 @@ namespace TugasLabAkhir.Repository
         public string ramenName { get; set; }
         public string Broth { get; set; }
         public int Quantity { get; set; }
-        public int subTotal { get; set; }
-        public int totalPrice { get; set; }
-        public int grandPrice { get; set; }
+        public int subTotalPrice { get; set; }
     }
 }

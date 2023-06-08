@@ -31,7 +31,7 @@ namespace TugasLabAkhir.View.Report
             {
                 CrystalReport report = new CrystalReport();
                 
-                List<TransactionDetail> detail = detailRepository.getAllTransactionData();
+                List<TransactionDetail> detail = detailRepository.getTransactionData();
 
                 DataSet data = getAllData(detail);
 
@@ -68,9 +68,7 @@ namespace TugasLabAkhir.View.Report
                 row["Ramen Name"] = td.ramenName;
                 row["Ramen Broth"] = td.Broth;
                 row["Total Ramen"] = td.Quantity;
-                row["Sub Total Price"] = td.subTotal;
-                row["Total Price"] = td.totalPrice;
-                row["Grand Price"] = td.grandPrice;
+                row["Sub Total Price"] = td.subTotalPrice;
 
                 detailTable.Rows.Add(row);
             }

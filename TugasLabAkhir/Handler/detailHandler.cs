@@ -28,37 +28,5 @@ namespace TugasLabAkhir.Handler
 
             return subTotalPrice;
         }
-
-        public static List<TransactionDetail> getTotalPrices(List<TransactionDetail> transaction)
-        {
-            var TrGroup = transaction.GroupBy(x => x.HeaderId).Select(group => new
-            {
-                HeaderId = group.Key,
-
-                sumSubTotal = group.Sum(x => x.subTotal)
-            });
-
-
-            foreach (var i in TrGroup)
-            {
-                var transactionDetails = transaction.Where(x => x.HeaderId == i.HeaderId);
-
-                foreach (var j in transactionDetails)
-                {
-                    j.totalPrice = i.sumSubTotal;
-                }
-            }
-
-            return transaction;
-        }
-
-        public static List<TransactionDetail> getGrandPrices(List<TransactionDetail> transaction)
-        {
-            int sumTotalPrice = transaction.Sum(x => x.subTotal);
-
-            transaction.ForEach(x => x.grandPrice = sumTotalPrice);
-
-            return transaction;
-        }
     }
 }

@@ -297,10 +297,6 @@ namespace TugasLabAkhir.Dataset {
             
             private global::System.Data.DataColumn columnSub_Total_Price;
             
-            private global::System.Data.DataColumn columnTotal_Price;
-            
-            private global::System.Data.DataColumn columnGrand_Price;
-            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public TransactionDetailsDataTable() {
@@ -408,22 +404,6 @@ namespace TugasLabAkhir.Dataset {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn Total_PriceColumn {
-                get {
-                    return this.columnTotal_Price;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn Grand_PriceColumn {
-                get {
-                    return this.columnGrand_Price;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -459,7 +439,7 @@ namespace TugasLabAkhir.Dataset {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public TransactionDetailsRow AddTransactionDetailsRow(string Transaction_Id, string Transaction_Date, string Customer_Name, string Staff_Id, string Staff_Name, string Ramen_Name, string Ramen_Broth, string Total_Ramen, string Sub_Total_Price, string Total_Price, string Grand_Price) {
+            public TransactionDetailsRow AddTransactionDetailsRow(string Transaction_Id, string Transaction_Date, string Customer_Name, string Staff_Id, string Staff_Name, string Ramen_Name, string Ramen_Broth, string Total_Ramen, string Sub_Total_Price) {
                 TransactionDetailsRow rowTransactionDetailsRow = ((TransactionDetailsRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         Transaction_Id,
@@ -470,9 +450,7 @@ namespace TugasLabAkhir.Dataset {
                         Ramen_Name,
                         Ramen_Broth,
                         Total_Ramen,
-                        Sub_Total_Price,
-                        Total_Price,
-                        Grand_Price};
+                        Sub_Total_Price};
                 rowTransactionDetailsRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowTransactionDetailsRow);
                 return rowTransactionDetailsRow;
@@ -504,8 +482,6 @@ namespace TugasLabAkhir.Dataset {
                 this.columnRamen_Broth = base.Columns["Ramen Broth"];
                 this.columnTotal_Ramen = base.Columns["Total Ramen"];
                 this.columnSub_Total_Price = base.Columns["Sub Total Price"];
-                this.columnTotal_Price = base.Columns["Total Price"];
-                this.columnGrand_Price = base.Columns["Grand Price"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -529,10 +505,6 @@ namespace TugasLabAkhir.Dataset {
                 base.Columns.Add(this.columnTotal_Ramen);
                 this.columnSub_Total_Price = new global::System.Data.DataColumn("Sub Total Price", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnSub_Total_Price);
-                this.columnTotal_Price = new global::System.Data.DataColumn("Total Price", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnTotal_Price);
-                this.columnGrand_Price = new global::System.Data.DataColumn("Grand Price", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnGrand_Price);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -819,38 +791,6 @@ namespace TugasLabAkhir.Dataset {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string Total_Price {
-                get {
-                    try {
-                        return ((string)(this[this.tableTransactionDetails.Total_PriceColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Total Price\' in table \'TransactionDetails\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableTransactionDetails.Total_PriceColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string Grand_Price {
-                get {
-                    try {
-                        return ((string)(this[this.tableTransactionDetails.Grand_PriceColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Grand Price\' in table \'TransactionDetails\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableTransactionDetails.Grand_PriceColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsTransaction_IdNull() {
                 return this.IsNull(this.tableTransactionDetails.Transaction_IdColumn);
             }
@@ -955,30 +895,6 @@ namespace TugasLabAkhir.Dataset {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetSub_Total_PriceNull() {
                 this[this.tableTransactionDetails.Sub_Total_PriceColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsTotal_PriceNull() {
-                return this.IsNull(this.tableTransactionDetails.Total_PriceColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetTotal_PriceNull() {
-                this[this.tableTransactionDetails.Total_PriceColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsGrand_PriceNull() {
-                return this.IsNull(this.tableTransactionDetails.Grand_PriceColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetGrand_PriceNull() {
-                this[this.tableTransactionDetails.Grand_PriceColumn] = global::System.Convert.DBNull;
             }
         }
         

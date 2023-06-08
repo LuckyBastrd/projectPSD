@@ -24,8 +24,6 @@
               <xs:element name="Ramen_x0020_Broth" msprop:Generator_ColumnVarNameInTable="columnRamen_Broth" msprop:Generator_ColumnPropNameInRow="Ramen_Broth" msprop:Generator_ColumnPropNameInTable="Ramen_BrothColumn" msprop:Generator_UserColumnName="Ramen Broth" type="xs:string" minOccurs="0" />
               <xs:element name="Total_x0020_Ramen" msprop:Generator_ColumnVarNameInTable="columnTotal_Ramen" msprop:Generator_ColumnPropNameInRow="Total_Ramen" msprop:Generator_ColumnPropNameInTable="Total_RamenColumn" msprop:Generator_UserColumnName="Total Ramen" type="xs:string" minOccurs="0" />
               <xs:element name="Sub_x0020_Total_x0020_Price" msprop:Generator_ColumnVarNameInTable="columnSub_Total_Price" msprop:Generator_ColumnPropNameInRow="Sub_Total_Price" msprop:Generator_ColumnPropNameInTable="Sub_Total_PriceColumn" msprop:Generator_UserColumnName="Sub Total Price" type="xs:string" minOccurs="0" />
-              <xs:element name="Total_x0020_Price" msprop:Generator_ColumnVarNameInTable="columnTotal_Price" msprop:Generator_ColumnPropNameInRow="Total_Price" msprop:Generator_ColumnPropNameInTable="Total_PriceColumn" msprop:Generator_UserColumnName="Total Price" type="xs:string" minOccurs="0" />
-              <xs:element name="Grand_x0020_Price" msprop:Generator_ColumnVarNameInTable="columnGrand_Price" msprop:Generator_ColumnPropNameInRow="Grand_Price" msprop:Generator_ColumnPropNameInTable="Grand_PriceColumn" msprop:Generator_UserColumnName="Grand Price" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
