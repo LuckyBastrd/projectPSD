@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using TugasLabAkhir.Handler;
 using TugasLabAkhir.Model;
+using TugasLabAkhir.Repository;
 
 namespace TugasLabAkhir.Controller
 {
@@ -14,5 +15,9 @@ namespace TugasLabAkhir.Controller
             return detailHandler.insertDetail(headerId, ramenId, quantity);
         }
 
+        public static List<TransactionDetail> getTransactionData(int? headerId = null)
+        {
+            return detailHandler.getTransactionData(headerId);
+        }
     }
 }

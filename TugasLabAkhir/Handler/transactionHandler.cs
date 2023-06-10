@@ -9,7 +9,6 @@ namespace TugasLabAkhir.Handler
 {
     public class transactionHandler
     {
-
         public static Header insertTransaction(string userId, string date)
         {
             return transactionRepository.insertTransaction(userId, date);
@@ -20,6 +19,12 @@ namespace TugasLabAkhir.Handler
             return transactionRepository.updateStaff(headerId, staffId);
         }
 
+        public static (List<Transaction> transactionUnhandled, List<Transaction> transactionHandled) getTransactionData(int userId)
+        {
+            return transactionRepository.getTransactionData(userId);
+        }
+
+        //Math Logic
         public static int totalItem(int headerId)
         {
             DatabaseEntities db = new DatabaseEntities();

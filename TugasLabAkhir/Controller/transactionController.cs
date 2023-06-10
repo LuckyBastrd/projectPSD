@@ -20,5 +20,10 @@ namespace TugasLabAkhir.Controller
             return transactionHandler.updateStaff(headerId, staffId);
         }
 
+        public static (List<Transaction> transactionUnhandled, List<Transaction> transactionHandled) getTransactionData(int userId)
+        {
+            return transactionHandler.getTransactionData(userId);
+        }
+
     }
 }

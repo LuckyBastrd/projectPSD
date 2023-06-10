@@ -46,17 +46,17 @@ namespace TugasLabAkhir.View.Navbar
         //Profile Button
         protected void profBtn_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/View/Profile/profilePage.aspx");
+            Response.Redirect("~/View/UserDataPage/Profile/profilePage.aspx");
         }
 
         protected void proflBtn_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/View/Profile/profilePage.aspx");
+            Response.Redirect("~/View/UserDataPage/Profile/profilePage.aspx");
         }
 
         protected void profileBtn_Click1(object sender, EventArgs e)
         {
-            Response.Redirect("~/View/Profile/profilePage.aspx");
+            Response.Redirect("~/View/UserDataPage/Profile/profilePage.aspx");
         }
 
         //Log Out Button
@@ -68,7 +68,7 @@ namespace TugasLabAkhir.View.Navbar
             {
                 Session.Clear();
 
-                Response.Redirect("~/View/Login/loginPage.aspx");
+                Response.Redirect("~/View/MainPage/Login/loginPage.aspx");
             }
 
             cookie.Expires = DateTime.Now.AddDays(-1);
@@ -76,7 +76,7 @@ namespace TugasLabAkhir.View.Navbar
 
             Session.Clear();
 
-            Response.Redirect("~/View/Login/loginPage.aspx");
+            Response.Redirect("~/View/MainPage/Login/loginPage.aspx");
         }
 
         protected void logoutBtn_Click(object sender, EventArgs e)
@@ -97,23 +97,23 @@ namespace TugasLabAkhir.View.Navbar
 
         protected void manageBtn_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/View/ManageRamen/manageRamen.aspx");
+            Response.Redirect("~/View/RamenDataPage/ManageRamen/manageRamen.aspx");
         }
 
         protected void mngBtn_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/View/ManageRamen/manageRamen.aspx");
+            Response.Redirect("~/View/RamenDataPage/ManageRamen/manageRamen.aspx");
         }
 
         protected void orderRamenBtn_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/View/orderRamen/orderPage.aspx");
+            Response.Redirect("~/View/RamenDataPage/orderRamen/orderPage.aspx");
         }
 
         protected void history()
         {
             string userId = Application["userId"].ToString();
-            Response.Redirect("~/View/History/history.aspx?userId=" + userId);
+            Response.Redirect("~/View/TransactionPage/History/history.aspx?userId=" + userId);
         }
 
         protected void hisBtn_Click(object sender, EventArgs e)
@@ -129,7 +129,7 @@ namespace TugasLabAkhir.View.Navbar
         protected void queue()
         {
             string userId = Application["userId"].ToString();
-            Response.Redirect("~/View/Queue/queue.aspx?userId=" + userId);
+            Response.Redirect("~/View/TransactionPage/Queue/queue.aspx?userId=" + userId);
         }
 
         protected void orderQBtn_Click(object sender, EventArgs e)
@@ -144,12 +144,12 @@ namespace TugasLabAkhir.View.Navbar
 
         protected void reportBtn_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/View/Report/reportPage.aspx");
+            Response.Redirect("~/View/TransactionPage/Report/reportPage.aspx");
         }
 
         protected void homeBtn_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/View/Home/homePage.aspx");
+            Response.Redirect("~/View/MainPage/Home/homePage.aspx");
         }
     }
 }

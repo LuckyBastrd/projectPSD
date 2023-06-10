@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using TugasLabAkhir.Controller;
 using TugasLabAkhir.Factory;
 using TugasLabAkhir.Handler;
 using TugasLabAkhir.Model;
@@ -58,7 +59,7 @@ namespace TugasLabAkhir.Repository
                 HeaderId = x.HeaderId,
                 userName = x.User.UserName,
                 staffId = x.StaffId.ToString(),
-                staffName = userRepository.getStaffName(x.StaffId.ToString()),
+                staffName = userController.getStaffName(x.StaffId.ToString()),
                 Date = x.Date,
                 totalItem = transactionHandler.totalItem(x.HeaderId),
                 TrStatus = "Unhandled"
@@ -69,7 +70,7 @@ namespace TugasLabAkhir.Repository
                 HeaderId = x.HeaderId,
                 userName = x.User.UserName,
                 staffId = x.StaffId.ToString(),
-                staffName = userRepository.getStaffName(x.StaffId.ToString()),
+                staffName = userController.getStaffName(x.StaffId.ToString()),
                 Date = x.Date,
                 totalItem = transactionHandler.totalItem(x.HeaderId),
                 TrStatus = "Handled"

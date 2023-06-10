@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using TugasLabAkhir.Controller;
 using TugasLabAkhir.Model;
 
 namespace TugasLabAkhir.Repository
@@ -10,7 +11,7 @@ namespace TugasLabAkhir.Repository
     {
         public static List<RamenItem> getRamenItem()
         {
-            List<Raman> r = ramenRepository.getAllRamen();
+            List<Raman> r = ramenController.getAllRamen();
 
             List<RamenItem> ramenItem = r.Select(x => new RamenItem
             {

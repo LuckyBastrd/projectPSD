@@ -25,5 +25,19 @@ namespace TugasLabAkhir.Handler
             return userRepository.updateUser(name, email, gender, password);
         }
 
+        public static List<User> getAllUser(int roleId)
+        {
+            return userRepository.getAllUser(roleId);
+        }
+
+        public static List<User> getUserById(int userId)
+        {
+            return userRepository.getUserById(userId);
+        }
+
+        public static string getStaffName(string staffId)
+        {
+            return userRepository.getStaffName(staffId);
+        }
     }
 }

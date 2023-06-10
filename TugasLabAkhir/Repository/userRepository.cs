@@ -29,7 +29,12 @@ namespace TugasLabAkhir.Repository
 
             User u = (from x in db.Users where name.Equals(x.UserName) && password.Equals(x.UserPassword) select x).FirstOrDefault();
 
-            return u;
+            if(u != null && u.UserName == name && u.UserPassword == password)
+            {
+                return u;
+            }
+
+            return null;
         }
 
         public static string updateUser(string name, string email, string gender, string password)
@@ -72,6 +77,7 @@ namespace TugasLabAkhir.Repository
 
             return u;
         }
+
         public static string getStaffName(string staffId)
         {
             DatabaseEntities db = new DatabaseEntities();

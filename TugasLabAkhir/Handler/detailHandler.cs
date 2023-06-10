@@ -16,6 +16,12 @@ namespace TugasLabAkhir.Handler
 
         }
 
+        public static List<TransactionDetail> getTransactionData(int? headerId = null)
+        {
+            return detailRepository.getTransactionData(headerId);
+        }
+
+        //
         public static int getSubTotalPrice(int ramenId, int Quantity)
         {
             DatabaseEntities db = new DatabaseEntities();

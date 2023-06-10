@@ -1223,22 +1223,23 @@
       <DependentUpon>Model.edmx</DependentUpon>
       <LastGenOutput>Model.cs</LastGenOutput>
     </Content>
-    <Content Include="View\Detail\detailPage.aspx" />
-    <Content Include="View\History\history.aspx" />
-    <Content Include="View\Home\homePage.aspx" />
-    <Content Include="View\insertRamen\insertRamen.aspx" />
-    <Content Include="View\Login\loginPage.aspx" />
-    <Content Include="View\ManageRamen\manageRamen.aspx" />
-    <Content Include="View\orderRamen\orderPage.aspx" />
-    <Content Include="View\Profile\profilePage.aspx" />
-    <Content Include="View\Queue\queue.aspx" />
-    <Content Include="View\Register\registerPage.aspx" />
-    <Content Include="View\Report\reportPage.aspx" />
-    <Content Include="View\updateRamen\updateRamen.aspx" />
+    <Content Include="View\TransactionPage\Detail\detailPage.aspx" />
+    <Content Include="View\TransactionPage\History\history.aspx" />
+    <Content Include="View\MainPage\Home\homePage.aspx" />
+    <Content Include="View\MainPage\Login\loginPage.aspx" />
+    <Content Include="View\RamenDataPage\ManageRamen\manageRamen.aspx" />
+    <Content Include="View\RamenDataPage\orderRamen\orderPage.aspx" />
+    <Content Include="View\UserDataPage\Profile\profilePage.aspx" />
+    <Content Include="View\TransactionPage\Queue\queue.aspx" />
+    <Content Include="View\RamenDataPage\insertRamen\insertRamen.aspx" />
+    <Content Include="View\RamenDataPage\updateRamen\updateRamen.aspx" />
+    <Content Include="View\MainPage\Register\registerPage.aspx" />
+    <Content Include="View\TransactionPage\Report\reportPage.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controller\detailController.cs" />
+    <Compile Include="Controller\orderController.cs" />
     <Compile Include="Controller\ramenController.cs" />
     <Compile Include="Controller\transactionController.cs" />
     <Compile Include="Controller\userController.cs" />
@@ -1252,6 +1253,7 @@
     <Compile Include="Factory\transactionFactory.cs" />
     <Compile Include="Factory\userFactory.cs" />
     <Compile Include="Handler\detailHandler.cs" />
+    <Compile Include="Handler\orderHandler.cs" />
     <Compile Include="Handler\ramenHandler.cs" />
     <Compile Include="Handler\transactionHandler.cs" />
     <Compile Include="Handler\userHandler.cs" />
@@ -1300,46 +1302,39 @@
     <Compile Include="Repository\ramenRepository.cs" />
     <Compile Include="Repository\transactionRepository.cs" />
     <Compile Include="Repository\userRepository.cs" />
-    <Compile Include="View\Detail\detailPage.aspx.cs">
+    <Compile Include="View\TransactionPage\Detail\detailPage.aspx.cs">
       <DependentUpon>detailPage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="View\Detail\detailPage.aspx.designer.cs">
+    <Compile Include="View\TransactionPage\Detail\detailPage.aspx.designer.cs">
       <DependentUpon>detailPage.aspx</DependentUpon>
     </Compile>
-    <Compile Include="View\History\history.aspx.cs">
+    <Compile Include="View\TransactionPage\History\history.aspx.cs">
       <DependentUpon>history.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="View\History\history.aspx.designer.cs">
+    <Compile Include="View\TransactionPage\History\history.aspx.designer.cs">
       <DependentUpon>history.aspx</DependentUpon>
     </Compile>
-    <Compile Include="View\Home\homePage.aspx.cs">
+    <Compile Include="View\MainPage\Home\homePage.aspx.cs">
       <DependentUpon>homePage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="View\Home\homePage.aspx.designer.cs">
+    <Compile Include="View\MainPage\Home\homePage.aspx.designer.cs">
       <DependentUpon>homePage.aspx</DependentUpon>
     </Compile>
-    <Compile Include="View\insertRamen\insertRamen.aspx.cs">
-      <DependentUpon>insertRamen.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="View\insertRamen\insertRamen.aspx.designer.cs">
-      <DependentUpon>insertRamen.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="View\Login\loginPage.aspx.cs">
+    <Compile Include="View\MainPage\Login\loginPage.aspx.cs">
       <DependentUpon>loginPage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="View\Login\loginPage.aspx.designer.cs">
+    <Compile Include="View\MainPage\Login\loginPage.aspx.designer.cs">
       <DependentUpon>loginPage.aspx</DependentUpon>
     </Compile>
-    <Compile Include="View\ManageRamen\manageRamen.aspx.cs">
+    <Compile Include="View\RamenDataPage\ManageRamen\manageRamen.aspx.cs">
       <DependentUpon>manageRamen.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="View\ManageRamen\manageRamen.aspx.designer.cs">
+    <Compile Include="View\RamenDataPage\ManageRamen\manageRamen.aspx.designer.cs">
       <DependentUpon>manageRamen.aspx</DependentUpon>
     </Compile>
     <Compile Include="View\Navbar\Navbar.Master.cs">
@@ -1349,47 +1344,54 @@
     <Compile Include="View\Navbar\Navbar.Master.designer.cs">
       <DependentUpon>Navbar.Master</DependentUpon>
     </Compile>
-    <Compile Include="View\orderRamen\orderPage.aspx.cs">
+    <Compile Include="View\RamenDataPage\orderRamen\orderPage.aspx.cs">
       <DependentUpon>orderPage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="View\orderRamen\orderPage.aspx.designer.cs">
+    <Compile Include="View\RamenDataPage\orderRamen\orderPage.aspx.designer.cs">
       <DependentUpon>orderPage.aspx</DependentUpon>
     </Compile>
-    <Compile Include="View\Profile\profilePage.aspx.cs">
+    <Compile Include="View\UserDataPage\Profile\profilePage.aspx.cs">
       <DependentUpon>profilePage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="View\Profile\profilePage.aspx.designer.cs">
+    <Compile Include="View\UserDataPage\Profile\profilePage.aspx.designer.cs">
       <DependentUpon>profilePage.aspx</DependentUpon>
     </Compile>
-    <Compile Include="View\Queue\queue.aspx.cs">
+    <Compile Include="View\TransactionPage\Queue\queue.aspx.cs">
       <DependentUpon>queue.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="View\Queue\queue.aspx.designer.cs">
+    <Compile Include="View\TransactionPage\Queue\queue.aspx.designer.cs">
       <DependentUpon>queue.aspx</DependentUpon>
     </Compile>
-    <Compile Include="View\Register\registerPage.aspx.cs">
-      <DependentUpon>registerPage.aspx</DependentUpon>
+    <Compile Include="View\RamenDataPage\insertRamen\insertRamen.aspx.cs">
+      <DependentUpon>insertRamen.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="View\Register\registerPage.aspx.designer.cs">
-      <DependentUpon>registerPage.aspx</DependentUpon>
+    <Compile Include="View\RamenDataPage\insertRamen\insertRamen.aspx.designer.cs">
+      <DependentUpon>insertRamen.aspx</DependentUpon>
     </Compile>
-    <Compile Include="View\Report\reportPage.aspx.cs">
-      <DependentUpon>reportPage.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="View\Report\reportPage.aspx.designer.cs">
-      <DependentUpon>reportPage.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="View\updateRamen\updateRamen.aspx.cs">
+    <Compile Include="View\RamenDataPage\updateRamen\updateRamen.aspx.cs">
       <DependentUpon>updateRamen.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="View\updateRamen\updateRamen.aspx.designer.cs">
+    <Compile Include="View\RamenDataPage\updateRamen\updateRamen.aspx.designer.cs">
       <DependentUpon>updateRamen.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\MainPage\Register\registerPage.aspx.cs">
+      <DependentUpon>registerPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\MainPage\Register\registerPage.aspx.designer.cs">
+      <DependentUpon>registerPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\TransactionPage\Report\reportPage.aspx.cs">
+      <DependentUpon>reportPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\TransactionPage\Report\reportPage.aspx.designer.cs">
+      <DependentUpon>reportPage.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

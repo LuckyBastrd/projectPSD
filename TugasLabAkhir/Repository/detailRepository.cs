@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using TugasLabAkhir.Controller;
 using TugasLabAkhir.Factory;
 using TugasLabAkhir.Handler;
 using TugasLabAkhir.Model;
@@ -46,7 +47,7 @@ namespace TugasLabAkhir.Repository
                 Date = x.Header.Date,
                 userName = x.Header.User.UserName,
                 staffId = x.Header.StaffId.ToString(),
-                staffName = userRepository.getStaffName(x.Header.StaffId.ToString()),
+                staffName = userController.getStaffName(x.Header.StaffId.ToString()),
                 ramenName = x.Raman.RamenName,
                 Broth = x.Raman.Broth,
                 Quantity = x.Quantity,

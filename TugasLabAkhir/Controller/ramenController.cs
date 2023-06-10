@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using TugasLabAkhir.Handler;
+using TugasLabAkhir.Model;
 
 namespace TugasLabAkhir.Controller
 {
@@ -57,5 +58,14 @@ namespace TugasLabAkhir.Controller
             return ramenHandler.deleteRamen(id);
         }
 
+        public static List<Raman> getAllRamen()
+        {
+            return ramenHandler.getAllRamen();
+        }
+
+        public static List<Raman> getRamenById(int ramenId)
+        {
+            return ramenHandler.getRamenById(ramenId);
+        }
     }
 }
