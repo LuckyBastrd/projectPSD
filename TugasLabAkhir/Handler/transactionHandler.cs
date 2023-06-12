@@ -24,7 +24,7 @@ namespace TugasLabAkhir.Handler
             return transactionRepository.getTransactionData(userId);
         }
 
-        //Math Logic
+        //Sum Logic
         public static int totalItem(int headerId)
         {
             DatabaseEntities db = new DatabaseEntities();

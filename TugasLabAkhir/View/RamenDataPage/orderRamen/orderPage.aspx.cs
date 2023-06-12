@@ -68,7 +68,6 @@ namespace TugasLabAkhir.View.RamenDataPage.orderRamen
                         Broth = broth,
                         Price = price,
                         Quantity = 1,
-                        
                     };
 
                     cartItems.Add(cartItem);

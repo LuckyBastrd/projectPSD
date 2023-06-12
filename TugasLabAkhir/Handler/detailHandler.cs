@@ -21,7 +21,7 @@ namespace TugasLabAkhir.Handler
             return detailRepository.getTransactionData(headerId);
         }
 
-        //
+        //Sum Logic
         public static int getSubTotalPrice(int ramenId, int Quantity)
         {
             DatabaseEntities db = new DatabaseEntities();
