@@ -31,3 +31,15 @@ This website offers a range of features tailored to different roles:
 ## Installation
 
 Make sure you have the required dependencies installed and configured, such as ASP.NET and Crystal Reports.
+
+## About the Contributors
+
+### Muhammad Rafi Khairunizham
+
+- GitHub Profile: [Rafi's GitHub](https://github.com/LuckyBastrd)
+- LinkedIn Profile: [Rafi's LinkedIn](https://www.linkedin.com/in/muhammad-rafi-khairunizham-2a8597253/)
+
+### Nikolaus Chandra
+
+- GitHub Profile: [Niko's GitHub](https://github.com/mrkeylost)
+- LinkedIn Profile: [Niko's LinkedIn](https://www.linkedin.com/in/nikolaus-chandra-8942a2221/)
